@@ -1,0 +1,165 @@
+<div id="overview">
+    <mat-card>
+        <mat-card-content>
+            <div class="row align-items-center">
+                <div class="col-2">
+                </div>
+                <div class="col-2">
+                    <mat-form-field>
+                        <mat-select placeholder="Tournament">
+                            <mat-option>None</mat-option>
+                            <mat-option *ngFor="let state of states" [value]="state">{{state}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div class="col-1">
+                    <button mat-raised-button color="primary" (click)="redirect('createTournament')"><mat-icon>edit</mat-icon></button>
+                </div>
+                <div class="col-1">
+                    <button mat-raised-button color="primary" (click)="redirect('createTournament')"><mat-icon>add</mat-icon></button>
+                </div>
+                <div class="col-1">
+                    <button mat-raised-button color="primary" (click)="redirect('createTournament')"><mat-icon>delete</mat-icon></button>
+                </div>
+                <div class="col-1">
+                    <button mat-raised-button color="primary" (click)="redirect('addttt')">Add team to tournament</button>
+                </div>
+            </div>
+            <mat-tab-group>
+                <mat-tab label="List team of Tournament">
+                    <mat-grid-list cols="4" rowHeight="2:1">
+                        <mat-grid-tile *ngFor="let team of lstteam">
+                            <div class="img-with-text">
+                                <img src="{{team.logo}}" alt="sometext" />
+                                <p>{{team.name}}</p>
+                            </div>
+                        </mat-grid-tile>
+                    </mat-grid-list>
+                </mat-tab>
+                <mat-tab label="Ranking"> Content 2 </mat-tab>
+            </mat-tab-group>
+        </mat-card-content>
+    </mat-card>
+</div>
+<div id="createTournament" style="display: none">
+    <mat-card>
+        <div class="panel panel-default">
+            <div class="title-Panels">Add tournament</div>
+        </div>
+        <form action="" class="example-form">
+            <div class="row align-items-center">
+                <div class="col-4">
+                    <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Name Tournament">
+                    </mat-form-field>
+                </div>
+                <mat-checkbox>Group</mat-checkbox>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-6">
+                    <mat-form-field class="example-full-width">
+                        <input matInput [matDatepicker]="picker" placeholder="From date">
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker touchUi="true" #picker></mat-datepicker>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-6">
+                    <mat-form-field class="example-full-width">
+                        <input matInput [matDatepicker]="picker2" placeholder="To date">
+                        <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                        <mat-datepicker touchUi="true" #picker2></mat-datepicker>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-6">
+                    <mat-form-field class="example-full-width">
+                        <textarea matInput placeholder="History"></textarea>
+                    </mat-form-field>
+                </div>
+            </div>
+            <button mat-raised-button color="primary" data-toggle="modal" data-target="#tournamentModal">Add</button>
+            <button mat-raised-button color="primary" (click)="redirect('overview')">Cancel</button>
+        </form>
+    </mat-card>
+</div>
+<div id="addttt" style="display: none">
+    <mat-card>
+        <div class="panel panel-default">
+            <div class="title-Panels">Add team to tournament</div>
+        </div>
+        <div class="row">
+            <div class="col-2">
+                <mat-form-field>
+                    <mat-select placeholder="Tournament">
+                        <mat-option>None</mat-option>
+                        <mat-option *ngFor="let state of states" [value]="state">{{state}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="col-2">
+                <mat-form-field>
+                    <mat-select placeholder="Group" [(ngModel)]="grttt">
+                        <mat-option *ngFor="let group of groups" [value]="group">{{group}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="col-2">
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Search Team">
+                </mat-form-field>
+            </div>
+            <div class="col-1">
+                <button mat-raised-button color="primary" data-toggle="modal" data-target="#teamModal" [disabled]="disCheck">Add</button>
+            </div>
+            <div class="col-1"><button mat-raised-button color="primary" (click)="redirect('overview')">Cancel</button></div>
+        </div>
+        <mat-card>
+            <table class="table table-hover" matSort (matSortChange)="sortData($event)">
+                <tr>
+                    <th mat-sort-header="id">No.</th>
+                    <th mat-sort-header="team">Team</th>
+                    <th>Logo</th>
+                    <th>Check</th>
+                </tr>
+                <tr *ngFor="let dessert of sortedData ">
+                    <td>{{dessert.id}}</td>
+                    <td>{{dessert.team}}</td>
+                    <td><img src="{{dessert.logo}} " alt=" "></td>
+                    <td>
+                        <mat-checkbox (change)="clickcheck($event.checked)">
+                        </mat-checkbox>
+                    </td>
+                </tr>
+            </table>
+        </mat-card>
+    </mat-card>
+</div>
+<div class="modal fade" id="tournamentModal">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body">
+                Add tournament successfully !!! Do you want to add team to tournament ?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-info" data-dismiss="modal" (click)="redirect('addttt')">Add team to tournament</button>
+                <button type="button" class="btn" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="teamModal">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body">
+                Add team successfully !!!
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-info" data-dismiss="modal" (click)="redirect('overview')">Go to tournament overview</button>
+                <button type="button" class="btn" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

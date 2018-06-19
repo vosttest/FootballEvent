@@ -1,0 +1,145 @@
+<div id="overview">
+    <mat-card>
+        <div class="panel panel-default">
+            <div class="title-Panels">List calendar</div>
+        </div>
+        <button mat-raised-button color="primary" (click)="redirect('create')">Add</button>
+        <mat-tab-group>
+            <mat-tab label="Today">
+                <mat-card>
+                    <table class="table table-hover" matSort (matSortChange)="sortCalendar($event)">
+                        <tr>
+                            <th mat-sort-header="tournament">Tournament</th>
+                            <th mat-sort-header="date">Date</th>
+                            <th>Logo</th>
+                            <th>Team 1</th>
+                            <th>Result</th>
+                            <th>Team 2</th>
+                            <th>Logo</th>
+                            <th></th>
+                        </tr>
+                        <tr *ngFor="let calendar of sortedCalendar ">
+                            <td>{{calendar.tournament}}</td>
+                            <td>{{calendar.date}}</td>
+                            <td><img src="{{calendar.logo1}} " alt=" "></td>
+                            <td>{{calendar.team1}}</td>
+                            <td>{{calendar.goal1}} : {{calendar.goal2}}</td>
+                            <td>{{calendar.team2}}</td>
+                            <td><img src="{{calendar.logo2}} " alt=" "></td>
+                            <mat-icon>edit</mat-icon>
+                        </tr>
+                    </table>
+                </mat-card>
+            </mat-tab>
+            <mat-tab label="Yesterday">
+                <mat-card>
+                    <table class="table table-hover" matSort (matSortChange)="sortCalendar($event)">
+                        <tr>
+                            <th mat-sort-header="tournament">Tournament</th>
+                            <th mat-sort-header="date">Date</th>
+                            <th>Logo</th>
+                            <th>Team 1</th>
+                            <th>Result</th>
+                            <th>Team 2</th>
+                            <th>Logo</th>
+                            <th></th>
+                        </tr>
+                        <tr *ngFor="let calendar of sortedCalendar ">
+                            <td>{{calendar.tournament}}</td>
+                            <td>{{calendar.date}}</td>
+                            <td><img src="{{calendar.logo1}} " alt=" "></td>
+                            <td>{{calendar.team1}}</td>
+                            <td>{{calendar.goal1}} : {{calendar.goal2}}</td>
+                            <td>{{calendar.team2}}</td>
+                            <td><img src="{{calendar.logo2}} " alt=" "></td>
+                            <mat-icon>edit</mat-icon>
+                        </tr>
+                    </table>
+                </mat-card>
+            </mat-tab>
+            <mat-tab label="All"> Content 3 </mat-tab>
+        </mat-tab-group>
+    </mat-card>
+</div>
+<div id="create" style="display: none">
+    <mat-card>
+        <div class="container">
+            <form class="example-form">
+                <div class="row align-items-center">
+                    <div class="col-6">
+                        <mat-form-field class="example-full-width">
+                            <mat-select placeholder="Tournament">
+                                <mat-option>None</mat-option>
+                                <mat-option *ngFor="let state of states" [value]="state">{{state}}</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row align-items-center">
+                    <div class="col-6">
+                        <mat-form-field class="example-full-width">
+                            <input matInput placeholder="Team 1">
+                        </mat-form-field>
+                    </div>
+                    <div class="col-6">
+                        <mat-form-field class="example-full-width">
+                            <input matInput placeholder="Team 2">
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row align-items-center">
+                    <div class="col-6">
+                        <mat-form-field class="example-full-width">
+                            <input matInput placeholder="Stadium">
+                        </mat-form-field>
+                    </div>
+                    <div class="col-6">
+                        <mat-form-field class="example-full-width">
+                            <input matInput placeholder="Referee">
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row align-items-center">
+                    <div class="col-6">
+                        <mat-form-field class="example-full-width">
+                            <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker touchUi="true" #picker></mat-datepicker>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-6">
+                        <mat-checkbox>Group_match</mat-checkbox>
+                    </div>
+                </div>
+                <div class="row align-items-center">
+                    <div class="col-6">
+                        <mat-form-field class="example-full-width">
+                            <textarea matInput placeholder="Squad 1"></textarea>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-6">
+                        <mat-form-field class="example-full-width">
+                            <textarea matInput placeholder="Squad 2"></textarea>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="text-right">
+                    <button mat-raised-button color="primary" data-toggle="modal" data-target="#addModal">Add</button>
+                    <button mat-raised-button color="accent" (click)="redirect('overview')">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </mat-card>
+    <div class="modal fade" id="addModal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    Add calendar successfully !!!
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-info" data-dismiss="modal" (click)="redirect('overview')">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

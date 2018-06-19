@@ -1,0 +1,49 @@
+<div id="overview">
+    <mat-card>
+        <div class="row">
+            <button mat-raised-button color="primary" (click)="redirect('create')">Add</button>
+        </div>
+        <div class="row">
+            <table class="table table-hover" matSort (matSortChange)="sortData($event)">
+                <tr>
+                    <th mat-sort-header="tilte" style="width: 30%;">News Tilte</th>
+                    <th mat-sort-header="content" style="width: 65%;">Content</th>
+                    <th style="width: 5%;"></th>
+                </tr>
+                <tr *ngFor="let i of sortedData">
+                    <td>{{i.tilte}}</td>
+                    <td>{{i.content}}</td>
+                    <td>
+                        <mat-icon>edit</mat-icon>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </mat-card>
+</div>
+<div id="create" style="display: none">
+    <mat-card>
+        <mat-card-title>
+            <div class="text-center">
+                <h2>Add News</h2>
+            </div>
+        </mat-card-title>
+        <div class="container">
+            <form class="example-form">
+                <div class="row">
+                    <div class="col-6">
+                        <mat-form-field class="example-full-width">
+                            <input matInput placeholder="News Title">
+                        </mat-form-field>
+                    </div>
+                </div>
+                <label>Content</label>
+                <div [froalaEditor] [(froalaModel)]="data2"></div><br/>
+                <div class="text-right">
+                    <button mat-raised-button color="primary">Save</button>
+                    <button mat-raised-button color="accent" (click)="redirect('overview')">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </mat-card>
+</div>

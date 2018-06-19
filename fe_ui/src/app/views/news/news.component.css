@@ -1,0 +1,34 @@
+.format-layout {
+    margin: 55px 20px 0 20px;
+}
+
+img.mat-card-image {
+    margin: 3% 0 0 5%;
+    width: 90%;
+    height: 90%;
+}
+
+.mat-card-md-image {
+    margin: 0 0 0 20%;
+}
+
+.news {
+    border-right: #000000 solid 1px;
+    width: 100%;
+    height: 100%;
+}
+
+.new {
+    background: url(https://cdn.vn.garenanow.com/web/fo3/fo4/worldcup/images/btn-xem-tat-ca.png) no-repeat;
+    background-size: 100% 100%;
+    color: black;
+}
+
+.related-news {
+    height: 370px;
+}
+
+.img {
+    width: 100%;
+    height: 60%;
+}

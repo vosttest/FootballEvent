@@ -1,0 +1,16 @@
+.title-Panels {
+    font-size: 150%;
+    background-color: #3f51b5;
+    color: white;
+    padding: 1%;
+}
+
+.example-radio-group {
+    display: inline-flex;
+    flex-direction: row;
+}
+
+.example-radio-button {
+    margin: 5px;
+    text-align: center;
+}
