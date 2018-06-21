@@ -1,5 +1,17 @@
-calendar {
-    margin-top: 24%;
+.layout {
+    background: url(https://cdn.vn.garenanow.com/web/fo3/fo4/worldcup/images/bet-bg.jpg)!important;
+    background-size: 100% 100%;
+}
+
+.mat-tab-label {
+    color: red
+}
+
+.rank {
+    background: url(https://cdn.vn.garenanow.com/web/fo3/fo4/worldcup/images/title-rank.jpg)!important;
+    background-size: 100% 100%;
+    color: white;
+    border: 2px solid;
 }
 
 button {
