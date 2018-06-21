@@ -17,7 +17,7 @@ export class CalendarComponent implements OnInit {
     }
 
     public openDialog() {
-        this.dialog.open(DialogData, {
+        this.dialog.open(DialogMatch, {
             data: {
                 animal: 'panda'
             }
@@ -28,13 +28,10 @@ export class CalendarComponent implements OnInit {
 
 @Component({
     selector: 'app-calendar',
-    templateUrl: 'Dialog.component.html',
+    templateUrl: 'dialog.component.html',
 })
-export class DialogData {
+export class DialogMatch {
+
     constructor(@Inject(MAT_DIALOG_DATA) public data: any) { }
 
-
 }
-
-
-

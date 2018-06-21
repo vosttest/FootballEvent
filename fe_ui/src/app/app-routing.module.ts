@@ -5,17 +5,14 @@ import { RouterModule, Routes } from '@angular/router';
 import { CalendarComponent } from './views/calendar/calendar.component';
 import { GuessComponent } from './views/guess/guess.component';
 import { NewsComponent } from './views/news/news.component';
-import { NewsViewComponent } from './views/news-view/news-view.component';
 
 import { LayoutAdminComponent } from './views/layouts/layout-admin/layout-admin.component';
 
 const routes: Routes = [
     { path: '', redirectTo: 'guess', pathMatch: 'full' },
-
     { path: 'calendar', component: CalendarComponent },
     { path: 'guess', component: GuessComponent },
     { path: 'news', component: NewsComponent },
-    { path: 'news-view', component: NewsViewComponent },
     {
         path: 'admin',
         component: LayoutAdminComponent,

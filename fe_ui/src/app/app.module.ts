@@ -13,24 +13,23 @@ import { ApiProvider, UserProvider } from './providers/provider';
 
 import { AppComponent } from './app.component';
 import { GuessComponent } from './views/guess/guess.component';
-import { CalendarComponent, DialogData } from './views/calendar/calendar.component';
+import { CalendarComponent, DialogMatch } from './views/calendar/calendar.component';
 import { TopMenuComponent } from './views/shared/top-menu/top-menu.component';
-import { LayoutAdminComponent } from './views/layouts/layout-admin/layout-admin.component';
-import { NewsComponent } from './views/news/news.component';
-import { NewsViewComponent } from './views/news-view/news-view.component';
+import { NewsComponent, DialogNews } from './views/news/news.component';
 import { EqualValidator } from "./utilities/utility";
+import { LayoutAdminComponent } from './views/layouts/layout-admin/layout-admin.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         GuessComponent,
         CalendarComponent,
+        DialogMatch,
         TopMenuComponent,
-        LayoutAdminComponent,
         NewsComponent,
-        NewsViewComponent,
-        DialogData,
-        EqualValidator
+        DialogNews,
+        EqualValidator,
+        LayoutAdminComponent
     ],
     imports: [
         BrowserModule,
@@ -45,7 +44,7 @@ import { EqualValidator } from "./utilities/utility";
         FroalaEditorModule.forRoot(),
         FroalaViewModule.forRoot()
     ],
-    entryComponents: [CalendarComponent, DialogData],
+    entryComponents: [CalendarComponent, DialogMatch, DialogNews],
     providers: [
         ApiProvider,
         UserProvider
