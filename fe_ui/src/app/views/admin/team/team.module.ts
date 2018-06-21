@@ -5,7 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TeamComponent } from './team.component';
 import { TeamRoutingModule } from './team-routing.module';
 import { AppMaterialModule } from '../../../app-material/app-material.module';
-import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
+import { NgxEditorModule } from 'ngx-editor';
 
 @NgModule({
     imports: [
@@ -14,8 +14,7 @@ import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
         ReactiveFormsModule,
         TeamRoutingModule,
         AppMaterialModule,
-        FroalaEditorModule.forRoot(),
-        FroalaViewModule.forRoot()
+        NgxEditorModule
     ],
     declarations: [
         TeamComponent,

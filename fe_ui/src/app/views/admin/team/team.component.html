@@ -1,7 +1,17 @@
 <div id="overview">
     <mat-card>
         <div class="row">
-            <button mat-raised-button color="primary" (click)="redirect('create')">Add</button>
+            <div class="col-2 overview">
+                <button mat-raised-button color="primary" (click)="redirect('create')">Add</button>
+            </div>
+            <div class="col-3">
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Search team by name">
+                </mat-form-field>
+            </div>
+            <button type="submit" class="btn btn-white btn-round btn-just-icon">
+                <i class="material-icons">search</i>
+            </button>
         </div>
         <div class="row">
             <table class="table table-hover" matSort (matSortChange)="sortData($event)">
@@ -19,7 +29,9 @@
                     <td>{{i.coach}}</td>
                     <td>{{i.country}}</td>
                     <td>{{i.continent}}</td>
-                    <mat-icon>edit</mat-icon>
+                    <td>
+                        <mat-icon>edit</mat-icon>
+                    </td>
                 </tr>
             </table>
         </div>
@@ -27,70 +39,66 @@
 </div>
 <div id="create" style="display: none">
     <mat-card>
-        <mat-card-title>
-            <div class="text-center">
-                <h2>Add Team</h2>
-            </div>
-        </mat-card-title>
-        <div class="container">
-            <form class="example-form">
-                <div class="row">
-                    <div class="col-6">
-                        <mat-form-field class="example-full-width">
-                            <input matInput placeholder="Team Name">
-                        </mat-form-field>
-                    </div>
-                    <div class="col-6">
-                        <mat-form-field class="example-full-width">
-                            <input matInput placeholder="Coach">
-                        </mat-form-field>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-6">
-                        <mat-form-field class="example-full-width">
-                            <mat-select placeholder="Country">
-                                <mat-option *ngFor="let i of country" [value]="i.value">
-                                    {{ i.viewValue }}
-                                </mat-option>
-                            </mat-select>
-                        </mat-form-field>
-                    </div>
-                    <div class="col-6">
-                        <mat-form-field class="example-full-width">
-                            <mat-select placeholder="Continent">
-                                <mat-option *ngFor="let i of continent" [value]="i.value">
-                                    {{ i.viewValue }}
-                                </mat-option>
-                            </mat-select>
-                        </mat-form-field>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-6">
-                        <mat-form-field class="example-full-width">
-                            <input matInput placeholder="Choose Icon">
-                        </mat-form-field>
-                    </div>
-                    <div class="col-6">
-                        <mat-form-field class="example-full-width">
-                            <mat-select placeholder="Tournament" [formControl]="toppings" multiple>
-                                <mat-option *ngFor="let i of toppingList" [value]="i">{{i}}</mat-option>
-                            </mat-select>
-                        </mat-form-field>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-12">
-                        <label>History</label>
-                        <div [froalaEditor] [(froalaModel)]="data2"></div><br/>
-                    </div>
-                </div>
-                <div class="text-right">
-                    <button mat-raised-button color="primary">Save</button>
-                    <button mat-raised-button color="accent" (click)="redirect('overview')">Cancel</button>
-                </div>
-            </form>
+        <div class="panel panel-default">
+            <div class="title-Panels">Add Team</div>
         </div>
+        <form class="example-form">
+            <div class="row">
+                <div class="col-6">
+                    <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Team Name">
+                    </mat-form-field>
+                </div>
+                <div class="col-6">
+                    <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Coach">
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <mat-form-field class="example-full-width">
+                        <mat-select placeholder="Country">
+                            <mat-option *ngFor="let i of country" [value]="i.value">
+                                {{ i.viewValue }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div class="col-6">
+                    <mat-form-field class="example-full-width">
+                        <mat-select placeholder="Continent">
+                            <mat-option *ngFor="let i of continent" [value]="i.value">
+                                {{ i.viewValue }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Choose Icon">
+                    </mat-form-field>
+                </div>
+                <div class="col-6">
+                    <mat-form-field class="example-full-width">
+                        <mat-select placeholder="Tournament" [formControl]="toppings" multiple>
+                            <mat-option *ngFor="let i of toppingList" [value]="i">{{i}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <label>History</label>
+                    <app-ngx-editor name="content" [config]="editorConfig" [spellcheck]="true" [(ngModel)]="vm.content"></app-ngx-editor>
+                </div>
+            </div>
+            <div class="text-right">
+                <button mat-raised-button color="primary">Save</button>
+                <button mat-raised-button color="accent" (click)="redirect('overview')">Cancel</button>
+            </div>
+        </form>
     </mat-card>
 </div>

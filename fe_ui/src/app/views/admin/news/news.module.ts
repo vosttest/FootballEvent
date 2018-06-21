@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { NewsComponent } from './news.component';
 import { NewsRoutingModule } from './news-routing.module';
 import { AppMaterialModule } from '../../../app-material/app-material.module';
-import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
+import { NgxEditorModule } from 'ngx-editor';
 
 @NgModule({
     imports: [
@@ -13,8 +13,7 @@ import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
         FormsModule,
         NewsRoutingModule,
         AppMaterialModule,
-        FroalaEditorModule.forRoot(),
-        FroalaViewModule.forRoot()
+        NgxEditorModule
     ],
     declarations: [
         NewsComponent,

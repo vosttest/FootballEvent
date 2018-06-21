@@ -38,3 +38,21 @@ button.mat-raised-button {
     color: white;
     padding: 1%;
 }
+
+.groupNumber {
+    width: 9%;
+    height: 5%;
+    margin-left: 2%;
+    margin-right: 1%;
+    margin-bottom: 1%;
+    margin-top: 0.5%;
+    border-color: gray;
+}
+
+.first-input {
+    padding-top: 5%;
+}
+
+.first-button {
+    padding-top: 1%;
+}

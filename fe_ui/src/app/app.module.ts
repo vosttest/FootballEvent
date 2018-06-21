@@ -7,7 +7,6 @@ import { AppMaterialModule } from './app-material/app-material.module';
 import { MnFullpageModule } from 'ngx-fullpage';
 import { ModalModule, CarouselModule } from 'ngx-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
-import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
 
 import { ApiProvider, UserProvider } from './providers/provider';
 
@@ -40,9 +39,7 @@ import { LayoutAdminComponent } from './views/layouts/layout-admin/layout-admin.
         MnFullpageModule.forRoot(),
         ModalModule.forRoot(),
         CarouselModule.forRoot(),
-        HttpClientModule,
-        FroalaEditorModule.forRoot(),
-        FroalaViewModule.forRoot()
+        HttpClientModule
     ],
     entryComponents: [CalendarComponent, DialogMatch, DialogNews],
     providers: [

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Sort } from '@angular/material';
+import { Router, ActivatedRoute, Params } from '@angular/router';
 
 @Component({
     selector: 'app-dashboard',
@@ -16,17 +17,17 @@ export class DashboardComponent implements OnInit {
         { id: '4', tournament: 'EURO2020', date: '15/06/2020', team1: 'Poland', logo1: '../assets/img/flag/Poland.png', team2: 'Iceland', logo2: '../assets/img/flag/Iceland.png', goal1: '1', goal2: '2' },
     ];
     rsall = [
-        { id: '1', category: 'Win-Lose', date: '15/06/2018', calendar: 'Germany-Brazil', result: '1 : 0', champion: '', top4: '', amount: '1234' },
-        { id: '2', category: 'Over-Under', date: '17/06/2018', calendar: 'Germany-Brazil', result: 'Over', champion: '', top4: '', amount: '1234' },
-        { id: '3', category: 'Champion', date: '16/06/2018', calendar: '', result: '', champion: 'Vietnam', top4: '', amount: '1234' },
-        { id: '4', category: 'Top4', date: '18/06/2018', calendar: '', result: '', champion: '', top4: 'Vietnam,Lao,Campuchia,Singapore', amount: '1234' },
-        { id: '5', category: 'Score', date: '18/06/2018', calendar: 'Germany-Brazil', result: '3 : 0', champion: '', top4: '', amount: '1234' },
-        { id: '6', category: 'All', date: '15/06/2018', calendar: 'Germany-Brazil', result: '1 : 0', champion: 'Vietnam', top4: 'Vietnam,Lao,Campuchia,Singapore', amount: '1234' },
+        { id: '1', category: 'Win-Lose', name: 'DuyNhat', phone: '123456798', date: '15/06/2018', calendar: 'Germany-Brazil', result: '1 : 0', amount: '1234' },
+        { id: '2', category: 'Over-Under', name: 'DuyNhat', phone: '123456798', date: '17/06/2018', calendar: 'Germany-Brazil', result: 'Over', amount: '1234' },
+        { id: '3', category: 'Champion', name: 'DuyNhat', phone: '123456798', date: '16/06/2018', calendar: '', result: 'Vietnam', amount: '1234' },
+        { id: '4', category: 'Top4', name: 'DuyNhat', phone: '123456798', date: '18/06/2018', calendar: '', result: 'Vietnam,Lao,Campuchia,Singapore', amount: '1234' },
+        { id: '5', category: 'Score', name: 'DuyNhat', phone: '123456798', date: '18/06/2018', calendar: 'Germany-Brazil', result: '3 : 0', amount: '1234' },
     ];
     sortedData;
     sortedDatarsall;
 
-    constructor() { }
+    constructor(private rou: Router,
+        private act: ActivatedRoute) { }
 
     ngOnInit() {
         this.sortedData = this.calendar.slice();
@@ -62,6 +63,9 @@ export class DashboardComponent implements OnInit {
                 default: return 0;
             }
         });
+    }
+    public redirect(url: string) {
+        this.rou.navigate(["admin/" + url]);
     }
 }
 

@@ -46,6 +46,8 @@ export class StatementComponent implements OnInit {
     count = 0; // Số lượng team trong group
     disCheck = true;
     grttt = "None Group";
+    ishaveGroup = true;
+    nameTour;
 
     constructor(private rou: Router,
         private act: ActivatedRoute) {
@@ -96,6 +98,16 @@ export class StatementComponent implements OnInit {
 
     public redirect(url: string) {
         this.rou.navigate(["admin/statement/" + url]);
+    }
+
+    haveGroup(e: any) {
+        if (e === true)
+            this.ishaveGroup = false;
+        else this.ishaveGroup = true;
+    }
+
+    abc() {
+        console.log("zxczxcz");
     }
 }
 

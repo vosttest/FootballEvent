@@ -6,20 +6,19 @@
                 </div>
                 <div class="col-2">
                     <mat-form-field>
-                        <mat-select placeholder="Tournament">
-                            <mat-option>None</mat-option>
+                        <mat-select placeholder="Tournament" [(ngModel)]="nameTour">
                             <mat-option *ngFor="let state of states" [value]="state">{{state}}</mat-option>
                         </mat-select>
                     </mat-form-field>
                 </div>
                 <div class="col-1">
-                    <button mat-raised-button color="primary" (click)="redirect('createTournament')"><mat-icon>edit</mat-icon></button>
+                    <button mat-raised-button color="primary" (click)="redirect('editTournament')" matTooltip="Edit tournament"><mat-icon>edit</mat-icon></button>
                 </div>
                 <div class="col-1">
-                    <button mat-raised-button color="primary" (click)="redirect('createTournament')"><mat-icon>add</mat-icon></button>
+                    <button mat-raised-button color="primary" (click)="redirect('createTournament')" matTooltip="Add tournament"><mat-icon>add</mat-icon></button>
                 </div>
                 <div class="col-1">
-                    <button mat-raised-button color="primary" (click)="redirect('createTournament')"><mat-icon>delete</mat-icon></button>
+                    <button mat-raised-button color="primary" (click)="redirect('createTournament')" matTooltip="Delete tournament"><mat-icon>delete</mat-icon></button>
                 </div>
                 <div class="col-1">
                     <button mat-raised-button color="primary" (click)="redirect('addttt')">Add team to tournament</button>
@@ -49,11 +48,12 @@
         <form action="" class="example-form">
             <div class="row align-items-center">
                 <div class="col-4">
-                    <mat-form-field class="example-full-width">
+                    <mat-form-field class="example-full-width first-input">
                         <input matInput placeholder="Name Tournament">
                     </mat-form-field>
                 </div>
-                <mat-checkbox>Group</mat-checkbox>
+                <mat-checkbox (change)="haveGroup($event.checked)">Group</mat-checkbox>
+                <input class="form-control groupNumber" type="number" [hidden]="ishaveGroup" placeholder="Number" matTooltip="Number of tournament">
             </div>
             <div class="row align-items-center">
                 <div class="col-6">
@@ -85,6 +85,51 @@
         </form>
     </mat-card>
 </div>
+<div id="editTournament" style="display: none">
+    <mat-card>
+        <div class="panel panel-default">
+            <div class="title-Panels">Edit tournament</div>
+        </div>
+        <form action="" class="example-form">
+            <div class="row align-items-center">
+                <div class="col-4">
+                    <mat-form-field class="example-full-width first-input">
+                        <input matInput placeholder="Name Tournament" value="{{nameTour}}">
+                    </mat-form-field>
+                </div>
+                <mat-checkbox (change)="haveGroup($event.checked)">Group</mat-checkbox>
+                <input class="form-control groupNumber" type="number" [hidden]="ishaveGroup" placeholder="Number" matTooltip="Number of tournament">
+            </div>
+            <div class="row align-items-center">
+                <div class="col-6">
+                    <mat-form-field class="example-full-width">
+                        <input matInput [matDatepicker]="picker3" placeholder="From date">
+                        <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
+                        <mat-datepicker touchUi="true" #picker3></mat-datepicker>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-6">
+                    <mat-form-field class="example-full-width">
+                        <input matInput [matDatepicker]="picker4" placeholder="To date">
+                        <mat-datepicker-toggle matSuffix [for]="picker4"></mat-datepicker-toggle>
+                        <mat-datepicker touchUi="true" #picker4></mat-datepicker>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-6">
+                    <mat-form-field class="example-full-width">
+                        <textarea matInput placeholder="History"></textarea>
+                    </mat-form-field>
+                </div>
+            </div>
+            <button mat-raised-button color="primary" data-toggle="modal" data-target="#edittourModal">Save</button>
+            <button mat-raised-button color="primary" (click)="redirect('overview')">Cancel</button>
+        </form>
+    </mat-card>
+</div>
 <div id="addttt" style="display: none">
     <mat-card>
         <div class="panel panel-default">
@@ -92,29 +137,28 @@
         </div>
         <div class="row">
             <div class="col-2">
-                <mat-form-field>
-                    <mat-select placeholder="Tournament">
-                        <mat-option>None</mat-option>
+                <mat-form-field class="first-input">
+                    <mat-select placeholder="Name tournament" value="{{nameTour}}">
                         <mat-option *ngFor="let state of states" [value]="state">{{state}}</mat-option>
                     </mat-select>
                 </mat-form-field>
             </div>
             <div class="col-2">
-                <mat-form-field>
+                <mat-form-field class="first-input">
                     <mat-select placeholder="Group" [(ngModel)]="grttt">
-                        <mat-option *ngFor="let group of groups" [value]="group">{{group}}</mat-option>
+                        <mat-option *ngFor="let group of groups" [value]="group" (click)="abc()">{{group}}</mat-option>
                     </mat-select>
                 </mat-form-field>
             </div>
             <div class="col-2">
-                <mat-form-field class="example-full-width">
+                <mat-form-field class="example-full-width first-input">
                     <input matInput placeholder="Search Team">
                 </mat-form-field>
             </div>
-            <div class="col-1">
+            <div class="col-1 first-button">
                 <button mat-raised-button color="primary" data-toggle="modal" data-target="#teamModal" [disabled]="disCheck">Add</button>
             </div>
-            <div class="col-1"><button mat-raised-button color="primary" (click)="redirect('overview')">Cancel</button></div>
+            <div class="col-1 first-button"><button mat-raised-button color="primary" (click)="redirect('overview')">Cancel</button></div>
         </div>
         <mat-card>
             <table class="table table-hover" matSort (matSortChange)="sortData($event)">
@@ -141,9 +185,10 @@
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-body">
-                Add tournament successfully !!! Do you want to add team to tournament ?
+                Add tournament successfully !!!
             </div>
             <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="redirect('overview')">Returns overview</button>
                 <button type="button" class="btn btn-info" data-dismiss="modal" (click)="redirect('addttt')">Add team to tournament</button>
                 <button type="button" class="btn" data-dismiss="modal">Close</button>
             </div>
@@ -157,7 +202,21 @@
                 Add team successfully !!!
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-info" data-dismiss="modal" (click)="redirect('overview')">Go to tournament overview</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="redirect('overview')">Go to tournament overview</button>
+                <button type="button" class="btn" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="edittourModal">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body">
+                Edit tournament successfully !!! Do you want to add team to tournament ?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="redirect('overview')">Returns overview</button>
+                <button type="button" class="btn btn-info" data-dismiss="modal" (click)="redirect('addttt')">Add team to tournament</button>
                 <button type="button" class="btn" data-dismiss="modal">Close</button>
             </div>
         </div>

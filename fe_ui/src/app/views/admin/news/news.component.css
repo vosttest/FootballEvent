@@ -2,6 +2,23 @@ button.mat-raised-button {
     margin-right: 1%;
 }
 
+.overview button.mat-raised-button {
+    margin-right: 1%;
+    margin-top: 7%;
+}
+
 .row {
     margin-bottom: 2%;
+}
+
+.btn.btn-just-icon {
+    border-radius: 50%;
+    background-color: #eef5f9;
+    box-shadow: 0 2px 2px 0 hsla(0, 0%, 60%, .14), 0 3px 1px -2px hsla(0, 0%, 60%, .2), 0 1px 5px 0 hsla(0, 0%, 60%, .12);
+    width: 4%;
+    height: 45px;
+}
+
+.btn.btn-just-icon i.material-icons {
+    line-height: 35px;
 }

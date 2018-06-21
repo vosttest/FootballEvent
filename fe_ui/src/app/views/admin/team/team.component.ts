@@ -11,6 +11,7 @@ import { Sort, MatPaginator } from '@angular/material';
 export class TeamComponent implements OnInit {
     public data2 = "";
     public function = "overview";
+    public vm: any = { content: "" };
 
     public continent = [
         { value: 'c1', viewValue: 'Asia' },
@@ -37,6 +38,15 @@ export class TeamComponent implements OnInit {
     public sortedData: any;
 
     toppings = new FormControl();
+
+    editorConfig = {
+        editable: true,
+        spellcheck: false,
+        height: '10rem',
+        minHeight: '5rem',
+        placeholder: 'Please type someting!',
+        translate: 'no'
+    };
 
     @ViewChild(MatPaginator) paginator: MatPaginator;
 

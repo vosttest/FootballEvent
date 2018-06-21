@@ -10,12 +10,22 @@ import { Sort } from '@angular/material';
 export class NewsComponent implements OnInit {
     public data2 = "";
     public function = "overview";
+    public vm: any = { content: "" };
 
     public data = [
-        { tilte: 'Kane lập cú đúp, Anh thắng trận ra quân', content: 'Pha làm bàn ở phút bù giờ hiệp hai của tiền đạo đội trưởng giúp tuyển Anh đánh bại Tunisia với tỷ số 2-1 ở World Cup 2018, tối 18/6.' },
-        { tilte: 'Lukaku lập cú đúp, Bỉ đại thắng Panama', content: 'Sự toả sáng của các cá nhân trong hiệp hai giúp Bỉ đánh bại tân binh của World Cup 2018 với tỷ số 3-0 ở trận ra quân tối 18/6.' }
+        { title: 'Kane lập cú đúp, Anh thắng trận ra quân', content: 'Pha làm bàn ở phút bù giờ hiệp hai của tiền đạo đội trưởng giúp tuyển Anh đánh bại Tunisia với tỷ số 2-1 ở World Cup 2018, tối 18/6.' },
+        { title: 'Lukaku lập cú đúp, Bỉ đại thắng Panama', content: 'Sự toả sáng của các cá nhân trong hiệp hai giúp Bỉ đánh bại tân binh của World Cup 2018 với tỷ số 3-0 ở trận ra quân tối 18/6.' }
     ];
     public sortedData: any;
+
+    editorConfig = {
+        editable: true,
+        spellcheck: false,
+        height: '10rem',
+        minHeight: '5rem',
+        placeholder: 'Please type someting!',
+        translate: 'no'
+    };
 
     constructor(private rou: Router,
         private act: ActivatedRoute) { }
@@ -39,7 +49,7 @@ export class NewsComponent implements OnInit {
         this.sortedData = data.sort((a, b) => {
             let isAsc = sort.direction == 'asc';
             switch (sort.active) {
-                case 'tilte': return compare(a.tilte, b.tilte, isAsc);
+                case 'title': return compare(a.title, b.title, isAsc);
                 case 'content': return compare(a.content, b.content, isAsc);
                 default: return 0;
             }

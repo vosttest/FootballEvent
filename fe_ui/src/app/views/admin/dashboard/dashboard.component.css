@@ -14,3 +14,24 @@
     margin: 5px;
     text-align: center;
 }
+
+.value-statictis {
+    padding-top: 5%;
+    font-weight: bold;
+    color: #3f51b5;
+    font-size: 30px;
+}
+
+.value-statictis:hover {
+    color: rgb(196, 26, 105);
+}
+
+.view-more:hover {
+    color: #3f51b5;
+}
+
+.quick-link {
+    font-weight: bold;
+    color: #3f51b5;
+    font-size: 25px;
+}
