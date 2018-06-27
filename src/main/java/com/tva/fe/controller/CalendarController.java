@@ -31,17 +31,19 @@ public class CalendarController {
 	// region -- Methods --
 
 	@PostMapping("/search")
-	public ResponseEntity<?> search() {
+	public ResponseEntity<?> search(@RequestBody CalendarReq req) {
 		SingleRsp res = new SingleRsp();
 
 		try {
 			// Get data
 			DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-			Date fromDate = dateFormat.parse("2018-06-25");
-			Date toDate = dateFormat.parse("2018-06-26");
+			String fromDate = dateFormat.format(req.getFromDate());
+			String toDate = dateFormat.format(req.getToDate());
+			Date newFromDate = dateFormat.parse(fromDate);
+			Date newToDate = dateFormat.parse(toDate);
 
 			// Handle
-			List<Calendar> tmp = calendarService.getDate(fromDate, toDate);
+			List<Calendar> tmp = calendarService.getDate(newFromDate, newToDate);
 
 			// Set data
 			res.setResult(tmp);

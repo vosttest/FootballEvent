@@ -22,6 +22,86 @@
     color: black;
 }
 
+::ng-deep #mat-tab-label-1-0 {
+    font-size: 30px;
+    margin: auto;
+    background: url(https://cdn.vn.garenanow.com/web/fo3/fo4/worldcup/images/btn-xem-tat-ca.png) no-repeat;
+    background-size: 100% 100%;
+    color: black;
+}
+
+::ng-deep #mat-tab-label-2-0 {
+    font-size: 30px;
+    margin: auto;
+    background: url(https://cdn.vn.garenanow.com/web/fo3/fo4/worldcup/images/btn-xem-tat-ca.png) no-repeat;
+    background-size: 100% 100%;
+    color: black;
+}
+
+::ng-deep #mat-tab-label-2-1 {
+    font-size: 30px;
+    margin: auto;
+    background: url(https://cdn.vn.garenanow.com/web/fo3/fo4/worldcup/images/btn-xem-tat-ca.png) no-repeat;
+    background-size: 100% 100%;
+    color: black;
+}
+
+::ng-deep #mat-tab-label-2-2 {
+    font-size: 30px;
+    margin: auto;
+    background: url(https://cdn.vn.garenanow.com/web/fo3/fo4/worldcup/images/btn-xem-tat-ca.png) no-repeat;
+    background-size: 100% 100%;
+    color: black;
+}
+
+::ng-deep #mat-tab-label-2-3 {
+    font-size: 30px;
+    margin: auto;
+    background: url(https://cdn.vn.garenanow.com/web/fo3/fo4/worldcup/images/btn-xem-tat-ca.png) no-repeat;
+    background-size: 100% 100%;
+    color: black;
+}
+
+::ng-deep #mat-tab-label-2-4 {
+    font-size: 30px;
+    margin: auto;
+    background: url(https://cdn.vn.garenanow.com/web/fo3/fo4/worldcup/images/btn-xem-tat-ca.png) no-repeat;
+    background-size: 100% 100%;
+    color: black;
+}
+
+::ng-deep #mat-tab-label-2-5 {
+    font-size: 30px;
+    margin: auto;
+    background: url(https://cdn.vn.garenanow.com/web/fo3/fo4/worldcup/images/btn-xem-tat-ca.png) no-repeat;
+    background-size: 100% 100%;
+    color: black;
+}
+
+::ng-deep #mat-tab-label-2-6 {
+    font-size: 30px;
+    margin: auto;
+    background: url(https://cdn.vn.garenanow.com/web/fo3/fo4/worldcup/images/btn-xem-tat-ca.png) no-repeat;
+    background-size: 100% 100%;
+    color: black;
+}
+
+::ng-deep #mat-tab-label-2-7 {
+    font-size: 30px;
+    margin: auto;
+    background: url(https://cdn.vn.garenanow.com/web/fo3/fo4/worldcup/images/btn-xem-tat-ca.png) no-repeat;
+    background-size: 100% 100%;
+    color: black;
+}
+
+::ng-deep #mat-tab-label-2-8 {
+    font-size: 30px;
+    margin: auto;
+    background: url(https://cdn.vn.garenanow.com/web/fo3/fo4/worldcup/images/btn-xem-tat-ca.png) no-repeat;
+    background-size: 100% 100%;
+    color: black;
+}
+
 .rank {
     background: url(https://cdn.vn.garenanow.com/web/fo3/fo4/worldcup/images/title-rank.jpg)!important;
     background-size: 100% 100%;

@@ -13,13 +13,11 @@ img.mat-card-image {
 }
 
 .news {
-    border-right: #000000 solid 1px;
     width: 100%;
     height: 100%;
 }
 
 .new {
-    background: url(https://cdn.vn.garenanow.com/web/fo3/fo4/worldcup/images/btn-xem-tat-ca.png) no-repeat;
     background-size: 100% 100%;
     color: black;
 }

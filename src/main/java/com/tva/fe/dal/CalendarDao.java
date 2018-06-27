@@ -10,7 +10,7 @@ import org.springframework.data.repository.query.Param;
 import com.tva.fe.model.Calendar;
 
 public interface CalendarDao extends CrudRepository<Calendar, Integer> {
-	@Query("FROM Calendar WHERE competition_date BETWEEN :fromDate AND :toDate")
+	@Query(nativeQuery = true, value = "SELECT * FROM Calendar WHERE competition_date BETWEEN :fromDate AND :toDate")
 	public List<Calendar> getBy(@Param("fromDate") Date fromDate, @Param("toDate") Date toDate);
 
 }

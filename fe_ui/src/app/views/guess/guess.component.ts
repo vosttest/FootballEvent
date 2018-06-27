@@ -16,9 +16,10 @@ export class GuessComponent implements OnInit {
 
     public vmSI: any = {};
     public vmSU: any = {};
-     public date= new Date();
-
+    public calendar: any[] = [];
     public vm: any;
+
+    public date = new Date();
 
     @ViewChild("signInModal") public signInModal: ModalDirective;
     @ViewChild("signUpModal") public signUpModal: ModalDirective;
@@ -28,9 +29,9 @@ export class GuessComponent implements OnInit {
         private pro: UserProvider,
         private cal: CalendarProvider) { }
 
-    ngOnInit() { this.search()
-    console.log(this.date);
-     }
+    ngOnInit() {
+        this.search()
+    }
 
     public signIn() {
         this.pro.signIn(this.vmSI).subscribe((rsp: any) => {
@@ -55,7 +56,7 @@ export class GuessComponent implements OnInit {
             if (rsp.status === HTTP.STATUS_SUCCESS) {
                 this.pro.saveAuth(rsp.result, false);
             } else {
-                console.log(rsp)
+                console.log(rsp);
             }
         }, err => console.log(err));
     }
@@ -71,7 +72,6 @@ export class GuessComponent implements OnInit {
         }
         else {
             this.signInModal.show();
-
         } err => console.log(err);
     }
 
@@ -85,20 +85,20 @@ export class GuessComponent implements OnInit {
     }
 
     public search() {
-        this.cal.search().subscribe((rsp: any) => {
+        let obj = {
+            fromDate: this.date,
+            toDate: '2018-06-28'
+        }
+        this.cal.search(obj).subscribe((rsp: any) => {
             if (rsp.status === HTTP.STATUS_SUCCESS) {
-                console.log(rsp.status);
-
                 this.vm = rsp.result;
-                console.log(this.vm[1].id);
+                this.calendar = this.vm;
             } else {
-                console.log(rsp);
+                console.log(rsp)
             }
         }, err => console.log(err));
     }
 }
-
-
 
 @Component({
     selector: 'app-guess',

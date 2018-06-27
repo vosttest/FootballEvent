@@ -18,7 +18,7 @@
             </div>
         </div>
     </div>
-    <div class="row tab-r">
+    <div class="row">
         <br>
         <mat-tab-group style="width:100%">
             <mat-tab label="Result">
@@ -40,18 +40,21 @@
                 <br>
                 <div class="row">
                     <form class="example-form">
-                        <mat-form-field class="example-full-width">
-                            <input matInput placeholder="Số người dự đoán giống bạn">
-                        </mat-form-field>
-                    </form>
-                    <form class="example-form">
-                        <mat-form-field class="example-full-width">
-                            <input matInput placeholder="Nhập số tiền cược">
-                        </mat-form-field>
+                        <div class="row">
+                            <div class="col-6">
+                                <mat-form-field class="example-full-width">
+                                    <input matInput placeholder="Số người dự đoán giống bạn">
+                                </mat-form-field>
+                            </div>
+                            <div class="col-6">
+                                <mat-form-field class="example-full-width">
+                                    <input matInput placeholder="Nhập số tiền cược">
+                                </mat-form-field>
+                            </div>
+                        </div>
                     </form>
                 </div>
-                <br>
-                <div class="row" style="margin: auto">
+                <div class="row">
                     <button mat-button>Guess</button>
                 </div>
             </mat-tab>
@@ -72,9 +75,13 @@
                         </mat-form-field>
                     </div>
                     <form class="example-form">
-                        <mat-form-field class="example-full-width">
-                            <input matInput placeholder="Số người dự đoán giống bạn">
-                        </mat-form-field>
+                        <div class="row">
+                            <div class="col-6">
+                                <mat-form-field class="example-full-width">
+                                    <input matInput placeholder="Số người dự đoán giống bạn">
+                                </mat-form-field>
+                            </div>
+                        </div>
                     </form>
                     <br>
                     <button mat-button>Guess</button>
@@ -95,16 +102,18 @@
                 </div>
                 <div class="row">
                     <form class="example-form">
-                        <mat-form-field class="example-full-width">
-                            <input matInput>
-                            <mat-placeholder class="placeholde">Số người dự đoán giống bạn</mat-placeholder>
-                        </mat-form-field>
-                    </form>
-                    <form class="example-form">
-                        <mat-form-field class="example-full-width">
-                            <input matInput>
-                            <mat-placeholder class="placeholde">Amount</mat-placeholder>
-                        </mat-form-field>
+                        <div class="row">
+                            <div class="col-6">
+                                <mat-form-field class="example-full-width">
+                                    <input matInput placeholder="Số người dự đoán giống bạn">
+                                </mat-form-field>
+                            </div>
+                            <div class="col-6">
+                                <mat-form-field class="example-full-width">
+                                    <input matInput placeholder="Nhập số tiền cược">
+                                </mat-form-field>
+                            </div>
+                        </div>
                     </form>
                     <br>
                     <button mat-button>Guess</button>

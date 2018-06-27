@@ -15,10 +15,11 @@ export class CalendarProvider {
 
     /**
      * Search all result
-     * @param info 
+     * @param fromDate 
+     * @param toDate 
      */
-    public search() {
-        return this.api.get('calendar/search');
+    public search(info:any) {
+        return this.api.post('calendar/search',info);
     }
 
     /**
