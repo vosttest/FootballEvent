@@ -39,6 +39,12 @@ export class StatementComponent implements OnInit {
         { name: 'Germany', logo: '../assets/img/flag/Germany.png' },
         { name: 'Germany', logo: '../assets/img/flag/Germany.png' },
     ];
+    public tour = [
+        { type: "WC", text: 'World Cup' },
+        { type: "EU", text: 'Euro' },
+        { type: "AFC", text: 'AFC Cup' },
+        { type: "CA", text: 'Copa America' }
+    ];
 
     public function = "overview";
     panelOpenState: boolean = true;

@@ -130,8 +130,9 @@ export class ApiProvider {
         //     accessRights: t.user.accessrights
         // };
 
-        // localStorage.removeItem("CURRENT_TOKEN");
+        localStorage.removeItem("CURRENT_TOKEN");
         // localStorage.setItem("CURRENT_TOKEN", JSON.stringify(user));
+        localStorage.setItem("CURRENT_TOKEN", token);
 
         // // Check token is expired will redirect to sign in page
         // let seconds = t.exp - t.iat;
@@ -152,7 +153,8 @@ export class ApiProvider {
     }
 
     private getTokeny(): string {
-        // let t = localStorage.getItem("CURRENT_TOKEN");
+        let t = localStorage.getItem("CURRENT_TOKEN");
+        let res = "";
         // let json = JSON.parse(t);
 
         // if (json === null) {
@@ -165,23 +167,26 @@ export class ApiProvider {
         //         this.rou.navigate(["/"]);
         //     }
         // }
+        if (t != null) {
+            res = "Bearer " + t;
+        }
 
-        // return t;
-        return '';
+        return res;
     }
 
     private posty(endpoint: string, body: any, reqOpts?: any) {
-        // if (!reqOpts) {
-        //     let h = new HttpHeaders().set("Authorization", this.getTokeny())
-        //     h = h.append("Content-Type", "application/json");
-        //     reqOpts = { headers: h };
-        // }
+        if (!reqOpts) {
+            let h = new HttpHeaders().set("Authorization", this.getTokeny())
+            h = h.append("Content-Type", "application/json");
+            reqOpts = { headers: h };
+        }
 
-        // return this.http.post(this.apiUrl + endpoint, body, reqOpts);
+        return this.http.post(this.apiUrl + endpoint, body, reqOpts);
     }
 
-    private getToken(): string {
-        // let res = localStorage.getItem("CURRENT_TOKEN");
+    public getToken(): string {
+        let t = localStorage.getItem("CURRENT_TOKEN");
+        let res = "";
         // let json = JSON.parse(res);
 
         // if (json === null) {
@@ -214,8 +219,10 @@ export class ApiProvider {
         //         this.allowLogout = true;
         //     }
         // }
+        if (t != null) {
+            res = "Bearer " + t;
+        }
 
-        // return res;
-        return '';
+        return res;
     }
 }

@@ -33,6 +33,9 @@ const routes: Routes = [
                 }, {
                     path: 'news/:function',
                     loadChildren: './views/admin/news/news.module#NewsModule'
+                }, {
+                    path: 'ratio/:function',
+                    loadChildren: './views/admin/ratio/ratio.module#RatioModule'
                 }
             ]
     },

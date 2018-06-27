@@ -22,6 +22,8 @@ INSERT INTO "statement"("name","from_date","to_date","history","parent_id",is_de
 INSERT INTO "statement"("name","from_date","to_date","history","parent_id",is_deleted,create_by,create_on) VALUES ('Group G',NULL,NULL,NULL,'1',TRUE,1,CURRENT_TIMESTAMP);
 INSERT INTO "statement"("name","from_date","to_date","history","parent_id",is_deleted,create_by,create_on) VALUES ('Group H',NULL,NULL,NULL,'1',TRUE,1,CURRENT_TIMESTAMP);
 
+INSERT INTO "team"("name","country","coach","history","logo",is_deleted,create_by,create_on) VALUES ('TBD',NULL,'TBD',NULL,'TBD.png',TRUE,1,CURRENT_TIMESTAMP);
+
 INSERT INTO "team"("name","country","coach","history","logo",is_deleted,create_by,create_on) VALUES ('Russia','Russia','Stanislav Cherchesov',NULL,'Russia.png',TRUE,1,CURRENT_TIMESTAMP);
 INSERT INTO "team"("name","country","coach","history","logo",is_deleted,create_by,create_on) VALUES ('Egypt','Egypt','Héctor Cúper',NULL,'Egypt.png',TRUE,1,CURRENT_TIMESTAMP);
 INSERT INTO "team"("name","country","coach","history","logo",is_deleted,create_by,create_on) VALUES ('Uruguay','Uruguay','Óscar Tabárez',NULL,'Uruguay.png',TRUE,1,CURRENT_TIMESTAMP);
@@ -61,8 +63,6 @@ INSERT INTO "team"("name","country","coach","history","logo",is_deleted,create_b
 INSERT INTO "team"("name","country","coach","history","logo",is_deleted,create_by,create_on) VALUES ('Senegal','Senegal','Aliou Cissé',NULL,'Senegal.png',TRUE,1,CURRENT_TIMESTAMP);
 INSERT INTO "team"("name","country","coach","history","logo",is_deleted,create_by,create_on) VALUES ('Japan','Japan','Akira Nishino',NULL,'Japan.png',TRUE,1,CURRENT_TIMESTAMP);
 INSERT INTO "team"("name","country","coach","history","logo",is_deleted,create_by,create_on) VALUES ('Colombia','Colombia','José Pékerman',NULL,'Colombia.png',TRUE,1,CURRENT_TIMESTAMP);
-
-INSERT INTO "team"("name","country","coach","history","logo",is_deleted,create_by,create_on) VALUES ('TBD',NULL,'TBD',NULL,'TBD.png',TRUE,1,CURRENT_TIMESTAMP);
 
 INSERT INTO "join"("team_id","statement_id",is_deleted,create_by,create_on) VALUES (1,2,FALSE,1,CURRENT_TIMESTAMP);
 INSERT INTO "join"("team_id","statement_id",is_deleted,create_by,create_on) VALUES (2,2,FALSE,1,CURRENT_TIMESTAMP);

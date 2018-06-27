@@ -21,7 +21,7 @@
                     <button mat-raised-button color="primary" (click)="redirect('createTournament')" matTooltip="Delete tournament"><mat-icon>delete</mat-icon></button>
                 </div>
                 <div class="col-1">
-                    <button mat-raised-button color="primary" (click)="redirect('addttt')">Add team to tournament</button>
+                    <button mat-raised-button color="primary" (click)="redirect('addttt')" matTooltip="Add team to tournament"><mat-icon>group_add</mat-icon></button>
                 </div>
             </div>
             <mat-tab-group>
@@ -49,11 +49,22 @@
             <div class="row align-items-center">
                 <div class="col-4">
                     <mat-form-field class="example-full-width first-input">
-                        <input matInput placeholder="Name Tournament">
+                        <input matInput placeholder="Tournament name">
                     </mat-form-field>
                 </div>
                 <mat-checkbox (change)="haveGroup($event.checked)">Group</mat-checkbox>
-                <input class="form-control groupNumber" type="number" [hidden]="ishaveGroup" placeholder="Number" matTooltip="Number of tournament">
+                <input class="form-control groupNumber" type="number" [hidden]="ishaveGroup" placeholder="Number" matTooltip="Number of tournament" min="0" max="26">
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <mat-form-field class="example-full-width">
+                        <mat-select placeholder="Tournament type">
+                            <mat-option *ngFor="let i of tour" [value]="i.type">
+                                {{ i.text }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
             </div>
             <div class="row align-items-center">
                 <div class="col-6">
@@ -80,8 +91,10 @@
                     </mat-form-field>
                 </div>
             </div>
-            <button mat-raised-button color="primary" data-toggle="modal" data-target="#tournamentModal">Add</button>
-            <button mat-raised-button color="primary" (click)="redirect('overview')">Cancel</button>
+            <div class="text-right">
+                <button mat-raised-button color="primary" data-toggle="modal" data-target="#tournamentModal">Save</button>
+                <button mat-raised-button color="accent" (click)="redirect('overview')">Cancel</button>
+            </div>
         </form>
     </mat-card>
 </div>
@@ -94,7 +107,7 @@
             <div class="row align-items-center">
                 <div class="col-4">
                     <mat-form-field class="example-full-width first-input">
-                        <input matInput placeholder="Name Tournament" value="{{nameTour}}">
+                        <input matInput placeholder="Tournament name" value="{{nameTour}}">
                     </mat-form-field>
                 </div>
                 <mat-checkbox (change)="haveGroup($event.checked)">Group</mat-checkbox>
@@ -125,8 +138,10 @@
                     </mat-form-field>
                 </div>
             </div>
-            <button mat-raised-button color="primary" data-toggle="modal" data-target="#edittourModal">Save</button>
-            <button mat-raised-button color="primary" (click)="redirect('overview')">Cancel</button>
+            <div class="text-right">
+                <button mat-raised-button color="primary" data-toggle="modal" data-target="#edittourModal">Save</button>
+                <button mat-raised-button color="accent" (click)="redirect('overview')">Cancel</button>
+            </div>
         </form>
     </mat-card>
 </div>
@@ -156,7 +171,7 @@
                 </mat-form-field>
             </div>
             <div class="col-1 first-button">
-                <button mat-raised-button color="primary" data-toggle="modal" data-target="#teamModal" [disabled]="disCheck">Add</button>
+                <button mat-raised-button color="primary" data-toggle="modal" data-target="#teamModal" [disabled]="disCheck">Save</button>
             </div>
             <div class="col-1 first-button"><button mat-raised-button color="primary" (click)="redirect('overview')">Cancel</button></div>
         </div>

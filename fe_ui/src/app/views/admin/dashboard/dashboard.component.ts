@@ -25,6 +25,7 @@ export class DashboardComponent implements OnInit {
     ];
     sortedData;
     sortedDatarsall;
+    mytime: Date = new Date();
 
     constructor(private rou: Router,
         private act: ActivatedRoute) { }

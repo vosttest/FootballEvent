@@ -1,9 +1,8 @@
 .menu-wrapper {
-    position: fixed;
     width: 100%;
     z-index: 70;
     text-align: center;
-    height: 40px;
+    height: 70px;
     margin: auto;
     left: 0px;
     right: 0px;
@@ -28,25 +27,30 @@
 .navbar-default .navbar-nav>.active>a:focus,
 .navbar-default .navbar-nav>li>a:hover,
 .highlight-header {
-    color: #1f9cde !important;
-    border-bottom-color: #1f9cde !important;
+    color: #fff !important;
+    border-bottom-color: #fff !important;
     text-decoration: none;
     margin: 0 0 0 1px;
     line-height: normal;
     border: none;
-    border-bottom: solid 5px #1f9cde;
+    border-bottom: solid 5px #fff;
 }
 
 .menu-wrapper li a {
-    font-size: 2em;
-    font-family: serif;
+    font-size: 1.7em;
+    font-family: fantasy;
+    color: #fff !important;
+}
+
+.bg-dark {
+    background-color: darkslategray!important;
 }
 
 .navbar {
     padding: 0px;
 }
 
-.modal-body button{
+.modal-body button {
     width: 100%;
 }
 
@@ -54,7 +58,15 @@ label>a {
     font-size: 11px;
 }
 
-span{
+span {
     font-size: 11px;
     color: #ff0000;
+}
+
+h1 {
+    margin-top: 60px;
+}
+
+p {
+    font-family: Lato;
 }

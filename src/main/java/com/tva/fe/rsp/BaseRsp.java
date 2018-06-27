@@ -38,8 +38,8 @@ public class BaseRsp {
 	// region -- Methods --
 
 	public BaseRsp() {
-		 this.status = Const.HTTP.STATUS_SUCCESS;
-		 this.message = "";
+		this.status = Const.HTTP.STATUS_SUCCESS;
+		this.message = "";
 	}
 
 	public BaseRsp(String status, String message) {
@@ -48,8 +48,8 @@ public class BaseRsp {
 	}
 
 	public void setError(String message) {
-		 this.status = Const.HTTP.STATUS_ERROR;
-		 this.message = message;
+		this.status = Const.HTTP.STATUS_ERROR;
+		this.message = message;
 	}
 
 	// end

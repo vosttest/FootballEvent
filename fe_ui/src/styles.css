@@ -20,7 +20,7 @@ h2 {
 }
 
 .example-full-width {
-    width: 100%;
+    width: 100%!important;
 }
 
 .mat-raised-button.mat-accent {
@@ -35,4 +35,8 @@ h2 {
     margin: 1% auto;
     border-radius: 3px;
     box-shadow: 0 4px 20px 0 rgba(0, 0, 0, .14), 0 7px 10px -5px rgba(39, 76, 176, 0.4);
+}
+
+.rowTable>td {
+    vertical-align: middle;
 }

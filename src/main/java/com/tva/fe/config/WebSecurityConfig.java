@@ -68,8 +68,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 			http.headers().frameOptions().sameOrigin().httpStrictTransportSecurity().disable();
 		}
 
-		http.authorizeRequests().antMatchers("/", "/user/sign-in", "/user/sign-up", "/user/refresh-token").permitAll()
-				.antMatchers("/user/reset-password", "/team/search").hasAuthority(Const.Authentication.ROLE_ADMIN)
+		http.authorizeRequests().antMatchers("**", "/user/sign-in", "/user/sign-up", "/user/refresh-token").permitAll()
+				.antMatchers("/user/reset-password").hasAuthority(Const.Authentication.ROLE_ADMIN)
 				.anyRequest().authenticated().and().exceptionHandling().authenticationEntryPoint(unauthorizedHandler)
 				.and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 

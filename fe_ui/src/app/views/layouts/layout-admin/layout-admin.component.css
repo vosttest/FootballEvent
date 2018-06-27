@@ -3,7 +3,7 @@
 @media (min-width: 992px) {
     #mainNav .navbar-collapse .navbar-sidenav {
         position: absolute;
-        top: 59px;
+        top: 100%;
         left: 0;
         -webkit-flex-direction: column;
         -ms-flex-direction: column;
@@ -23,7 +23,7 @@
     }
     #mainNav.navbar-dark .navbar-nav .nav-link {
         font-family: Poppins, sans-serif;
-        color: Black;
+        color: #607d8b;
         height: 45px;
         padding: 0 50px;
         align-items: center;
@@ -62,6 +62,7 @@
 
 .container-fluid {
     margin-top: 1%;
+    margin-bottom: 1%;
 }
 
 #content-wrapper {
@@ -69,14 +70,14 @@
     left: 16%;
     right: 0%;
     top: 9%;
-    bottom: 2%;
+    bottom: 0%;
     background-color: #eef5f9;
     overflow: overlay;
 }
 
 @keyframes content-left {
     from {
-        left: 16.7%;
+        left: 16.%;
     }
     to {
         left: 5%;
@@ -117,7 +118,7 @@
 }
 
 #exampleAccordion {
-    width: 16.7%;
+    width: 16.8%;
     transition: width 1s;
 }
 

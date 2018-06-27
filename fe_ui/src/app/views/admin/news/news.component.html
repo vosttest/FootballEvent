@@ -2,7 +2,7 @@
     <mat-card>
         <div class="row">
             <div class="col-2 overview">
-                <button mat-raised-button color="primary" (click)="redirect('create')">Add</button>
+                <button mat-raised-button color="primary" (click)="redirect('create')" matTooltip="Add news"><mat-icon>add</mat-icon></button>
             </div>
             <div class="col-3">
                 <mat-form-field class="example-full-width">
@@ -20,10 +20,10 @@
                     <th mat-sort-header="content" style="width: 65%;">Content</th>
                     <th style="width: 5%;"></th>
                 </tr>
-                <tr *ngFor="let i of sortedData">
+                <tr *ngFor="let i of sortedData" class="rowTable">
                     <td>{{i.title}}</td>
                     <td>{{i.content}}</td>
-                    <td>
+                    <td class="text-center">
                         <mat-icon>edit</mat-icon>
                     </td>
                 </tr>

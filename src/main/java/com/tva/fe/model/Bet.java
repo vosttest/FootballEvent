@@ -25,9 +25,8 @@ public class Bet {
 	@Column(columnDefinition = "SERIAL")
 	private Integer id;
 
-	@Temporal(TemporalType.TIMESTAMP)
-	@Column(columnDefinition = "TIMESTAMP WITH TIME ZONE")
-	private Date calendarId;
+	@Column(columnDefinition = "integer")
+	private Integer calendarId;
 
 	@Column(columnDefinition = "varchar(64)")
 	private String code;
@@ -46,6 +45,9 @@ public class Bet {
 
 	@Column(columnDefinition = "integer")
 	private Integer g41;
+	
+	@Column(columnDefinition = "float")
+	private Float amount;
 
 	@Column(columnDefinition = "integer")
 	private Integer subQuestion;
@@ -85,11 +87,11 @@ public class Bet {
 		this.id = id;
 	}
 
-	public Date getCalendarId() {
+	public Integer getCalendarId() {
 		return calendarId;
 	}
 
-	public void setCalendarId(Date calendarId) {
+	public void setCalendarId(Integer calendarId) {
 		this.calendarId = calendarId;
 	}
 
@@ -140,6 +142,14 @@ public class Bet {
 	public void setG41(Integer g41) {
 		this.g41 = g41;
 	}
+	
+	public Float getAmount() {
+		return amount;
+	}
+
+	public void setAmount(Float amount) {
+		this.amount = amount;
+	}
 
 	public Integer getSubQuestion() {
 		return subQuestion;
@@ -169,7 +179,7 @@ public class Bet {
 		return isDeleted;
 	}
 
-	public void setDeleted(boolean isDeleted) {
+	public void setIsDeleted(boolean isDeleted) {
 		this.isDeleted = isDeleted;
 	}
 

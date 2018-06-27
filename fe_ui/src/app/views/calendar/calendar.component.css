@@ -1,10 +1,25 @@
-.layout {
-    background: url(https://cdn.vn.garenanow.com/web/fo3/fo4/worldcup/images/bet-bg.jpg)!important;
+::ng-deep #mat-tab-label-0-0 {
+    font-size: 30px;
+    margin: auto;
+    background: url(https://cdn.vn.garenanow.com/web/fo3/fo4/worldcup/images/btn-tab-2.png) no-repeat;
     background-size: 100% 100%;
+    color: #cfc596;
 }
 
-.mat-tab-label {
-    color: red
+::ng-deep #mat-tab-label-0-1 {
+    font-size: 30px;
+    margin: auto;
+    background: url(https://cdn.vn.garenanow.com/web/fo3/fo4/worldcup/images/btn-tab-2.png) no-repeat;
+    background-size: 100% 100%;
+    color: #cfc596;
+}
+
+::ng-deep #mat-tab-label-0-2 {
+    font-size: 30px;
+    margin: auto;
+    background: url(https://cdn.vn.garenanow.com/web/fo3/fo4/worldcup/images/btn-xem-tat-ca.png) no-repeat;
+    background-size: 100% 100%;
+    color: black;
 }
 
 .rank {
@@ -36,23 +51,6 @@ button {
     margin-top: 10%;
 }
 
-.tab-1 {
-    background: url(https://cdn.vn.garenanow.com/web/fo3/fo4/worldcup/images/btn-tab-1.png) no-repeat;
-    background-size: 100% 100%;
-}
-
-.tab-2 {
-    background: url(https://cdn.vn.garenanow.com/web/fo3/fo4/worldcup/images/btn-tab-2.png) no-repeat;
-    background-size: 100% 100%;
-    color: #cfc596;
-}
-
-.tab-3 {
-    background: url(https://cdn.vn.garenanow.com/web/fo3/fo4/worldcup/images/btn-xem-tat-ca.png) no-repeat;
-    background-size: 100% 100%;
-    color: black;
-}
-
 .mar-top5 {
     margin-top: 5%;
 }
@@ -70,7 +68,6 @@ button {
 .time-break {
     margin-bottom: 5rem;
     height: 1px;
-    background: white;
     position: relative;
 }
 
@@ -101,10 +98,11 @@ button {
     background: url(https://cdn.vn.garenanow.com/web/fo3/fo4/worldcup/images/match-bg.png) no-repeat;
     position: absolute;
     top: -25px;
-    width: 90%;
+    width: 84%;
     height: 3.26rem;
     margin-left: 8%;
     margin-right: 8%;
+    background-size: cover;
 }
 
 .time {
@@ -112,7 +110,7 @@ button {
     width: 6.2rem;
     height: 3.26rem;
     text-align: center;
-    position: relative;
+    position: absolute;
     left: 43%;
     top: -25px;
     line-height: 3rem;
@@ -122,7 +120,7 @@ button {
 .team1 {
     position: absolute;
     left: -4%;
-    width: 41%;
+    width: 45%;
     color: white;
     text-align: center;
     text-transform: uppercase;
@@ -132,8 +130,8 @@ button {
 
 .team2 {
     position: absolute;
-    right: 1%;
-    width: 41%;
+    right: -5%;
+    width: 45%;
     color: white;
     text-align: center;
     text-transform: uppercase;
@@ -149,4 +147,116 @@ button {
     border-left: 1px solid white;
     border-right: 1px solid white;
     padding: 0px;
+}
+
+.div-span {
+    margin: auto;
+    line-height: 1;
+}
+
+@media only screen and (max-width: 1200px) {
+    .time-break .time-content {
+        width: 13rem;
+        font-size: 0.8rem;
+    }
+    .banner {
+        height: 2.26rem;
+        top: -18px;
+    }
+    .time {
+        width: 4.8rem;
+        height: 2.4rem;
+        top: -19px;
+        line-height: 2.3rem;
+        color: white;
+        background-size: contain;
+    }
+    .flag {
+        height: 2.26rem;
+    }
+    span {
+        font-size: 13px;
+    }
+}
+
+@media only screen and (max-width: 950px) {
+    .banner {
+        height: 1.8rem;
+        top: -13px;
+    }
+    .time {
+        width: 3.8rem;
+        height: 12rem;
+        top: -14px;
+        line-height: 2rem;
+        color: white;
+        background-size: contain;
+        font-size: 12px;
+        margin: auto;
+    }
+    .flag {
+        height: 1.8rem;
+        width: 3rem;
+    }
+    span {
+        font-size: 0.7rem;
+    }
+}
+
+@media only screen and (max-width:500px) {
+    span {
+        font-size: 0.5rem;
+    }
+    .banner {
+        height: 1.5rem;
+        top: -12px;
+    }
+    .flag {
+        height: 1.5rem;
+    }
+    .time {
+        width: 3rem;
+        height: 1.7rem;
+        top: -12px;
+        line-height: 1.4rem;
+        color: white;
+        background-size: contain;
+        font-size: 12px;
+        margin: auto;
+    }
+    .div-span {
+        margin: auto;
+        line-height: 0.5;
+    }
+}
+
+@media only screen and (max-width:400px) {
+    .time-break .time-content {
+        width: 10rem;
+        font-size: 0.5rem;
+    }
+    span {
+        font-size: 0.3rem;
+    }
+    .banner {
+        height: 1rem;
+        top: -8px
+    }
+    .flag {
+        height: 1rem;
+        width: 2rem;
+    }
+    .time {
+        width: 2rem;
+        height: 1.7rem;
+        top: -7px;
+        line-height: 0.8rem;
+        color: white;
+        background-size: contain;
+        margin: auto;
+    }
+    .div-span {
+        margin: auto;
+        line-height: 0.5;
+    }
 }

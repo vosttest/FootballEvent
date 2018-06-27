@@ -3,23 +3,18 @@ import { FormControl } from '@angular/forms';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { Sort, MatPaginator } from '@angular/material';
 
+import { TeamProvider, CommonProvider } from '../../../providers/provider';
+import { HTTP } from '../../../utilities/utility';
+
 @Component({
     selector: 'app-team',
     templateUrl: './team.component.html',
     styleUrls: ['./team.component.css']
 })
 export class TeamComponent implements OnInit {
-    public data2 = "";
-    public function = "overview";
-    public vm: any = { content: "" };
-
-    public continent = [
-        { value: 'c1', viewValue: 'Asia' },
-        { value: 'c2', viewValue: 'Europe' },
-        { value: 'c3', viewValue: 'America' },
-        { value: 'c4', viewValue: 'Africa' },
-        { value: 'c5', viewValue: 'Oceania' },
-    ];
+    public data: any = [];
+    public lstTour: any = [];
+    public continent = ['Asia', 'Europe', 'America', 'Africa', 'Oceania'];
     public country = [
         { value: 'a1', viewValue: 'Russia' },
         { value: 'a2', viewValue: 'Spain' },
@@ -27,15 +22,11 @@ export class TeamComponent implements OnInit {
         { value: 'a4', viewValue: 'Korea' },
         { value: 'a5', viewValue: 'VietNam' },
     ];
-    public data = [
-        { name: 'Brazil', logo: 'Brazil.png', coach: 'Tite', country: 'Brazil', continent: 'America' },
-        { name: 'Germany', logo: 'Germany.png', coach: 'Loew Joachim', country: 'Germany', continent: 'Europe' },
-        { name: 'Australia', logo: 'Australia.png', coach: 'Van Marwijk Bert', country: 'Australia', continent: 'Oceania' },
-        { name: 'Nigeria', logo: 'Nigeria.png', coach: 'Rohr Gernot', country: 'Nigeria', continent: 'Africa' },
-        { name: 'Japan', logo: 'Japan.png', coach: 'Nishino Akira', country: 'Japan', continent: 'Asia' }
-    ];
-    public toppingList = ['World Cup', 'Euro ', 'AFC Cup', 'Copa America'];
     public sortedData: any;
+
+    public function = "overview";
+    public vm: any = { content: "", tournament: "", icon: "Vietnam.png" };
+    public loader = false;
 
     toppings = new FormControl();
 
@@ -50,7 +41,9 @@ export class TeamComponent implements OnInit {
 
     @ViewChild(MatPaginator) paginator: MatPaginator;
 
-    constructor(private rou: Router,
+    constructor(private pro: TeamProvider,
+        private proCommon: CommonProvider,
+        private rou: Router,
         private act: ActivatedRoute) { }
 
     ngOnInit() {
@@ -60,7 +53,36 @@ export class TeamComponent implements OnInit {
             document.getElementById(this.function).style.display = "block";
         });
 
-        this.sortedData = this.data.slice();
+        this.search();
+        this.getType('Statement');
+    }
+
+    private search() {
+        this.loader = true;
+
+        this.pro.search("").subscribe((rsp: any) => {
+            if (rsp.status === HTTP.STATUS_SUCCESS) {
+                this.data = rsp.result.data;
+                this.sortedData = this.data.slice();
+            }
+            else {
+                console.log(rsp.message);
+            }
+
+            this.loader = false;
+        }, err => console.log(err));
+    }
+
+    private getType(type: string) {
+        this.proCommon.search(type).subscribe((rsp: any) => {
+            if (rsp.status === HTTP.STATUS_SUCCESS) {
+                if (type == "Statement") {
+                    this.lstTour = rsp.result.data;
+                    console.log(this.lstTour);
+
+                }
+            }
+        }, err => console.log(err));
     }
 
     sortData(sort: Sort) {
@@ -83,6 +105,12 @@ export class TeamComponent implements OnInit {
 
     public redirect(url: string) {
         this.rou.navigate(["admin/team/" + url]);
+    }
+
+    files: FileList;
+    getFiles(event) {
+        this.files = event.target.files;
+        this.vm.icon = this.files[0].name;
     }
 
 }

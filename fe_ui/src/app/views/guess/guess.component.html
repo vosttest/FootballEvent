@@ -1,193 +1,363 @@
-<div id="fullpage" mnFullpage>
+<div id="fullpage">
     <div class="section section-1 fp-section fp-table">
         <div class="fp-tableCell">
             <carousel>
                 <slide>
                     <img src="../assets/img/banner2.jpg" alt="first slide" style="display:block">
                     <div class="carousel-caption d-none d-md-block">
-                        <h3>First slide label</h3>
                     </div>
                 </slide>
                 <slide>
                     <img src="../assets/img/banner1.jpg" alt="second slide" style="display:block">
                     <div class="carousel-caption d-none d-md-block">
-                        <h3>Second slide label</h3>
                     </div>
                 </slide>
                 <slide>
                     <img src="../assets/img/banner3.jpg" alt="third slide" style="display:block">
                     <div class="carousel-caption d-none d-md-block">
-                        <h3>Third slide label</h3>
                     </div>
                 </slide>
             </carousel>
         </div>
     </div>
     <div class="section section-2 fp-section fp-table">
-        <div class="fp-tableCell">
-            <form>
-                <mat-form-field>
-                    <mat-select placeholder="Select date">
-                        <mat-option>None</mat-option>
-                        <mat-option value="option1">14/06/2018</mat-option>
-                        <mat-option value="option2">15/06/2018</mat-option>
-                        <mat-option value="option3">16/06/2018</mat-option>
-                        <mat-option value="option4">17/06/2018</mat-option>
-                        <mat-option value="option5">18/06/2018</mat-option>
-                        <mat-option value="option6">19/06/2018</mat-option>
-                    </mat-select>
-                </mat-form-field>
-            </form>
-        </div>
+        <!-- <div class="fp-tableCell">
+        </div> -->
         <div class="row main">
             <div class="col-sm-8 tabs row">
                 <div class="col-sm-4 tab tab-1">
                     Sắp diễn ra
                 </div>
-                <div class="col-sm-4 tab tab-2">
-                    Các trận trước
-                </div>
-                <div class="col-sm-4 tab tab-3">
-                    Xem tất cả
-                </div>
-                <div class="col-sm-12 border mar-top5">
-                    <div class="time-break">
+                <div class="col-sm-12 mar-top5">
+                    <div class="time-break border">
                         <div class="time-content">Ngày 14/06/2018</div>
                     </div>
                     <div class="time-break">
-                        <div class="banner">
-                            <div class="team1">
-                                <img alt="true" class="flag" src="https://cdn.vn.garenanow.com/web/fo3/fo4/worldcup/images/flags/Russia.png">
-                                <div style="margin: auto">
-                                    <span> Russia </span>
-                                </div>
-                            </div>
-                            <div class="team2">
-                                <div style="margin: auto">
-                                    <span> SAUDI ARABIA </span>
-                                </div>
-                                <img alt="true" class="flag" src="https://cdn.vn.garenanow.com/web/fo3/fo4/worldcup/images/flags/Saudi_Arabia.png">
-                            </div>
-                            <!-- <div class="predict">
-                                <button mat-button>
-                                    <div style=" margin: auto;margin-left: 3.5rem;margin-top: 0.6rem;;position: absolute;color: white">
-                                        <span> BET </span>
+                        <div class="matchs">
+                            <div class="row match-line">
+                                <img src="https://cdn.vn.garenanow.com/web/fo3/fo4/worldcup/images/rounds/A.png" alt="true" class="group-name-title">
+                                <div class="banner" (click)="openDialog()">
+                                    <div class="team1">
+                                        <img alt="true" class="flag" src="https://cdn.vn.garenanow.com/web/fo3/fo4/worldcup/images/flags/Russia.png">
+                                        <div class="div-span">
+                                            <span> Russia </span>
+                                        </div>
                                     </div>
-                                    <img src="https://cdn.vn.garenanow.com/web/fo3/fo4/worldcup/images/bg-du-doan.png">
-                                </button>
-                            </div> -->
+                                    <div class="team2">
+                                        <div class="div-span">
+                                            <span> SAUDI ARABIA </span>
+                                        </div>
+                                        <img alt="true" class="flag" src="https://cdn.vn.garenanow.com/web/fo3/fo4/worldcup/images/flags/Saudi_Arabia.png">
+                                    </div>
+                                </div>
+                                <div class="time">22:00</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-12">
+                    <div class="time-break border">
+                        <div class="time-content">Ngày 15/06/2018</div>
+                    </div>
+                    <div class="time-break">
+                        <div class="matchs">
+                            <div class="row match-line">
+                                <img src="https://cdn.vn.garenanow.com/web/fo3/fo4/worldcup/images/rounds/A.png" alt="true" class="group-name-title">
+                                <div class="banner" (click)="openDialog()">
+                                    <div class="team1">
+                                        <img alt="true" class="flag" src="https://cdn.vn.garenanow.com/web/fo3/fo4/worldcup/images/flags/Egypt.png">
+                                        <div class="div-span">
+                                            <span> Egypt </span>
+                                        </div>
+                                    </div>
+                                    <div class="team2">
+                                        <div class="div-span">
+                                            <span> Uruguay </span>
+                                        </div>
+                                        <img alt="true" class="flag" src="https://cdn.vn.garenanow.com/web/fo3/fo4/worldcup/images/flags/Uruguay.png">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="time">19:00</div>
+                    </div>
+
+                    <div class="time-break">
+                        <div class="matchs">
+                            <div class="row match-line">
+                                <div class="banner" (click)="openDialog()">
+                                    <div class="team1">
+                                        <img alt="true" class="flag" src="https://cdn.vn.garenanow.com/web/fo3/fo4/worldcup/images/flags/Morocco.png">
+                                        <div class="div-span">
+                                            <span> Morocco </span>
+                                        </div>
+                                    </div>
+                                    <div class="team2">
+                                        <div class="div-span">
+                                            <span> Iran </span>
+                                        </div>
+                                        <img alt="true" class="flag" src="https://cdn.vn.garenanow.com/web/fo3/fo4/worldcup/images/flags/Iran.png">
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="time">22:00</div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-    <div class="section welcome-section fp-section fp-table">
-        <div class="fp-tableCell">
-            <carousel interval="2000" showIndicators="true" activeSlide="0" noPause=true>
-                <slide>
-                    <img src="../assets/img/price5.jpg" class="prize" alt="first slide" style="display:block">
-                </slide>
-                <slide>
-                    <img src="../assets/img/price3.jpg" class="prize" alt="third slide" style="display:block">
-                </slide>
-                <slide>
-                    <img src="../assets/img/price6.jpg" class="prize" alt="second slide" style="display:block">
-                </slide>
-                <slide>
-                    <img src="../assets/img/price4.jpg" class="prize" alt="third slide" style="display:block">
-                </slide>
-            </carousel>
-            <div class="fp-prize">
-                <div class="row">
-                    <div class="col-md-6">
-                        <img src="../assets/img/GT1.jpg" class="image" alt="prize1" style="display:block">
+                <div class="col-sm-12">
+                    <div class="time-break border">
+                        <div class="time-content">Ngày 16/06/2018</div>
                     </div>
-                    <div class="col-md-6">
-                        <img src="../assets/img/GT2.jpg" class="image" alt="prize2" style="display:block">
+                    <div class="time-break">
+                        <div class="matchs">
+                            <div class="row match-line">
+                                <img src="https://cdn.vn.garenanow.com/web/fo3/fo4/worldcup/images/rounds/A.png" alt="true" class="group-name-title">
+                                <div class="banner" (click)="openDialog()">
+                                    <div class="team1">
+                                        <img alt="true" class="flag" src="https://cdn.vn.garenanow.com/web/fo3/fo4/worldcup/images/flags/Portugal.png">
+                                        <div class="div-span">
+                                            <span> Portugal </span>
+                                        </div>
+                                    </div>
+                                    <div class="team2">
+                                        <div class="div-span">
+                                            <span> Spain </span>
+                                        </div>
+                                        <img alt="true" class="flag" src="https://cdn.vn.garenanow.com/web/fo3/fo4/worldcup/images/flags/Spain.png">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="time">01:00</div>
+                    </div>
+                    <div class="time-break">
+                        <div class="matchs">
+                            <div class="row match-line">
+                                <div class="banner" (click)="openDialog()">
+                                    <div class="team1">
+                                        <img alt="true" class="flag" src="https://cdn.vn.garenanow.com/web/fo3/fo4/worldcup/images/flags/France.png">
+                                        <div class="div-span">
+                                            <span> France </span>
+                                        </div>
+                                    </div>
+                                    <div class="team2">
+                                        <div class="div-span">
+                                            <span> Australia </span>
+                                        </div>
+                                        <img alt="true" class="flag" src="https://cdn.vn.garenanow.com/web/fo3/fo4/worldcup/images/flags/Australia.png">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="time">17:00</div>
+                    </div>
+                    <div class="time-break">
+                        <div class="matchs">
+                            <div class="row match-line">
+                                <div class="banner" (click)="openDialog()">
+                                    <div class="team1">
+                                        <img alt="true" class="flag" src="https://cdn.vn.garenanow.com/web/fo3/fo4/worldcup/images/flags/Argentina.png">
+                                        <div class="div-span">
+                                            <span> Argentina </span>
+                                        </div>
+                                    </div>
+                                    <div class="team2">
+                                        <div class="div-span">
+                                            <span> Iceland </span>
+                                        </div>
+                                        <img alt="true" class="flag" src="https://cdn.vn.garenanow.com/web/fo3/fo4/worldcup/images/flags/Iceland.png">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="time">20:00</div>
+                    </div>
+                    <div class="time-break">
+                        <div class="matchs">
+                            <div class="row match-line">
+                                <div class="banner" (click)="openDialog()">
+                                    <div class="team1">
+                                        <img alt="true" class="flag" src="https://cdn.vn.garenanow.com/web/fo3/fo4/worldcup/images/flags/Peru.png">
+                                        <div class="div-span">
+                                            <span> Peru </span>
+                                        </div>
+                                    </div>
+                                    <div class="team2">
+                                        <div class="div-span">
+                                            <span> Denmark </span>
+                                        </div>
+                                        <img alt="true" class="flag" src="https://cdn.vn.garenanow.com/web/fo3/fo4/worldcup/images/flags/Denmark.png">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="time">>23:00</div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="section section-4 fp-section fp-table">
-        <div class="fp-tableCell">
-            <div class="row">
-                <img class="vs" src="../assets/img/logo2.jpg">
-                <div class="col-md-6">
-                    <img alt="true" class="team" src="https://cdn.vn.garenanow.com/web/fo3/fo4/worldcup/images/flags/Saudi_Arabia.png">
-                </div>
-                <div class="col-md-6">
-                    <img alt="true" class="team" src="https://cdn.vn.garenanow.com/web/fo3/fo4/worldcup/images/flags/Russia.png">
+        <div class="section welcome-section fp-section fp-table">
+            <div class="fp-tableCell">
+                <carousel interval="2000" showIndicators="true" activeSlide="0" noPause=true>
+                    <slide>
+                        <img src="../assets/img/price5.jpg" class="prize" alt="first slide" style="display:block">
+                    </slide>
+                    <slide>
+                        <img src="../assets/img/price3.jpg" class="prize" alt="third slide" style="display:block">
+                    </slide>
+                    <slide>
+                        <img src="../assets/img/price6.jpg" class="prize" alt="second slide" style="display:block">
+                    </slide>
+                    <slide>
+                        <img src="../assets/img/price4.jpg" class="prize" alt="third slide" style="display:block">
+                    </slide>
+                </carousel>
+                <div class="fp-prize">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="../assets/img/GT1.jpg" class="image" alt="prize1" style="display:block">
+                        </div>
+                        <div class="col-md-6">
+                            <img src="../assets/img/GT2.jpg" class="image" alt="prize2" style="display:block">
+                        </div>
+                    </div>
                 </div>
             </div>
-            <carousel>
-                <slide>
-                    <div class="text-center pg-4 bg-red text-white">
-                        <h3>Result</h3>
-                        <div class="row result">
-                            <div class="col-md-4 padding-left">
-                                <mat-radio-button value="1"></mat-radio-button>
-                                <h3>Win</h3>
-                            </div>
-                            <div class="col-md-4">
-                                <mat-radio-button value="2">
-                                </mat-radio-button>
-                                <h3>Draw</h3>
-                            </div>
-                            <div class="col-md-4 padding-right">
-                                <mat-radio-button value="3"></mat-radio-button>
-                                <h3>Win</h3>
-                            </div>
+        </div>
+    </div>
+    <div bsModal #signInModal="bs-modal" class="modal fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xs" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <h2 class="text-center">Sign In</h2>
+                    <form name="form" #f="ngForm" (ngSubmit)="f.form.valid && signIn()">
+                        <div class="col-md-12">
+                            <mat-form-field class="example-full-width" tabindex="0">
+                                <input id="userName" name="userName" #userName="ngModel" [(ngModel)]="vmSI.userName" matInput placeholder="User name" required maxlength="32">
+                            </mat-form-field>
+                            <span [hidden]="userName.valid || (userName.pristine && !f.submitted)">
+                        <span *ngIf="userName.errors?.required">
+                            <i class="fa fa-exclamation-triangle"></i>Please enter user name.
+                        </span>
+                            </span>
                         </div>
-                        <div class="row">
-                            <div class="col-md-4"></div>
-                            <div class="col-md-4">
-                                <button mat-button>Guess</button>
-                            </div>
-                            <div class="col-md-4"></div>
+                        <div class="col-md-12">
+                            <mat-form-field class="example-full-width" tabindex="1">
+                                <input id="password" name="password" #password="ngModel" [(ngModel)]="vmSI.password" matInput type="password" placeholder="Password" required maxlength="32">
+                            </mat-form-field>
+                            <span [hidden]="password.valid || (password.pristine && !f.submitted)">
+                        <span *ngIf="password.errors?.required">
+                            <i class="fa fa-exclamation-triangle"></i>Please enter password.
+                        </span>
+                            </span>
                         </div>
-                    </div>
-                </slide>
-                <slide>
-                    <div class="text-center pg-4 bg-red text-white">
-                        <h3>Score</h3>
-                        <div class="row result">
-                            <div class="col-md-5">
-                                <mat-form-field appearance="outline">
-                                    <mat-label>Score</mat-label>
-                                    <input matInput>
-                                </mat-form-field>
-                            </div>
-                            <div class="col-md-2" style="font-size: 90px">:</div>
-                            <div class="col-md-5">
-                                <mat-form-field appearance="outline">
-                                    <mat-label>Score</mat-label>
-                                    <input matInput>
-                                </mat-form-field>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-4"></div>
-                            <div class="col-md-4">
-                                <button mat-button>Guess</button>
-                            </div>
-                            <div class="col-md-4"></div>
-                        </div>
-                    </div>
-                </slide>
-                <slide>
-                    <div class="text-center py-5 bg-red text-white">
-                        <h3>Over/Under</h3>
-                        <div class="lead">
-                            <h3>Third slide label</h3>
-                            <p>Nulla vitae elit libero, a pharetra augue mollis interdum. </p>
-                        </div>
-                    </div>
-                </slide>
-            </carousel>
+                        <button mat-raised-button color="primary" type="submit" tabindex="2" (click)=openDialog()>Sign In</button>
+                    </form>
+                    <label>
+                    <a (click)="signInModal.hide();signUpModal.show();vmSI={};vmSU={};">Don't have Account? Create one now.</a>
+                </label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
+<div bsModal #signUpModal="bs-modal" class="modal fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xs" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <h2 class="text-center">Sign Up</h2>
+                <form name="form" #f2="ngForm" (ngSubmit)="f2.form.valid && signUp()">
+                    <div class="col-md-12">
+                        <mat-form-field class="example-full-width">
+                            <input id="userName1" name="userName1" #userName1="ngModel" [(ngModel)]="vmSU.userName" matInput placeholder="User name" maxlength="32" minlength="6" required tabindex="3">
+                        </mat-form-field>
+                        <span [hidden]="userName1.valid || (userName1.pristine && !f2.submitted)">
+                                <span *ngIf="userName1.errors?.required">
+                                    <i class="fa fa-exclamation-triangle"></i>Please enter user name.
+                                </span>
+                        <span *ngIf="!userName1.errors?.required && userName1.errors?.minlength">
+                                    <i class="fa fa-exclamation-triangle"></i>At least 6 letters.
+                                </span>
+                        </span>
+                    </div>
+                    <div class="col-md-12">
+                        <mat-form-field class="example-full-width">
+                            <input id="password1" name="password1" #password1="ngModel" [(ngModel)]="vmSU.password" matInput type="password" placeholder="Password" maxlength="32" pattern="{{pwdPattern}}" required tabindex="4">
+                        </mat-form-field>
+                        <span [hidden]="password1.valid || (password1.pristine && !f2.submitted)">
+                                <span *ngIf="password1.errors?.required">
+                                    <i class="fa fa-exclamation-triangle"></i>Please enter password.
+                                </span>
+                        <span *ngIf="!password1.errors?.required && password1.errors?.pattern">
+                                    <i class="fa fa-exclamation-triangle"></i>Password must be 8 characters and include numbers, uppercase and lowercase. letters
+                                    and one special character.
+                                </span>
+                        </span>
+                    </div>
+                    <div class="col-md-12">
+                        <mat-form-field class="example-full-width">
+                            <input id="cPassword" name="cPassword" #cPassword="ngModel" [(ngModel)]="vmSU.cPassword" matInput type="password" placeholder="Confirm password" validateEqual="password1" required maxlength="32" tabindex="5">
+                        </mat-form-field>
+                        <span [hidden]="cPassword.valid || (cPassword.pristine && !f2.submitted)">
+                                <span *ngIf="cPassword.errors?.required">
+                                    <i class="fa fa-exclamation-triangle"></i>Please enter confirm password.
+                                </span>
+                        <span *ngIf="!cPassword.errors?.required && !cPassword.errors?.validateEqual">
+                                    <i class="fa fa-exclamation-triangle"></i>Password not equal.
+                                </span>
+                        </span>
+                    </div>
+                    <div class="col-md-12">
+                        <mat-form-field class="example-full-width">
+                            <input id="firstName" name="firstName" #firstName="ngModel" [(ngModel)]="vmSU.firstName" matInput placeholder="First name" maxlength="32" required tabindex="6">
+                        </mat-form-field>
+                        <span [hidden]="firstName.valid || (firstName.pristine && !f2.submitted)">
+                                <span *ngIf="firstName.errors?.required">
+                                    <i class="fa fa-exclamation-triangle"></i>Please enter first name.
+                                </span>
+                        </span>
+                    </div>
+                    <div class="col-md-12">
+                        <mat-form-field class="example-full-width">
+                            <input id="lastName" name="lastName" #lastName="ngModel" [(ngModel)]="vmSU.lastName" matInput placeholder="Last name" maxlength="32" required tabindex="7">
+                        </mat-form-field>
+                        <span [hidden]="lastName.valid || (lastName.pristine && !f2.submitted)">
+                                <span *ngIf="lastName.errors?.required">
+                                    <i class="fa fa-exclamation-triangle"></i>Please enter last name.
+                                </span>
+                        </span>
+                    </div>
+                    <div class="col-md-12">
+                        <mat-form-field class="example-full-width">
+                            <input id="phoneNo" name="phoneNo" #phoneNo="ngModel" [(ngModel)]="vmSU.phoneNo" matInput placeholder="Phone number" maxlength="11" required pattern="{{phonePattern}}" tabindex="8">
+                        </mat-form-field>
+                        <span [hidden]="phoneNo.valid || (phoneNo.pristine && !f2.submitted)">
+                                <span *ngIf="phoneNo.errors?.required">
+                                    <i class="fa fa-exclamation-triangle"></i>Please enter phone number.
+                                </span>
+                        <span *ngIf="!phoneNo.errors?.required && phoneNo.errors?.pattern">
+                                    <i class="fa fa-exclamation-triangle"></i>Phone number invalid.
+                                </span>
+                        </span>
+                    </div>
+                    <div class="col-md-12">
+                        <mat-form-field class="example-full-width">
+                            <input id="address" name="address" #address="ngModel" [(ngModel)]="vmSU.address" matInput placeholder="Address" maxlength="128" required tabindex="9">
+                        </mat-form-field>
+                        <span [hidden]="address.valid || (address.pristine && !f2.submitted)">
+                                <span *ngIf="address.errors?.required">
+                                    <i class="fa fa-exclamation-triangle"></i>Please enter address.
+                                </span>
+                        </span>
+                    </div>
+                    <button type="submit" mat-raised-button color="primary" tabindex="10">Sign Up</button>
+                </form>
+                <label>
+                    <a (click)="signUpModal.hide();signInModal.show();vmSU={};vmSI={};">Already have Account? Sign in here.</a>
+                </label>
+            </div>
         </div>
     </div>
 </div>

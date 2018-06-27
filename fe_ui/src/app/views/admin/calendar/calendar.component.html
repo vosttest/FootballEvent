@@ -3,30 +3,32 @@
         <div class="panel panel-default">
             <div class="title-Panels">List calendar</div>
         </div>
-        <button mat-raised-button color="primary" (click)="redirect('create')">Add</button>
+        <button mat-raised-button color="primary" (click)="redirect('create')" matTooltip="Add calendar"><mat-icon>add</mat-icon></button>
         <mat-tab-group>
             <mat-tab label="Today">
                 <mat-card>
                     <table class="table table-hover" matSort (matSortChange)="sortCalendar($event)">
-                        <tr>
-                            <th mat-sort-header="tournament">Tournament</th>
-                            <th mat-sort-header="date">Date</th>
-                            <th>Logo</th>
+                        <tr class="text-center">
+                            <th mat-sort-header="tournament ">Tournament</th>
+                            <th mat-sort-header="date ">Date</th>
                             <th>Team 1</th>
                             <th>Result</th>
                             <th>Team 2</th>
-                            <th>Logo</th>
                             <th></th>
                         </tr>
-                        <tr *ngFor="let calendar of sortedCalendar ">
+                        <tr *ngFor="let calendar of sortedCalendar " class="rowTable">
                             <td>{{calendar.tournament}}</td>
                             <td>{{calendar.date}}</td>
-                            <td><img src="{{calendar.logo1}} " alt=" "></td>
-                            <td>{{calendar.team1}}</td>
-                            <td>{{calendar.goal1}} : {{calendar.goal2}}</td>
-                            <td>{{calendar.team2}}</td>
-                            <td><img src="{{calendar.logo2}} " alt=" "></td>
-                            <td>
+                            <td class="text-center">
+                                <div><img src="{{calendar.logo1}} " alt=" "></div>
+                                <div>{{calendar.team1}}</div>
+                            </td>
+                            <td class="text-center">{{calendar.goal1}} : {{calendar.goal2}}</td>
+                            <td class="text-center">
+                                <div><img src="{{calendar.logo2}} " alt=" "></div>
+                                <div>{{calendar.team2}}</div>
+                            </td>
+                            <td class="text-center">
                                 <mat-icon (click)="redirect('edit')">edit</mat-icon>
                             </td>
                         </tr>

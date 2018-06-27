@@ -2,7 +2,7 @@
     <mat-card>
         <div class="row">
             <div class="col-2 overview">
-                <button mat-raised-button color="primary" (click)="redirect('create')">Add</button>
+                <button mat-raised-button color="primary" (click)="redirect('create')" matTooltip="Add team"><mat-icon>add</mat-icon></button>
             </div>
             <div class="col-3">
                 <mat-form-field class="example-full-width">
@@ -23,13 +23,13 @@
                     <th mat-sort-header="continent" style="width: 20%;">Continent</th>
                     <th style="width: 5%;"></th>
                 </tr>
-                <tr *ngFor="let i of sortedData">
+                <tr *ngFor="let i of sortedData" class="rowTable">
                     <td>{{i.name}}</td>
                     <td><img src="../assets/img/flag/{{i.logo}}"></td>
                     <td>{{i.coach}}</td>
                     <td>{{i.country}}</td>
                     <td>{{i.continent}}</td>
-                    <td>
+                    <td class="text-center">
                         <mat-icon>edit</mat-icon>
                     </td>
                 </tr>
@@ -68,8 +68,8 @@
                 <div class="col-6">
                     <mat-form-field class="example-full-width">
                         <mat-select placeholder="Continent">
-                            <mat-option *ngFor="let i of continent" [value]="i.value">
-                                {{ i.viewValue }}
+                            <mat-option *ngFor="let i of continent" [value]="i">
+                                {{ i }}
                             </mat-option>
                         </mat-select>
                     </mat-form-field>
@@ -77,14 +77,14 @@
             </div>
             <div class="row">
                 <div class="col-6">
-                    <mat-form-field class="example-full-width">
-                        <input matInput placeholder="Choose Icon">
-                    </mat-form-field>
+                    <input name="icon" type="file" (change)="getFiles($event)" />
+                    <input name="icon2" [(ngModel)]="vm.icon" value="../assets/img/flag/{{vm.icon}}" hidden/>
+                    <img src="../assets/img/flag/{{vm.icon}}">
                 </div>
                 <div class="col-6">
                     <mat-form-field class="example-full-width">
-                        <mat-select placeholder="Tournament" [formControl]="toppings" multiple>
-                            <mat-option *ngFor="let i of toppingList" [value]="i">{{i}}</mat-option>
+                        <mat-select placeholder="Tournament" [(ngModel)]="vm.tournament" [formControl]="toppings" multiple>
+                            <mat-option *ngFor="let i of lstTour" [value]="i.type">{{i.text}}</mat-option>
                         </mat-select>
                     </mat-form-field>
                 </div>

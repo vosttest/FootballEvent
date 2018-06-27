@@ -37,14 +37,14 @@ public class Statement {
 	@Column(columnDefinition = "text")
 	private String history;
 
-	@Column(columnDefinition = "integer")
-	private Integer code;
+	@Column(columnDefinition = "varchar(64)")
+	private String code;
 
 	@Column(columnDefinition = "integer")
 	private Integer parentId;
 
 	@Column(columnDefinition = "bool")
-	private boolean isLegs;
+	private Boolean isLegs;
 
 	@Column(columnDefinition = "bool")
 	private boolean isDeleted;
@@ -107,11 +107,11 @@ public class Statement {
 		this.history = history;
 	}
 
-	public Integer getCode() {
+	public String getCode() {
 		return code;
 	}
 
-	public void setCode(Integer code) {
+	public void setCode(String code) {
 		this.code = code;
 	}
 
@@ -123,11 +123,11 @@ public class Statement {
 		this.parentId = parentId;
 	}
 
-	public boolean is2Legs() {
+	public Boolean getIsLegs() {
 		return isLegs;
 	}
 
-	public void set2Legs(boolean isLegs) {
+	public void setIsLegs(Boolean isLegs) {
 		this.isLegs = isLegs;
 	}
 

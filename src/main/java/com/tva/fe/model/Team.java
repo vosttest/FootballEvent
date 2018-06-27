@@ -30,6 +30,9 @@ public class Team {
 	private String country;
 
 	@Column(columnDefinition = "varchar(64)")
+	private String continent;
+
+	@Column(columnDefinition = "varchar(64)")
 	private String coach;
 
 	@Column(columnDefinition = "varchar(128)")
@@ -84,6 +87,14 @@ public class Team {
 
 	public void setCountry(String country) {
 		this.country = country;
+	}
+
+	public String getContinent() {
+		return continent;
+	}
+
+	public void setContinent(String continent) {
+		this.continent = continent;
 	}
 
 	public String getCoach() {
@@ -163,7 +174,7 @@ public class Team {
 	// region -- Methods --
 
 	public Team() {
-
+		this.isDeleted = false;
 	}
 
 	// end

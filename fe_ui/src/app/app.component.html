@@ -1,2 +1,10 @@
 <app-top-menu></app-top-menu>
-<router-outlet></router-outlet>
+<router-outlet>
+    <!--Scroll to top-->
+    <div class="scroll-to-top" [ngClass]="{'show-scroll': navIsFixed}">
+        <button class="back-to-top" (click)="scrollToTop()">
+            <mat-icon>vertical_align_top</mat-icon>
+        </button>
+    </div>
+</router-outlet>
+<app-bottom-menu></app-bottom-menu>

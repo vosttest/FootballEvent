@@ -45,10 +45,16 @@ public class Ratio {
 	private Float r22;
 
 	@Column(columnDefinition = "float")
-	private Float r3;
+	private Float r31;
 
 	@Column(columnDefinition = "float")
-	private Float r4;
+	private Float r32;
+
+	@Column(columnDefinition = "float")
+	private Float r33;
+
+	@Column(columnDefinition = "integer")
+	private Integer r4;
 
 	@Column(columnDefinition = "bool")
 	private boolean isDeleted;
@@ -99,9 +105,6 @@ public class Ratio {
 		return r11;
 	}
 
-	/**
-	 * Bet team 1 win
-	 */
 	public void setR11(Float r11) {
 		this.r11 = r11;
 	}
@@ -110,9 +113,6 @@ public class Ratio {
 		return r12;
 	}
 
-	/**
-	 * Bet 2 teams draw
-	 */
 	public void setR12(Float r12) {
 		this.r12 = r12;
 	}
@@ -121,9 +121,6 @@ public class Ratio {
 		return r13;
 	}
 
-	/**
-	 * Bet team 2 win
-	 */
 	public void setR13(Float r13) {
 		this.r13 = r13;
 	}
@@ -132,9 +129,6 @@ public class Ratio {
 		return r21;
 	}
 
-	/**
-	 * Bet final result of team 1 (final result of team 2 is required)
-	 */
 	public void setR21(Float r21) {
 		this.r21 = r21;
 	}
@@ -143,32 +137,39 @@ public class Ratio {
 		return r22;
 	}
 
-	/**
-	 * Bet final result of team 2 (final result of team 1 is required)
-	 */
 	public void setR22(Float r22) {
 		this.r22 = r22;
 	}
 
-	public Float getR3() {
-		return r3;
+	public Float getR31() {
+		return r31;
 	}
 
-	/**
-	 * Bet tài xỉu
-	 */
-	public void setR3(Float r3) {
-		this.r3 = r3;
+	public void setR31(Float r31) {
+		this.r31 = r31;
 	}
 
-	public Float getR4() {
+	public Float getR32() {
+		return r32;
+	}
+
+	public void setR32(Float r32) {
+		this.r32 = r32;
+	}
+
+	public Float getR33() {
+		return r33;
+	}
+
+	public void setR33(Float r33) {
+		this.r33 = r33;
+	}
+
+	public Integer getR4() {
 		return r4;
 	}
 
-	/**
-	 * Bet champion of tournament
-	 */
-	public void setR4(Float r4) {
+	public void setR4(Integer r4) {
 		this.r4 = r4;
 	}
 

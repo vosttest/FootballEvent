@@ -31,10 +31,10 @@ public class Calendar {
 	@Column(columnDefinition = "TIMESTAMP WITH TIME ZONE")
 	private Date startGuess;
 
-	@Column(columnDefinition = "integer")
+	@Column(columnDefinition = "integer",name="team1_id")
 	private Integer team1Id;
 
-	@Column(columnDefinition = "integer")
+	@Column(columnDefinition = "integer",name="team2_id")
 	private Integer team2Id;
 
 	@Column(columnDefinition = "varchar(64)")

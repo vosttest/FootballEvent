@@ -1,159 +1,185 @@
 <section class="layout">
     <div class="row main">
         <div class="col-sm-8 tabs row">
-            <div class="col-sm-4 tab tab-1">
-                Sắp diễn ra
-            </div>
-            <div class="col-sm-4 tab tab-2">
-                Các trận trước
-            </div>
-            <div class="col-sm-4 tab tab-3">
-                Xem tất cả
-            </div>
-            <div class="col-sm-12 border mar-top5">
-                <div class="time-break">
-                    <div class="time-content">Ngày 14/06/2018</div>
-                </div>
-                <div class="time-break">
-                    <div class="banner">
-                        <div class="team1">
-                            <img alt="true" class="flag" src="https://cdn.vn.garenanow.com/web/fo3/fo4/worldcup/images/flags/Russia.png">
-                            <div style="margin: auto">
-                                <span> Russia </span>
+            <mat-tab-group style="height: 100%;width: 110%;">
+                <mat-tab label="Sắp diễn ra" class="tab-2">
+                    <div class="col-sm-12 border mar-top5">
+                        <div class="time-break">
+                            <div class="time-content">Ngày 14/06/2018</div>
+                        </div>
+
+                        <div class="time-break">
+                            <div class="banner">
+                                <div class="team1">
+                                    <a style="cursor: pointer" (click)="openDialog()">
+                                        <img alt="true" class="flag" src="https://cdn.vn.garenanow.com/web/fo3/fo4/worldcup/images/flags/Russia.png">
+                                    </a>
+                                    <div class="div-span">
+                                        <span> Russia </span>
+                                    </div>
+                                </div>
+                                <div class="team2">
+                                    <div class="div-span">
+                                        <span> SAUDI ARABIA </span>
+                                    </div>
+                                    <a style="cursor: pointer" (click)="openDialog()">
+                                        <img alt="true" class="flag" src="https://cdn.vn.garenanow.com/web/fo3/fo4/worldcup/images/flags/Saudi_Arabia.png">
+                                    </a>
+                                </div>
+                            </div>
+                            <span class="dialog"><a (click)="openDialog()">Information</a></span>
+                            <div class="time"><span>22:00</span></div>
+                        </div>
+
+                    </div>
+                    <div class="col-sm-12 border">
+                        <div class="time-break">
+                            <div class="time-content">Ngày 15/06/2018</div>
+                        </div>
+                        <div class="time-break">
+                            <div class="banner">
+                                <div class="team1">
+                                    <img alt="true" class="flag" src="https://cdn.vn.garenanow.com/web/fo3/fo4/worldcup/images/flags/Egypt.png">
+                                    <div class="div-span">
+                                        <span> Egypt </span>
+                                    </div>
+                                </div>
+                                <div class="team2">
+                                    <div class="div-span">
+                                        <span> Uruguay </span>
+                                    </div>
+                                    <img alt="true" class="flag" src="https://cdn.vn.garenanow.com/web/fo3/fo4/worldcup/images/flags/Uruguay.png">
+                                </div>
+                            </div>
+                            <span class="dialog"><a (click)="openDialog()">Information</a></span>
+                            <div class="time">
+                                <span>19:00</span>
                             </div>
                         </div>
-                        <div class="team2">
-                            <div style="margin: auto">
-                                <span> SAUDI ARABIA </span>
+                        <div class="time-break">
+                            <div class="banner">
+                                <div class="team1">
+                                    <img alt="true" class="flag" src="https://cdn.vn.garenanow.com/web/fo3/fo4/worldcup/images/flags/Morocco.png">
+                                    <div class="div-span">
+                                        <span> Morocco </span>
+                                    </div>
+                                </div>
+                                <div class="team2">
+                                    <div class="div-span">
+                                        <span> Iran </span>
+                                    </div>
+                                    <img alt="true" class="flag" src="https://cdn.vn.garenanow.com/web/fo3/fo4/worldcup/images/flags/Iran.png">
+                                </div>
                             </div>
-                            <img alt="true" class="flag" src="https://cdn.vn.garenanow.com/web/fo3/fo4/worldcup/images/flags/Saudi_Arabia.png">
+                            <span class="dialog"><a (click)="openDialog()">Information</a></span>
+                            <div class="time">
+
+                                <span>22:00</span>
+                            </div>
                         </div>
                     </div>
-                    <span class="dialog"><a (click)="openDialog()">Information</a></span>
-                    <div class="time">22:00</div>
-                </div>
-            </div>
-            <div class="col-sm-12 border">
-                <div class="time-break">
-                    <div class="time-content">Ngày 15/06/2018</div>
-                </div>
-                <div class="time-break">
-                    <div class="banner">
-                        <div class="team1">
-                            <img alt="true" class="flag" src="https://cdn.vn.garenanow.com/web/fo3/fo4/worldcup/images/flags/Egypt.png">
-                            <div style="margin: auto">
-                                <span> Egypt </span>
+                    <div class="col-sm-12 border">
+                        <div class="time-break">
+                            <div class="time-content">Ngày 16/06/2018</div>
+                        </div>
+                        <div class="time-break">
+                            <div class="banner">
+                                <div class="team1">
+                                    <img alt="true" class="flag" src="https://cdn.vn.garenanow.com/web/fo3/fo4/worldcup/images/flags/Portugal.png">
+                                    <div class="div-span">
+                                        <span> Portugal </span>
+                                    </div>
+                                </div>
+                                <div class="team2">
+                                    <div class="div-span">
+                                        <span> Spain </span>
+                                    </div>
+                                    <img alt="true" class="flag" src="https://cdn.vn.garenanow.com/web/fo3/fo4/worldcup/images/flags/Spain.png">
+                                </div>
+                            </div>
+                            <span class="dialog"><a (click)="openDialog()">Information</a></span>
+                            <div class="time">
+
+                                <span>01:00</span>
                             </div>
                         </div>
-                        <div class="team2">
-                            <div style="margin: auto">
-                                <span> Uruguay </span>
+                        <div class="time-break">
+                            <div class="banner">
+                                <div class="team1">
+                                    <img alt="true" class="flag" src="https://cdn.vn.garenanow.com/web/fo3/fo4/worldcup/images/flags/France.png">
+                                    <div class="div-span">
+                                        <span> France </span>
+                                    </div>
+                                </div>
+                                <div class="team2">
+                                    <div class="div-span">
+                                        <span> Australia </span>
+                                    </div>
+                                    <img alt="true" class="flag" src="https://cdn.vn.garenanow.com/web/fo3/fo4/worldcup/images/flags/Australia.png">
+                                </div>
                             </div>
-                            <img alt="true" class="flag" src="https://cdn.vn.garenanow.com/web/fo3/fo4/worldcup/images/flags/Uruguay.png">
+                            <span class="dialog"><a (click)="openDialog()">Information</a></span>
+                            <div class="time">
+
+                                <span>17:00</span>
+                            </div>
+                        </div>
+                        <div class="time-break">
+                            <div class="banner">
+                                <div class="team1">
+                                    <img alt="true" class="flag" src="https://cdn.vn.garenanow.com/web/fo3/fo4/worldcup/images/flags/Argentina.png">
+                                    <div class="div-span">
+                                        <span> Argentina </span>
+                                    </div>
+                                </div>
+                                <div class="team2">
+                                    <div class="div-span">
+                                        <span> Iceland </span>
+                                    </div>
+                                    <img alt="true" class="flag" src="https://cdn.vn.garenanow.com/web/fo3/fo4/worldcup/images/flags/Iceland.png">
+                                </div>
+                            </div>
+                            <span class="dialog"><a (click)="openDialog()">Information</a></span>
+                            <div class="time">
+
+                                <span>20:00</span>
+                            </div>
+                        </div>
+                        <div class="time-break">
+                            <div class="banner">
+                                <div class="team1">
+                                    <img alt="true" class="flag" src="https://cdn.vn.garenanow.com/web/fo3/fo4/worldcup/images/flags/Peru.png">
+                                    <div class="div-span">
+                                        <span> Peru </span>
+                                    </div>
+                                </div>
+                                <div class="team2">
+                                    <div class="div-span">
+                                        <span> Denmark </span>
+                                    </div>
+                                    <img alt="true" class="flag" src="https://cdn.vn.garenanow.com/web/fo3/fo4/worldcup/images/flags/Denmark.png">
+                                </div>
+                            </div>
+                            <span class="dialog"><a (click)="openDialog()">Information</a></span>
+                            <div class="time">
+
+                                <span>23:00</span>
+                            </div>
                         </div>
                     </div>
-                    <span class="dialog"><a (click)="openDialog()">Information</a></span>
-                    <div class="time">19:00</div>
-                </div>
-                <div class="time-break">
-                    <div class="banner">
-                        <div class="team1">
-                            <img alt="true" class="flag" src="https://cdn.vn.garenanow.com/web/fo3/fo4/worldcup/images/flags/Morocco.png">
-                            <div style="margin: auto">
-                                <span> Morocco </span>
-                            </div>
-                        </div>
-                        <div class="team2">
-                            <div style="margin: auto">
-                                <span> Iran </span>
-                            </div>
-                            <img alt="true" class="flag" src="https://cdn.vn.garenanow.com/web/fo3/fo4/worldcup/images/flags/Iran.png">
-                        </div>
-                    </div>
-                    <span class="dialog"><a (click)="openDialog()">Information</a></span>
-                    <div class="time">22:00</div>
-                </div>
-            </div>
-            <div class="col-sm-12 border">
-                <div class="time-break">
-                    <div class="time-content">Ngày 16/06/2018</div>
-                </div>
-                <div class="time-break">
-                    <div class="banner">
-                        <div class="team1">
-                            <img alt="true" class="flag" src="https://cdn.vn.garenanow.com/web/fo3/fo4/worldcup/images/flags/Portugal.png">
-                            <div style="margin: auto">
-                                <span> Portugal </span>
-                            </div>
-                        </div>
-                        <div class="team2">
-                            <div style="margin: auto">
-                                <span> Spain </span>
-                            </div>
-                            <img alt="true" class="flag" src="https://cdn.vn.garenanow.com/web/fo3/fo4/worldcup/images/flags/Spain.png">
-                        </div>
-                    </div>
-                    <span class="dialog"><a (click)="openDialog()">Information</a></span>
-                    <div class="time">01:00</div>
-                </div>
-                <div class="time-break">
-                    <div class="banner">
-                        <div class="team1">
-                            <img alt="true" class="flag" src="https://cdn.vn.garenanow.com/web/fo3/fo4/worldcup/images/flags/France.png">
-                            <div style="margin: auto">
-                                <span> France </span>
-                            </div>
-                        </div>
-                        <div class="team2">
-                            <div style="margin: auto">
-                                <span> Australia </span>
-                            </div>
-                            <img alt="true" class="flag" src="https://cdn.vn.garenanow.com/web/fo3/fo4/worldcup/images/flags/Australia.png">
-                        </div>
-                    </div>
-                    <span class="dialog"><a (click)="openDialog()">Information</a></span>
-                    <div class="time">17:00</div>
-                </div>
-                <div class="time-break">
-                    <div class="banner">
-                        <div class="team1">
-                            <img alt="true" class="flag" src="https://cdn.vn.garenanow.com/web/fo3/fo4/worldcup/images/flags/Argentina.png">
-                            <div style="margin: auto">
-                                <span> Argentina </span>
-                            </div>
-                        </div>
-                        <div class="team2">
-                            <div style="margin: auto">
-                                <span> Iceland </span>
-                            </div>
-                            <img alt="true" class="flag" src="https://cdn.vn.garenanow.com/web/fo3/fo4/worldcup/images/flags/Iceland.png">
-                        </div>
-                    </div>
-                    <span class="dialog"><a (click)="openDialog()">Information</a></span>
-                    <div class="time">20:00</div>
-                </div>
-                <div class="time-break">
-                    <div class="banner">
-                        <div class="team1">
-                            <img alt="true" class="flag" src="https://cdn.vn.garenanow.com/web/fo3/fo4/worldcup/images/flags/Peru.png">
-                            <div style="margin: auto">
-                                <span> Peru </span>
-                            </div>
-                        </div>
-                        <div class="team2">
-                            <div style="margin: auto">
-                                <span> Denmark </span>
-                            </div>
-                            <img alt="true" class="flag" src="https://cdn.vn.garenanow.com/web/fo3/fo4/worldcup/images/flags/Denmark.png">
-                        </div>
-                    </div>
-                    <span class="dialog"><a (click)="openDialog()">Information</a></span>
-                    <div class="time">23:00</div>
-                </div>
-            </div>
+
+                </mat-tab>
+                <mat-tab label="Các trận trước" class=""></mat-tab>
+                <mat-tab label="Xem tất cả" class=""></mat-tab>
+            </mat-tab-group>
+
+
+        </div>
+        <div class="col-sm-4">
         </div>
 
-        <div class="col-sm-4" style="margin-left: 2.4%;margin-top: 20%;">
+
+        <div class="col-sm-4" style="margin-left: 53%; margin-top: 0%; position: fixed;">
             <!-- <table style=" width: 30%;border-style: solid; border-color: red; ">
                 <tr style="width: 30%">
                     <th style="text-align: center ">
@@ -162,23 +188,23 @@
                 </tr>
                 <tr>
                     <td> -->
-            <mat-tab-group class="rank" style="height: 55%;width: 120%;">
-                <mat-tab label="GROUP STAGE" style="text-align: center;width: 100%;color: white">
+            <mat-tab-group class="rank" style="height: 55%;width: 110%;">
+                <mat-tab label="STANDINGS" class="cs">
                     <mat-tab-group style="width: 100%;border-right: 0px;border-left: 0px;">
-                        <mat-tab label="A" style="width: 20%" class="test">
+                        <mat-tab label="A" class="">
                             <table style="width: 100%;">
                                 <tr style="text-align: center">
                                     <th>
-                                        STT
+                                        POS
                                     </th>
                                     <th>
-                                        ĐỘI TUYỂN
+                                        TEAMS
                                     </th>
                                     <th>
-                                        HỆ SỐ
+                                        GD
                                     </th>
                                     <th>
-                                        ĐIỂM
+                                        POINT
                                     </th>
                                 </tr>
                                 <tr style="height: 60px">
@@ -208,20 +234,20 @@
                             </table>
                         </mat-tab>
 
-                        <mat-tab label="B ">
+                        <mat-tab class="groupstates" label="B">
                             <table style="width: 100%;">
                                 <tr style="text-align: center">
                                     <th>
-                                        STT
+                                        POS
                                     </th>
                                     <th>
-                                        ĐỘI TUYỂN
+                                        TEAMS
                                     </th>
                                     <th>
-                                        HỆ SỐ
+                                        GD
                                     </th>
                                     <th>
-                                        ĐIỂM
+                                        POINT
                                     </th>
                                 </tr>
                                 <tr style="height: 60px">
@@ -250,20 +276,20 @@
                                 </tr>
                             </table>
                         </mat-tab>
-                        <mat-tab label="C ">
+                        <mat-tab class="groupstates" label="C">
                             <table style="width: 100%;">
                                 <tr style="text-align: center">
                                     <th>
-                                        STT
+                                        POS
                                     </th>
                                     <th>
-                                        ĐỘI TUYỂN
+                                        TEAMS
                                     </th>
                                     <th>
-                                        HỆ SỐ
+                                        GD
                                     </th>
                                     <th>
-                                        ĐIỂM
+                                        POINT
                                     </th>
                                 </tr>
                                 <tr style="height: 60px">
@@ -292,20 +318,20 @@
                                 </tr>
                             </table>
                         </mat-tab>
-                        <mat-tab label="D ">
+                        <mat-tab class="groupstates" label="D">
                             <table style="width: 100%;">
                                 <tr style="text-align: center">
                                     <th>
-                                        STT
+                                        POS
                                     </th>
                                     <th>
-                                        ĐỘI TUYỂN
+                                        TEAMS
                                     </th>
                                     <th>
-                                        HỆ SỐ
+                                        GD
                                     </th>
                                     <th>
-                                        ĐIỂM
+                                        POINT
                                     </th>
                                 </tr>
                                 <tr style="height: 60px">
@@ -334,20 +360,20 @@
                                 </tr>
                             </table>
                         </mat-tab>
-                        <mat-tab label="E ">
+                        <mat-tab class="groupstates" label="E">
                             <table style="width: 100%;">
                                 <tr style="text-align: center">
                                     <th>
-                                        STT
+                                        POS
                                     </th>
                                     <th>
-                                        ĐỘI TUYỂN
+                                        TEAMS
                                     </th>
                                     <th>
-                                        HỆ SỐ
+                                        GD
                                     </th>
                                     <th>
-                                        ĐIỂM
+                                        POINT
                                     </th>
                                 </tr>
                                 <tr style="height: 60px">
@@ -376,20 +402,20 @@
                                 </tr>
                             </table>
                         </mat-tab>
-                        <mat-tab label="F ">
+                        <mat-tab class="groupstates" label="F">
                             <table style="width: 100%;">
                                 <tr style="text-align: center">
                                     <th>
-                                        STT
+                                        POS
                                     </th>
                                     <th>
-                                        ĐỘI TUYỂN
+                                        TEAMS
                                     </th>
                                     <th>
-                                        HỆ SỐ
+                                        GD
                                     </th>
                                     <th>
-                                        ĐIỂM
+                                        POINT
                                     </th>
                                 </tr>
                                 <tr style="height: 60px">
@@ -418,20 +444,20 @@
                                 </tr>
                             </table>
                         </mat-tab>
-                        <mat-tab label="G ">
+                        <mat-tab class="groupstates" label="G">
                             <table style="width: 100%;">
                                 <tr style="text-align: center">
                                     <th>
-                                        STT
+                                        POS
                                     </th>
                                     <th>
-                                        ĐỘI TUYỂN
+                                        TEAMS
                                     </th>
                                     <th>
-                                        HỆ SỐ
+                                        GD
                                     </th>
                                     <th>
-                                        ĐIỂM
+                                        POINT
                                     </th>
                                 </tr>
                                 <tr style="height: 60px">
@@ -460,20 +486,20 @@
                                 </tr>
                             </table>
                         </mat-tab>
-                        <mat-tab label="H ">
+                        <mat-tab class="groupstates" label="H">
                             <table style="width: 100%;">
                                 <tr style="text-align: center">
                                     <th>
-                                        STT
+                                        POS
                                     </th>
                                     <th>
-                                        ĐỘI TUYỂN
+                                        TEAMS
                                     </th>
                                     <th>
-                                        HỆ SỐ
+                                        GD
                                     </th>
                                     <th>
-                                        ĐIỂM
+                                        POINT
                                     </th>
                                 </tr>
                                 <tr style="height: 60px">
