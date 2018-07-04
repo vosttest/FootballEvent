@@ -1,175 +1,97 @@
 <section class="layout">
     <div class="row main">
         <div class="col-sm-8 tabs row">
-            <mat-tab-group style="height: 100%;width: 110%;">
-                <mat-tab label="Sắp diễn ra" class="tab-2">
-                    <div class="col-sm-12 border mar-top5">
+            <mat-tab-group style="height: 100%;width: 110%;" (selectedTabChange)="loadTab($event)">
+                <mat-tab label="Upcoming Matches" class="tab-2">
+                    <div class="col-sm-12 border mar-top5" *ngFor="let i of calendar">
                         <div class="time-break">
-                            <div class="time-content">Ngày 14/06/2018</div>
+                            <div class="time-content">{{ i.competitionDate | date:'EEEE dd-MM-yyy' }}</div>
                         </div>
-                        <div class="time-break">
+                        <div class="time-break" *ngFor="let j of i.calendarDetail">
                             <div class="banner">
                                 <div class="team1">
                                     <a style="cursor: pointer" (click)="openDialog()">
-                                        <img alt="true" class="flag" src="https://cdn.vn.garenanow.com/web/fo3/fo4/worldcup/images/flags/Russia.png">
+                                        <img alt="true" class="flag" src="{{ imgURL + j.logo1 }}">
                                     </a>
                                     <div class="div-span">
-                                        <span> Russia </span>
+                                        <span> {{j.name1}}  </span>
                                     </div>
                                 </div>
                                 <div class="team2">
                                     <div class="div-span">
-                                        <span> SAUDI ARABIA </span>
+                                        <span> {{j.name2}}  </span>
                                     </div>
                                     <a style="cursor: pointer" (click)="openDialog()">
-                                        <img alt="true" class="flag" src="https://cdn.vn.garenanow.com/web/fo3/fo4/worldcup/images/flags/Saudi_Arabia.png">
+                                        <img alt="true" class="flag" src="{{ imgURL + j.logo2 }}">
                                     </a>
                                 </div>
                             </div>
                             <span class="dialog"><a (click)="openDialog()">Information</a></span>
-                            <div class="time"><span>22:00</span></div>
+                            <div class="time"><span>{{ j.competitionDate1 | date:'HH:mm' }}</span></div>
                         </div>
 
                     </div>
-                    <div class="col-sm-12 border">
-                        <div class="time-break">
-                            <div class="time-content">Ngày 15/06/2018</div>
-                        </div>
-                        <div class="time-break">
-                            <div class="banner">
-                                <div class="team1">
-                                    <img alt="true" class="flag" src="https://cdn.vn.garenanow.com/web/fo3/fo4/worldcup/images/flags/Egypt.png">
-                                    <div class="div-span">
-                                        <span> Egypt </span>
-                                    </div>
-                                </div>
-                                <div class="team2">
-                                    <div class="div-span">
-                                        <span> Uruguay </span>
-                                    </div>
-                                    <img alt="true" class="flag" src="https://cdn.vn.garenanow.com/web/fo3/fo4/worldcup/images/flags/Uruguay.png">
-                                </div>
-                            </div>
-                            <span class="dialog"><a (click)="openDialog()">Information</a></span>
-                            <div class="time">
-                                <span>19:00</span>
-                            </div>
-                        </div>
-                        <div class="time-break">
-                            <div class="banner">
-                                <div class="team1">
-                                    <img alt="true" class="flag" src="https://cdn.vn.garenanow.com/web/fo3/fo4/worldcup/images/flags/Morocco.png">
-                                    <div class="div-span">
-                                        <span> Morocco </span>
-                                    </div>
-                                </div>
-                                <div class="team2">
-                                    <div class="div-span">
-                                        <span> Iran </span>
-                                    </div>
-                                    <img alt="true" class="flag" src="https://cdn.vn.garenanow.com/web/fo3/fo4/worldcup/images/flags/Iran.png">
-                                </div>
-                            </div>
-                            <span class="dialog"><a (click)="openDialog()">Information</a></span>
-                            <div class="time">
-
-                                <span>22:00</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 border">
-                        <div class="time-break">
-                            <div class="time-content">Ngày 16/06/2018</div>
-                        </div>
-                        <div class="time-break">
-                            <div class="banner">
-                                <div class="team1">
-                                    <img alt="true" class="flag" src="https://cdn.vn.garenanow.com/web/fo3/fo4/worldcup/images/flags/Portugal.png">
-                                    <div class="div-span">
-                                        <span> Portugal </span>
-                                    </div>
-                                </div>
-                                <div class="team2">
-                                    <div class="div-span">
-                                        <span> Spain </span>
-                                    </div>
-                                    <img alt="true" class="flag" src="https://cdn.vn.garenanow.com/web/fo3/fo4/worldcup/images/flags/Spain.png">
-                                </div>
-                            </div>
-                            <span class="dialog"><a (click)="openDialog()">Information</a></span>
-                            <div class="time">
-
-                                <span>01:00</span>
-                            </div>
-                        </div>
-                        <div class="time-break">
-                            <div class="banner">
-                                <div class="team1">
-                                    <img alt="true" class="flag" src="https://cdn.vn.garenanow.com/web/fo3/fo4/worldcup/images/flags/France.png">
-                                    <div class="div-span">
-                                        <span> France </span>
-                                    </div>
-                                </div>
-                                <div class="team2">
-                                    <div class="div-span">
-                                        <span> Australia </span>
-                                    </div>
-                                    <img alt="true" class="flag" src="https://cdn.vn.garenanow.com/web/fo3/fo4/worldcup/images/flags/Australia.png">
-                                </div>
-                            </div>
-                            <span class="dialog"><a (click)="openDialog()">Information</a></span>
-                            <div class="time">
-
-                                <span>17:00</span>
-                            </div>
-                        </div>
-                        <div class="time-break">
-                            <div class="banner">
-                                <div class="team1">
-                                    <img alt="true" class="flag" src="https://cdn.vn.garenanow.com/web/fo3/fo4/worldcup/images/flags/Argentina.png">
-                                    <div class="div-span">
-                                        <span> Argentina </span>
-                                    </div>
-                                </div>
-                                <div class="team2">
-                                    <div class="div-span">
-                                        <span> Iceland </span>
-                                    </div>
-                                    <img alt="true" class="flag" src="https://cdn.vn.garenanow.com/web/fo3/fo4/worldcup/images/flags/Iceland.png">
-                                </div>
-                            </div>
-                            <span class="dialog"><a (click)="openDialog()">Information</a></span>
-                            <div class="time">
-
-                                <span>20:00</span>
-                            </div>
-                        </div>
-                        <div class="time-break">
-                            <div class="banner">
-                                <div class="team1">
-                                    <img alt="true" class="flag" src="https://cdn.vn.garenanow.com/web/fo3/fo4/worldcup/images/flags/Peru.png">
-                                    <div class="div-span">
-                                        <span> Peru </span>
-                                    </div>
-                                </div>
-                                <div class="team2">
-                                    <div class="div-span">
-                                        <span> Denmark </span>
-                                    </div>
-                                    <img alt="true" class="flag" src="https://cdn.vn.garenanow.com/web/fo3/fo4/worldcup/images/flags/Denmark.png">
-                                </div>
-                            </div>
-                            <span class="dialog"><a (click)="openDialog()">Information</a></span>
-                            <div class="time">
-
-                                <span>23:00</span>
-                            </div>
-                        </div>
-                    </div>
-
                 </mat-tab>
-                <mat-tab label="Các trận trước"></mat-tab>
-                <mat-tab label="Xem tất cả"></mat-tab>
+                <mat-tab label="Recent Results">
+                    <div class="col-sm-12 border mar-top5" *ngFor="let i of calendar">
+                        <div class="time-break">
+                            <div class="time-content">{{ i.competitionDate | date:'EEEE dd-MM-yyy' }}</div>
+                        </div>
+                        <div class="time-break" *ngFor="let j of i.calendarDetail">
+                            <div class="banner">
+                                <div class="team1">
+                                    <a style="cursor: pointer" (click)="openDialog()">
+                                        <img alt="true" class="flag" src="{{ imgURL + j.logo1 }}">
+                                    </a>
+                                    <div class="div-span">
+                                        <span> {{j.name1}}  </span>
+                                    </div>
+                                </div>
+                                <div class="team2">
+                                    <div class="div-span">
+                                        <span> {{j.name2}}  </span>
+                                    </div>
+                                    <a style="cursor: pointer" (click)="openDialog()">
+                                        <img alt="true" class="flag" src="{{ imgURL + j.logo2 }}">
+                                    </a>
+                                </div>
+                            </div>
+                            <span class="dialog"><a (click)="openDialog()">Information</a></span>
+                            <div class="time"><span>{{ j.competitionDate1 | date:'HH:mm' }}</span></div>
+                        </div>
+
+                    </div>
+                </mat-tab>
+                <mat-tab label="All Results">
+                    <div class="col-sm-12 border mar-top5" *ngFor="let i of calendar">
+                        <div class="time-break">
+                            <div class="time-content">{{ i.competitionDate | date:'EEEE dd-MM-yyy' }}</div>
+                        </div>
+                        <div class="time-break" *ngFor="let j of i.calendarDetail">
+                            <div class="banner">
+                                <div class="team1">
+                                    <a style="cursor: pointer" (click)="openDialog()">
+                                        <img alt="true" class="flag" src="{{ imgURL + j.logo1 }}">
+                                    </a>
+                                    <div class="div-span">
+                                        <span> {{j.name1}}  </span>
+                                    </div>
+                                </div>
+                                <div class="team2">
+                                    <div class="div-span">
+                                        <span> {{j.name2}}  </span>
+                                    </div>
+                                    <a style="cursor: pointer" (click)="openDialog()">
+                                        <img alt="true" class="flag" src="{{ imgURL + j.logo2 }}">
+                                    </a>
+                                </div>
+                            </div>
+                            <span class="dialog"><a (click)="openDialog()">Information</a></span>
+                            <div class="time"><span>{{ j.competitionDate1 | date:'HH:mm' }}</span></div>
+                        </div>
+
+                    </div>
+                </mat-tab>
             </mat-tab-group>
 
 

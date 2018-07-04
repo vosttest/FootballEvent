@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { UserProvider } from '../../../providers/provider';
+import { HTTP } from '../../../utilities/utility';
+import { ModalDirective } from 'ngx-bootstrap';
 
 @Component({
     selector: 'app-top-menu',
@@ -7,9 +10,42 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class TopMenuComponent implements OnInit {
-    isNavbarCollapsed = true;
-    
-    constructor() { }
+    public isNavbarCollapsed = true;
+    public loader = false;
+    public isShow = false;
 
-    ngOnInit() { }
+    public vm: any = { userName: "", amount: "" };
+
+    @ViewChild("confirmModal") public confirmModal: ModalDirective;
+
+    constructor(private pro: UserProvider) { }
+
+    ngOnInit() {
+        this.view();
+    }
+
+    private view() {
+        this.loader = true;
+
+        this.pro.view().subscribe((rsp: any) => {
+            if (rsp.status === HTTP.STATUS_SUCCESS) {
+                this.vm = rsp.result;
+                this.isShow = true;
+            } else {
+                console.log(rsp.message);
+            }
+
+            this.loader = false;
+        }, err => console.log(err));
+    }
+
+    public showConfirm() {
+        this.confirmModal.show();
+    }
+
+    public signOut() {
+        this.pro.signOut();
+        this.confirmModal.hide();
+        window.location.reload();
+    }
 }

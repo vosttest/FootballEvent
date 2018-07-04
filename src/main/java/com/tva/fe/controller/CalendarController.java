@@ -1,7 +1,5 @@
 package com.tva.fe.controller;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -14,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.tva.fe.bll.CalendarService;
-import com.tva.fe.model.Calendar;
+import com.tva.fe.dto.CalendarDto;
 import com.tva.fe.req.CalendarReq;
 import com.tva.fe.rsp.SingleRsp;
 
@@ -35,15 +33,12 @@ public class CalendarController {
 		SingleRsp res = new SingleRsp();
 
 		try {
-			// Get data
-			DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-			String fromDate = dateFormat.format(req.getFromDate());
-			String toDate = dateFormat.format(req.getToDate());
-			Date newFromDate = dateFormat.parse(fromDate);
-			Date newToDate = dateFormat.parse(toDate);
+			// Get Data
+			Date fromDate = req.getFromDate();
+			Date toDate = req.getToDate();
 
 			// Handle
-			List<Calendar> tmp = calendarService.getDate(newFromDate, newToDate);
+			List<CalendarDto> tmp = calendarService.getCalendar(fromDate, toDate);
 
 			// Set data
 			res.setResult(tmp);

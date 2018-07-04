@@ -26,7 +26,12 @@ public class RatioService {
 		List<Ratio> res = ratioDao.search();
 		return res;
 	}
-
+	
+	public List<Ratio> getByCal(int calendarId) {
+		List<Ratio> res = ratioDao.getByCal(calendarId);
+		return res;
+	}
+	
 	public String save(Ratio m) {
 		String res = "";
 

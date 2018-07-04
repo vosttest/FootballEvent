@@ -31,13 +31,28 @@ export class UserProvider {
     }
 
     /**
+     * Sign in by Phone Number
+     * @param info
+     */
+    public verifyPhone(info: any) {
+        return this.api.post("user/verify-phone", info);
+    }
+
+    /**
      * Sign out
      */
     public signOut() {
         this.api.get("user/sign-out").subscribe((rsp: any) => {
         }, err => console.log(err));
         localStorage.removeItem("CURRENT_TOKEN");
-        this.rou.navigate(["/"]);
+        this.rou.navigate(["/guess"]);
+    }
+
+    /**
+     * View user
+     */
+    public view() {
+        return this.api.get('user/view');
     }
 
     /**

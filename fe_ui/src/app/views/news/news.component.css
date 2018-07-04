@@ -13,8 +13,15 @@ img.mat-card-image {
 }
 
 .news {
-    width: 100%;
-    height: 100%;
+    height: 600px;
+}
+
+.news1 {
+    height: 500px;
+}
+
+.news2 {
+    height: 500px;
 }
 
 .new {

@@ -56,6 +56,9 @@ public class Ratio {
 	@Column(columnDefinition = "integer")
 	private Integer r4;
 
+	@Column(columnDefinition = "varchar(32)")
+	private String status;
+
 	@Column(columnDefinition = "bool")
 	private boolean isDeleted;
 
@@ -171,6 +174,14 @@ public class Ratio {
 
 	public void setR4(Integer r4) {
 		this.r4 = r4;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
 	}
 
 	public boolean isDeleted() {

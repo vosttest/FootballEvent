@@ -52,6 +52,23 @@ public class RatioController {
 
 		return new ResponseEntity<>(res, HttpStatus.OK);
 	}
+	
+	@RequestMapping(value = "/search-by-calendar/{id}", method = RequestMethod.GET)
+	public ResponseEntity<?> searchByCal(@PathVariable("id") int id) {
+		SingleRsp res = new SingleRsp();
+
+		try {
+			// Handle
+			List<Ratio> m = ratioService.getByCal(id);
+
+			// Set data
+			res.setResult(m);
+		} catch (Exception ex) {
+			res.setError(ex.getMessage());
+		}
+
+		return new ResponseEntity<>(res, HttpStatus.OK);
+	}
 
 	@PostMapping("/save")
 	public ResponseEntity<?> save(@RequestBody RatioReq req) {

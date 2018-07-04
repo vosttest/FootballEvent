@@ -2,17 +2,45 @@
     margin-bottom: 14%;
 }
 
+img {
+    width: 100%;
+}
+
+@media only screen and (max-width: 1300px) {
+    img {
+        width: 100%;
+        margin-left: 0px;
+        margin-right: 0px;
+        margin: auto;
+    }
+    img.prize {
+        width: 100%;
+        height: calc(50vh) !important;
+        margin-left: 0px;
+        margin-right: 0px;
+        margin: auto;
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    img {
+        width: 100%;
+        margin-left: 0px;
+        margin-right: 0px;
+        margin: auto;
+    }
+    img.prize {
+        width: 100%;
+        height: calc(25vh) !important;
+        margin-left: 0px;
+        margin-right: 0px;
+        margin: auto;
+    }
+}
+
 .row {
     padding-top: 1%;
     text-align: center;
-}
-
-img {
-    width: 100%;
-    height: calc(100vh);
-    margin-left: 0px;
-    margin-right: 0px;
-    margin: auto;
 }
 
 img.prize {
@@ -30,8 +58,6 @@ img.image {
 }
 
 .section-2 {
-    /* background-image: url(https://cdn.vn.garenanow.com/web/fo3/fo4/worldcup/images/bet-bg.jpg); */
-    background-size: 100% auto!important;
     height: 100%;
 }
 
@@ -63,18 +89,16 @@ img.image {
     /* margin-top: 6rem; */
     height: 1px;
     position: relative;
+    left: 6%;
 }
 
 .time-break .time-content {
     background: url(https://cdn.vn.garenanow.com/web/fo3/fo4/worldcup/images/time-match-bg.png) no-repeat;
     width: 15rem;
-    /* height: 3.2rem; */
     text-align: center;
-    /* padding-top: 2%; */
     position: absolute;
     color: white;
     left: 50%;
-    /* top: 50%; */
     transform: translateX(-50%) translateY(-50%);
     background-size: 100% 100%;
 }
@@ -101,7 +125,7 @@ img.image {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    left: -5rem;
+    left: -6rem;
     margin-top: 2%;
 }
 
@@ -110,11 +134,6 @@ img.group-name-title {
     background-size: 100% 100%;
     height: calc(8vh);
 }
-
-
-/* .matchs.match-line {
-    margin-top: 10%;
-} */
 
 .border {
     border-left: 1px solid white;
@@ -126,10 +145,9 @@ img.group-name-title {
     background: url(https://cdn.vn.garenanow.com/web/fo3/fo4/worldcup/images/match-bg.png) no-repeat;
     position: absolute;
     top: -25px;
-    width: 90%;
+    width: 95%;
     height: 3.26rem;
-    margin-left: 8%;
-    margin-right: 8%;
+    margin-left: 5%;
     background-size: cover;
     cursor: pointer;
 }
@@ -140,47 +158,34 @@ img.group-name-title {
     height: 3.26rem;
     text-align: center;
     position: absolute;
-    left: 42%;
-    top: -25px;
+    left: 40%;
     line-height: 3rem;
     color: white;
-    /* margin-top: 5%; */
 }
 
 .team1 {
     position: absolute;
-    left: -4%;
-    width: 45%;
+    left: -5%;
+    width: 50%;
     color: white;
     text-align: center;
     text-transform: uppercase;
     font-family: 'Dusha';
+    font-size: 20px;
     display: flex;
 }
 
 .team2 {
     position: absolute;
     right: -5%;
-    width: 45%;
+    width: 50%;
     color: white;
     text-align: center;
     text-transform: uppercase;
     font-family: 'Dusha';
+    font-size: 20px;
     display: flex;
 }
-
-
-/* .predict {
-    position: absolute;
-    right: 1%;
-    width: 41%;
-    color: white;
-    text-align: center;
-    text-transform: uppercase;
-    font-family: 'Dusha';
-    display: flex;
-}
- */
 
 predict.img {
     width: 100%;
@@ -191,12 +196,73 @@ predict.img {
 
 .flag {
     height: 3.25rem;
-    width: 50%;
+    width: 35%;
     margin-left: -2%;
-    margin-right: -4%;
+    margin-right: -2%;
+}
+
+@media only screen and (max-width: 2560px) {
+    img {
+        height: calc(85vh);
+    }
+    .time-break {
+        width: 100%;
+    }
+    .time-break .time-content {
+        width: 13rem;
+        font-size: 1rem;
+    }
+    .banner {
+        height: 3.3rem;
+        top: -18px;
+    }
+    .time {
+        width: 6.2rem;
+        height: 3.5rem;
+        line-height: 3.3rem;
+        color: white;
+        background-size: contain;
+        left: 41%;
+    }
+    .flag {
+        height: 3.3rem;
+    }
+    span {
+        font-size: 20x;
+    }
 }
 
 @media only screen and (max-width: 1200px) {
+    img {
+        height: calc(85vh);
+    }
+    .time-break .time-content {
+        width: 13rem;
+        font-size: 0.8rem;
+    }
+    .banner {
+        height: 3rem;
+        top: -18px;
+    }
+    .time {
+        width: 5.8rem;
+        line-height: 3rem;
+        color: white;
+        background-size: contain;
+        left: 40%;
+    }
+    .flag {
+        height: 3rem;
+    }
+    span {
+        font-size: 18px;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .time-break {
+        width: 100%;
+    }
     .time-break .time-content {
         width: 13rem;
         font-size: 0.8rem;
@@ -204,14 +270,16 @@ predict.img {
     .banner {
         height: 2.26rem;
         top: -18px;
+        width: 100%;
     }
     .time {
-        width: 4.8rem;
-        height: 2.4rem;
-        top: -19px;
+        width: 4.5rem;
+        height: 2.25rem;
+        top: -1px;
         line-height: 2.3rem;
         color: white;
         background-size: contain;
+        left: 40%;
     }
     .flag {
         height: 2.26rem;
@@ -222,19 +290,22 @@ predict.img {
 }
 
 @media only screen and (max-width: 950px) {
+    .time-break {
+        width: 100%;
+    }
     .banner {
         height: 1.8rem;
         top: -13px;
     }
     .time {
         width: 3.8rem;
-        height: 12rem;
-        top: -14px;
+        height: 1.85rem;
         line-height: 2rem;
         color: white;
         background-size: contain;
-        font-size: 12px;
+        font-size: 11px;
         margin: auto;
+        left: 40%;
     }
     .flag {
         height: 1.8rem;
@@ -245,7 +316,7 @@ predict.img {
     }
 }
 
-@media only screen and (max-width:500px) {
+@media only screen and (max-width:700px) {
     span {
         font-size: 0.5rem;
     }
@@ -259,7 +330,6 @@ predict.img {
     .time {
         width: 3rem;
         height: 1.7rem;
-        top: -12px;
         line-height: 1.4rem;
         color: white;
         background-size: contain;
@@ -273,29 +343,42 @@ predict.img {
 }
 
 @media only screen and (max-width:400px) {
+    img {
+        height: calc(25vh);
+    }
+    .time-break {
+        width: 100%;
+        margin-bottom: 3rem;
+        height: 1px;
+        left: -8%;
+    }
     .time-break .time-content {
-        width: 10rem;
+        width: 7rem;
         font-size: 0.5rem;
+        left: 50%;
     }
     span {
         font-size: 0.3rem;
     }
     .banner {
+        width: 85%;
         height: 1rem;
-        top: -8px
+        top: -8px;
+        left: 2%;
     }
     .flag {
         height: 1rem;
         width: 2rem;
     }
     .time {
-        width: 2rem;
-        height: 1.7rem;
-        top: -7px;
+        width: 18%;
+        height: 1.2rem;
         line-height: 0.8rem;
         color: white;
         background-size: contain;
         margin: auto;
+        font-size: 8px;
+        left: 35%;
     }
     .div-span {
         margin: auto;
@@ -303,45 +386,53 @@ predict.img {
     }
 }
 
-
-/* .team {
-    height: 80%;
-    width: 45%;
-} */
-
-
-/* img.vs {
-    width: 100%;
-    height: calc(45vh);
-    margin-left: 0px;
-    margin-right: 0px;
-    margin: auto;
-}
- */
-
-.col-md-6 {
-    margin-top: -15%;
-    margin-bottom: 4%;
-}
-
- ::ng-deep.mat-radio-button.mat-radio-button {
-    padding-right: 16px;
+@media only screen and (max-width:375px) {
+    .img {
+        height: calc(25vh);
+    }
+    .time-break {
+        width: 100%;
+        margin-bottom: 3rem;
+        height: 1px;
+        left: -8%;
+    }
+    .time-break .time-content {
+        width: 6rem;
+        font-size: 0.5rem;
+        left: 30%;
+    }
+    span {
+        font-size: 8px;
+    }
+    .banner {
+        width: 85%;
+        height: 1rem;
+        top: -8px;
+        left: 2%;
+    }
+    .flag {
+        height: 1rem;
+        width: 2rem;
+    }
+    .time {
+        width: 18%;
+        height: 1.5rem;
+        line-height: 0.8rem;
+        color: white;
+        background-size: contain;
+        margin: auto;
+        font-size: 8px;
+        left: 35%;
+    }
+    .div-span {
+        margin: auto;
+        line-height: 0.5;
+    }
 }
 
 .result {
     padding-top: 2%;
 }
-
-
-/* .mat-button {
-    background: url(https://cdn.vn.garenanow.com/web/fo3/fo4/worldcup/images/bg-du-doan.png);
-    background-size: 100% 100%;
-    height: 80%;
-    width: 23%;
-    color: white;
-    font-size: 15px;
-    text-transform: uppercase;
-} */
 
 .padding-left {
     padding-left: 20%;
@@ -351,13 +442,30 @@ predict.img {
     padding-right: 20%;
 }
 
-.bg-red {
-    background: url(https://cdn.vn.garenanow.com/web/fo3/fo4/worldcup/images/bet-bg.jpg)
+.form-control {
+    background-image: linear-gradient(to top, #d2d2d2 2px, rgba(156, 39, 176, 0) 2px), linear-gradient(to top, #d2d2d2 1px, rgba(210, 210, 210, 0) 1px);
+    background-size: 0 100%, 100% 100%;
+    transition: border-color 0s ease-in-out, box-shadow 0s ease-in-out;
 }
 
-.pg-4 {
-    padding-bottom: 50%;
-    padding-top: 5%;
+.free-guess {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    width: 90%;
+    margin-bottom: 2%;
+    margin-left: 6%;
+}
+
+.guess-c.form-group {
+    margin-top: 1%;
+    padding-left: 0%;
+    padding-right: 2%;
+}
+
+
+/* CSS for Dialog*/
+
+::ng-deep.mat-radio-button.mat-radio-button {
+    padding-right: 16px;
 }
 
  ::ng-deep.score.input {
@@ -367,23 +475,13 @@ predict.img {
     text-align: center;
 }
 
-::ng-deep.mat-tab-list {
-    margin-top: 4%;
-}
-
 ::ng-deep.mat-tab-labels {
     font-size: 25px;
-    margin-top: 5%;
 }
 
 ::ng-deep.mat-tab-label {
     font-size: 25px;
     margin: auto;
-}
-
- ::ng-deep .cdk-overlay-pane {
-    width: 70%;
-    height: 90%;
 }
 
 ::ng-deep .mat-button {
@@ -395,26 +493,19 @@ predict.img {
     text-transform: uppercase;
 }
 
+::ng-deep #mat-input-4.mat-input-element {
+    font-size: 50px;
+    text-align: -webkit-center;
+}
 
-/* ::ng-deep .mat-tab-body-content {
-overflow: hidden;
-height: 100%;
-} */
-
- ::ng-deep #mat-input-12.mat-input-element {
+::ng-deep #mat-input-5.mat-input-element {
     font-size: 50px;
     text-align: -webkit-center;
 }
 
  ::ng-deep #mat-input-13.mat-input-element {
-    font-size: 25px;
+    font-size: 30px;
     text-align: -webkit-center;
-}
-
- ::ng-deep #mat-input-11.mat-input-element {
-    font-size: 50px;
-    text-align: -webkit-center;
-    color: black;
 }
 
  ::ng-deep #mat-input-14.mat-input-element {
@@ -435,10 +526,6 @@ height: 100%;
     color: black;
 }
 
- ::ng-deep .team.form-group {
-    margin-top: -27%;
-}
-
  ::ng-deep.mat-dialog-container {
     overflow: hidden;
 }
@@ -447,60 +534,33 @@ height: 100%;
     overflow: hidden;
 }
 
-
-/* ::ng-deep.mat-tab-body-content-0-2 {
-    overflow: hidden;
-}
- */
-
-::ng-deep.mat-tab-body-content {
-    overflow: hidden;
-}
-
  ::ng-deep.mat-dialog-content.mat-dialog-content {
     max-height: 80vh;
-}
-
- ::ng-deep.betting {
-    text-align: center;
-    color: black
-}
-
-
-/* ::ng-deep .mat-tab-labels {
-    font-size: 25px;
-    margin-top: 5%;
-} */
-
- ::ng-deep.mat-placeholder {
-    color: white;
-}
-
- ::ng-deep.team.form-group {
-    margin-top: -30%;
-    margin-bottom: 20%;
 }
 
  ::ng-deep.teamA {
     position: absolute;
     margin-top: 2%;
-    text-align: right;
+    text-align: center;
     color: white;
     font-family: cursive;
     font-size: 35px;
+    margin-left: 20%;
 }
 
  ::ng-deep.teamB {
     position: absolute;
     margin-top: 2%;
-    text-align: right;
+    text-align: center;
     color: white;
     font-family: cursive;
     font-size: 35px;
+    margin-left: 20%;
 }
 
  ::ng-deep.flag-d {
-    width: 70%;
+    width: 60%;
+    /* height: calc(9vh); */
 }
 
 :ng-deep.tab-r {
@@ -512,25 +572,42 @@ div#fullpage {
     overflow-y: -webkit-paged-y;
 }
 
-@media only screen and (max-width: 1200px) {
-     ::ng-deep.teamA {
+@media only screen and (max-width: 1280px) {
+     ::ng-deep.flag-d {
+        width: 60%;
+    }
+     ::ng-deep.flag-team {
         position: absolute;
         margin-top: 2%;
-        text-align: right;
+        text-align: center;
         color: white;
         font-family: cursive;
         font-size: 35px;
+        padding: 0 15%;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+     ::ng-deep.teamA {
+        position: absolute;
+        margin-top: 2%;
+        text-align: center;
+        color: white;
+        font-family: cursive;
+        font-size: 25px;
+        margin-left: 10%;
     }
      ::ng-deep.teamB {
         position: absolute;
         margin-top: 2%;
-        text-align: right;
+        text-align: center;
         color: white;
         font-family: cursive;
-        font-size: 35px;
+        font-size: 25px;
+        margin-left: 10%;
     }
      ::ng-deep.flag-d {
-        width: 70%;
+        width: 50%;
     }
 }
 
@@ -542,6 +619,7 @@ div#fullpage {
         color: white;
         font-family: cursive;
         font-size: 25px;
+        margin-left: 10%;
     }
      ::ng-deep.teamB {
         position: absolute;
@@ -550,6 +628,7 @@ div#fullpage {
         color: white;
         font-family: cursive;
         font-size: 25px;
+        margin-left: 10%;
     }
      ::ng-deep.flag-d {
         width: 50%;
@@ -563,7 +642,8 @@ div#fullpage {
         text-align: center;
         color: white;
         font-family: cursive;
-        font-size: 200px;
+        font-size: 20px;
+        margin-left: 5%;
     }
      ::ng-deep.teamB {
         position: absolute;
@@ -572,6 +652,7 @@ div#fullpage {
         color: white;
         font-family: cursive;
         font-size: 20px;
+        margin-left: 5%;
     }
      ::ng-deep.flag-d {
         width: 30%;
@@ -585,7 +666,7 @@ div#fullpage {
         text-align: center;
         color: white;
         font-family: cursive;
-        font-size: 10px;
+        font-size: 8px;
     }
      ::ng-deep.teamB {
         position: absolute;
@@ -593,9 +674,114 @@ div#fullpage {
         text-align: right;
         color: white;
         font-family: cursive;
-        font-size: 10px;
+        font-size: 8px;
     }
      ::ng-deep.flag-d {
         width: 20%;
     }
+}
+
+
+/* CSS Modal*/
+
+
+/* @media only screen and (min-width: 1024px) { */
+
+.modal-dialog {
+    max-width: 60%!important;
+}
+
+.team.form-group {
+    margin: -20% auto 8%;
+    width: 100%;
+}
+
+.flag-d {
+    width: 60%;
+    height: calc(10vh);
+}
+
+.flag-team {
+    position: absolute;
+    margin-top: 2%;
+    text-align: center;
+    color: white;
+    font-family: cursive;
+    font-size: 35px;
+    padding: 0 15%;
+}
+
+::ng-deep.mat-tab-body-content {
+    overflow: hidden!important;
+}
+
+
+/* CSS SignIn Modal */
+
+.sign-in.modal-dialog {
+    width: 35%;
+}
+
+
+/* CSS AccessToken Modal */
+
+.modal-header>button {
+    border-color: #00000000;
+    background-color: #00000000;
+}
+
+.token.modal-dialog {
+    width: 50%;
+}
+
+.border-iput {
+    border-bottom: 1px solid;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    text-align: center;
+    font-size: 20px;
+    margin-left: 3px;
+    display: inline;
+    font-weight: 700;
+    width: 15.9%;
+}
+
+.input>label,
+.input>label>span {
+    font-size: 12px;
+}
+
+.my-box {
+    border: solid 0.1px #7A7A7A;
+    box-shadow: 0px 3px 10px #7A7A7A;
+    position: absolute;
+    padding: 20px 40px 10px 40px;
+    right: 0px;
+    left: 0px;
+    margin-top: 20px;
+    border-radius: 7px;
+}
+
+h2 {
+    font-size: 35px;
+    margin-bottom: 25px;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.token .modal-content {
+    max-width: 500px !important;
+    margin: auto !important;
+}
+
+
+/* CSS Information Modal */
+
+.info.modal-dialog {
+    width: 35%;
 }

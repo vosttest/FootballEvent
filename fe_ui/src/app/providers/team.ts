@@ -30,6 +30,15 @@ export class TeamProvider {
     }
 
     /**
+     * Get Team by Calendar
+     *
+     */
+    public getByCal(id: any) {
+        return this.api.get('team/getByCal/' + id);
+    }
+
+
+    /**
      * Delete by Id
      */
     public delete(id: any) {

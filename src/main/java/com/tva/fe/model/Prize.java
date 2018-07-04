@@ -26,6 +26,9 @@ public class Prize {
 	@Column(columnDefinition = "integer")
 	private Integer betId;
 
+	@Column(columnDefinition = "float")
+	private Float total;
+
 	@Column(columnDefinition = "bool")
 	private boolean isDeleted;
 
@@ -61,6 +64,14 @@ public class Prize {
 
 	public void setBetId(Integer betId) {
 		this.betId = betId;
+	}
+
+	public Float getTotal() {
+		return total;
+	}
+
+	public void setTotal(Float total) {
+		this.total = total;
 	}
 
 	public boolean isDeleted() {

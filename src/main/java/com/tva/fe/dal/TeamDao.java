@@ -14,4 +14,7 @@ public interface TeamDao extends CrudRepository<Team, Integer> {
 
 	@Query("FROM Team")
 	public List<Team> search();
+
+	@Query(nativeQuery = true, value = "SELECT * FROM get_team_by_cal(:id)")
+	public List<Object[]> getByCal(@Param("id") int id);
 }

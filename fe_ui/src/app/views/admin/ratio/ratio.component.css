@@ -3,3 +3,19 @@ th,
 td {
     border: 1px solid black;
 }
+
+.save {
+    margin-right: 1%;
+}
+
+::ng-deep.mat-tab-body-content {
+    margin-left: -3%;
+}
+
+::ng-deep.mat-form-field-wrapper {
+    margin-left: 20%;
+}
+
+table {
+    margin-left: 1%;
+}

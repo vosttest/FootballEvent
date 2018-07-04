@@ -11,6 +11,7 @@ INSERT INTO "common"("type","value","text","description","sequence",is_deleted,c
 INSERT INTO "common"("type","value","text","description","sequence",is_deleted,create_by,create_on) VALUES ('Guess','TS','Tỷ số',NULL,2,FALSE,1,CURRENT_TIMESTAMP);
 INSERT INTO "common"("type","value","text","description","sequence",is_deleted,create_by,create_on) VALUES ('Guess','TX','Tài xỉu',NULL,3,FALSE,1,CURRENT_TIMESTAMP);
 INSERT INTO "common"("type","value","text","description","sequence",is_deleted,create_by,create_on) VALUES ('Guess','DVD','Đội vô địch',NULL,4,FALSE,1,CURRENT_TIMESTAMP);
+INSERT INTO "common"("type","value","text","description","sequence",is_deleted,create_by,create_on) VALUES ('Amount','AM','10000',NULL,4,FALSE,1,CURRENT_TIMESTAMP);
 
 INSERT INTO "statement"("name","from_date","to_date","history","parent_id",is_deleted,create_by,create_on) VALUES ('World Cup 2018','06/14/2018 22:00','07/15/2018 22:00',NULL,NULL,FALSE,1,CURRENT_TIMESTAMP);
 INSERT INTO "statement"("name","from_date","to_date","history","parent_id",is_deleted,create_by,create_on) VALUES ('Group A',NULL,NULL,NULL,'1',TRUE,1,CURRENT_TIMESTAMP);
@@ -22,7 +23,6 @@ INSERT INTO "statement"("name","from_date","to_date","history","parent_id",is_de
 INSERT INTO "statement"("name","from_date","to_date","history","parent_id",is_deleted,create_by,create_on) VALUES ('Group G',NULL,NULL,NULL,'1',TRUE,1,CURRENT_TIMESTAMP);
 INSERT INTO "statement"("name","from_date","to_date","history","parent_id",is_deleted,create_by,create_on) VALUES ('Group H',NULL,NULL,NULL,'1',TRUE,1,CURRENT_TIMESTAMP);
 
-INSERT INTO "team"("name","country","coach","history","logo",is_deleted,create_by,create_on) VALUES ('TBD',NULL,'TBD',NULL,'TBD.png',TRUE,1,CURRENT_TIMESTAMP);
 
 INSERT INTO "team"("name","country","coach","history","logo",is_deleted,create_by,create_on) VALUES ('Russia','Russia','Stanislav Cherchesov',NULL,'Russia.png',TRUE,1,CURRENT_TIMESTAMP);
 INSERT INTO "team"("name","country","coach","history","logo",is_deleted,create_by,create_on) VALUES ('Egypt','Egypt','Héctor Cúper',NULL,'Egypt.png',TRUE,1,CURRENT_TIMESTAMP);
@@ -63,6 +63,8 @@ INSERT INTO "team"("name","country","coach","history","logo",is_deleted,create_b
 INSERT INTO "team"("name","country","coach","history","logo",is_deleted,create_by,create_on) VALUES ('Senegal','Senegal','Aliou Cissé',NULL,'Senegal.png',TRUE,1,CURRENT_TIMESTAMP);
 INSERT INTO "team"("name","country","coach","history","logo",is_deleted,create_by,create_on) VALUES ('Japan','Japan','Akira Nishino',NULL,'Japan.png',TRUE,1,CURRENT_TIMESTAMP);
 INSERT INTO "team"("name","country","coach","history","logo",is_deleted,create_by,create_on) VALUES ('Colombia','Colombia','José Pékerman',NULL,'Colombia.png',TRUE,1,CURRENT_TIMESTAMP);
+
+INSERT INTO "team"("name","country","coach","history","logo",is_deleted,create_by,create_on) VALUES ('TBD',NULL,'TBD',NULL,'TBD.png',TRUE,1,CURRENT_TIMESTAMP);
 
 INSERT INTO "join"("team_id","statement_id",is_deleted,create_by,create_on) VALUES (1,2,FALSE,1,CURRENT_TIMESTAMP);
 INSERT INTO "join"("team_id","statement_id",is_deleted,create_by,create_on) VALUES (2,2,FALSE,1,CURRENT_TIMESTAMP);
@@ -146,18 +148,17 @@ INSERT INTO "calendar"("competition_date","team1_id","team2_id","stadium","refer
 INSERT INTO "calendar"("competition_date","team1_id","team2_id","stadium","referee","squad1","squad2","is_group_match",is_deleted,create_by,create_on) VALUES ('6/25/2018  1:00:00 AM',29,32,NULL,NULL,NULL,NULL,TRUE,FALSE,1,CURRENT_TIMESTAMP);
 INSERT INTO "calendar"("competition_date","team1_id","team2_id","stadium","referee","squad1","squad2","is_group_match",is_deleted,create_by,create_on) VALUES ('6/28/2018  9:00:00 PM',31,29,NULL,NULL,NULL,NULL,TRUE,FALSE,1,CURRENT_TIMESTAMP);
 INSERT INTO "calendar"("competition_date","team1_id","team2_id","stadium","referee","squad1","squad2","is_group_match",is_deleted,create_by,create_on) VALUES ('6/28/2018  9:00:00 PM',30,32,NULL,NULL,NULL,NULL,TRUE,FALSE,1,CURRENT_TIMESTAMP);
-INSERT INTO "calendar"("competition_date","team1_id","team2_id","stadium","referee","squad1","squad2","is_group_match",is_deleted,create_by,create_on) VALUES ('6/30/2018  9:00:00 PM',33,33,NULL,NULL,NULL,NULL,FALSE,FALSE,1,CURRENT_TIMESTAMP);
-INSERT INTO "calendar"("competition_date","team1_id","team2_id","stadium","referee","squad1","squad2","is_group_match",is_deleted,create_by,create_on) VALUES ('7/1/2018  1:00:00 AM',33,33,NULL,NULL,NULL,NULL,FALSE,FALSE,1,CURRENT_TIMESTAMP);
-INSERT INTO "calendar"("competition_date","team1_id","team2_id","stadium","referee","squad1","squad2","is_group_match",is_deleted,create_by,create_on) VALUES ('7/1/2018  9:00:00 PM',33,33,NULL,NULL,NULL,NULL,FALSE,FALSE,1,CURRENT_TIMESTAMP);
-INSERT INTO "calendar"("competition_date","team1_id","team2_id","stadium","referee","squad1","squad2","is_group_match",is_deleted,create_by,create_on) VALUES ('7/2/2018  1:00:00 AM',33,33,NULL,NULL,NULL,NULL,FALSE,FALSE,1,CURRENT_TIMESTAMP);
-INSERT INTO "calendar"("competition_date","team1_id","team2_id","stadium","referee","squad1","squad2","is_group_match",is_deleted,create_by,create_on) VALUES ('7/2/2018  9:00:00 PM',33,33,NULL,NULL,NULL,NULL,FALSE,FALSE,1,CURRENT_TIMESTAMP);
-INSERT INTO "calendar"("competition_date","team1_id","team2_id","stadium","referee","squad1","squad2","is_group_match",is_deleted,create_by,create_on) VALUES ('7/3/2018  1:00:00 AM',33,33,NULL,NULL,NULL,NULL,FALSE,FALSE,1,CURRENT_TIMESTAMP);
-INSERT INTO "calendar"("competition_date","team1_id","team2_id","stadium","referee","squad1","squad2","is_group_match",is_deleted,create_by,create_on) VALUES ('7/3/2018  9:00:00 PM',33,33,NULL,NULL,NULL,NULL,FALSE,FALSE,1,CURRENT_TIMESTAMP);
-INSERT INTO "calendar"("competition_date","team1_id","team2_id","stadium","referee","squad1","squad2","is_group_match",is_deleted,create_by,create_on) VALUES ('7/4/2018  1:00:00 AM',33,33,NULL,NULL,NULL,NULL,FALSE,FALSE,1,CURRENT_TIMESTAMP);
-INSERT INTO "calendar"("competition_date","team1_id","team2_id","stadium","referee","squad1","squad2","is_group_match",is_deleted,create_by,create_on) VALUES ('7/6/2018  9:00:00 PM',33,33,NULL,NULL,NULL,NULL,FALSE,FALSE,1,CURRENT_TIMESTAMP);
-INSERT INTO "calendar"("competition_date","team1_id","team2_id","stadium","referee","squad1","squad2","is_group_match",is_deleted,create_by,create_on) VALUES ('7/7/2018  1:00:00 AM',33,33,NULL,NULL,NULL,NULL,FALSE,FALSE,1,CURRENT_TIMESTAMP);
-INSERT INTO "calendar"("competition_date","team1_id","team2_id","stadium","referee","squad1","squad2","is_group_match",is_deleted,create_by,create_on) VALUES ('7/7/2018  9:00:00 PM',33,33,NULL,NULL,NULL,NULL,FALSE,FALSE,1,CURRENT_TIMESTAMP);
-INSERT INTO "calendar"("competition_date","team1_id","team2_id","stadium","referee","squad1","squad2","is_group_match",is_deleted,create_by,create_on) VALUES ('7/8/2018  1:00:00 AM',33,33,NULL,NULL,NULL,NULL,FALSE,FALSE,1,CURRENT_TIMESTAMP);
+INSERT INTO "calendar"("competition_date","team1_id","team2_id","stadium","referee","squad1","squad2","is_group_match",is_deleted,create_by,create_on) VALUES ('6/30/2018  9:00:00 PM',9,12,NULL,NULL,NULL,NULL,FALSE,FALSE,1,CURRENT_TIMESTAMP);
+INSERT INTO "calendar"("competition_date","team1_id","team2_id","stadium","referee","squad1","squad2","is_group_match",is_deleted,create_by,create_on) VALUES ('7/1/2018  1:00:00 AM',3,7,NULL,NULL,NULL,NULL,FALSE,FALSE,1,CURRENT_TIMESTAMP);
+INSERT INTO "calendar"("competition_date","team1_id","team2_id","stadium","referee","squad1","squad2","is_group_match",is_deleted,create_by,create_on) VALUES ('7/1/2018  9:00:00 PM',8,1,NULL,NULL,NULL,NULL,FALSE,FALSE,1,CURRENT_TIMESTAMP);
+INSERT INTO "calendar"("competition_date","team1_id","team2_id","stadium","referee","squad1","squad2","is_group_match",is_deleted,create_by,create_on) VALUES ('7/2/2018  9:00:00 PM',17,22,NULL,NULL,NULL,NULL,FALSE,FALSE,1,CURRENT_TIMESTAMP);
+INSERT INTO "calendar"("competition_date","team1_id","team2_id","stadium","referee","squad1","squad2","is_group_match",is_deleted,create_by,create_on) VALUES ('7/2/2018  1:00:00 AM',20,11,NULL,NULL,NULL,NULL,FALSE,FALSE,1,CURRENT_TIMESTAMP);
+INSERT INTO "calendar"("competition_date","team1_id","team2_id","stadium","referee","squad1","squad2","is_group_match",is_deleted,create_by,create_on) VALUES ('7/3/2018  9:00:00 PM',23,19,NULL,NULL,NULL,NULL,FALSE,FALSE,1,CURRENT_TIMESTAMP);
+INSERT INTO "calendar"("competition_date","team1_id","team2_id","stadium","referee","squad1","squad2","is_group_match",is_deleted,create_by,create_on) VALUES ('7/4/2018  1:00:00 AM',32,26,NULL,NULL,NULL,NULL,FALSE,FALSE,1,CURRENT_TIMESTAMP);
+INSERT INTO "calendar"("competition_date","team1_id","team2_id","stadium","referee","squad1","squad2","is_group_match",is_deleted,create_by,create_on) VALUES ('7/6/2018  9:00:00 PM',3,9,NULL,NULL,NULL,NULL,FALSE,FALSE,1,CURRENT_TIMESTAMP);
+INSERT INTO "calendar"("competition_date","team1_id","team2_id","stadium","referee","squad1","squad2","is_group_match",is_deleted,create_by,create_on) VALUES ('7/7/2018  1:00:00 AM',17,25,NULL,NULL,NULL,NULL,FALSE,FALSE,1,CURRENT_TIMESTAMP);
+INSERT INTO "calendar"("competition_date","team1_id","team2_id","stadium","referee","squad1","squad2","is_group_match",is_deleted,create_by,create_on) VALUES ('7/7/2018  9:00:00 PM',23,26,NULL,NULL,NULL,NULL,FALSE,FALSE,1,CURRENT_TIMESTAMP);
+INSERT INTO "calendar"("competition_date","team1_id","team2_id","stadium","referee","squad1","squad2","is_group_match",is_deleted,create_by,create_on) VALUES ('7/8/2018  1:00:00 AM',1,20,NULL,NULL,NULL,NULL,FALSE,FALSE,1,CURRENT_TIMESTAMP);
 INSERT INTO "calendar"("competition_date","team1_id","team2_id","stadium","referee","squad1","squad2","is_group_match",is_deleted,create_by,create_on) VALUES ('7/11/2018  1:00:00 AM',33,33,NULL,NULL,NULL,NULL,FALSE,FALSE,1,CURRENT_TIMESTAMP);
 INSERT INTO "calendar"("competition_date","team1_id","team2_id","stadium","referee","squad1","squad2","is_group_match",is_deleted,create_by,create_on) VALUES ('7/12/2018  1:00:00 AM',33,33,NULL,NULL,NULL,NULL,FALSE,FALSE,1,CURRENT_TIMESTAMP);
 INSERT INTO "calendar"("competition_date","team1_id","team2_id","stadium","referee","squad1","squad2","is_group_match",is_deleted,create_by,create_on) VALUES ('7/14/2018  9:00:00 PM',33,33,NULL,NULL,NULL,NULL,FALSE,FALSE,1,CURRENT_TIMESTAMP);

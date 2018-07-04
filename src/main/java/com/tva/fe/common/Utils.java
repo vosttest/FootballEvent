@@ -1,11 +1,15 @@
 package com.tva.fe.common;
 
+import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Collections;
 import java.util.Date;
 import java.util.List;
+import java.util.Random;
+import java.util.TimeZone;
 import java.util.stream.Collectors;
 
 import org.springframework.http.HttpHeaders;
@@ -100,6 +104,70 @@ public class Utils {
 		} catch (Exception e) {
 			throw new Exception(e.getMessage());
 		}
+
+		return res;
+	}
+
+	/**
+	 * Get UTC date time
+	 * 
+	 * @param type
+	 *            Choose attribute to add (Calendar.MINUTE, Calendar.HOUR, ...)
+	 * @param n
+	 *            Number want to add
+	 * @return
+	 * @throws Exception
+	 */
+	public static Date getTime(int type, int n) throws Exception {
+		Date res = null;
+
+		try {
+			TimeZone t = TimeZone.getTimeZone("UTC");
+			Calendar c = Calendar.getInstance(t);
+			c.add(type, n);
+			res = c.getTime();
+		} catch (Exception e) {
+			throw new Exception(e.getMessage());
+		}
+
+		return res;
+	}
+
+	/**
+	 * Verify with current date
+	 * 
+	 * @param d
+	 *            Date
+	 * @return
+	 */
+	public static boolean verify(Date d) {
+		TimeZone t = TimeZone.getTimeZone("UTC");
+		Calendar c = Calendar.getInstance(t);
+
+		if (d.compareTo(c.getTime()) < 0) {
+			return false;
+		}
+
+		return true;
+	}
+
+	/**
+	 * Get token with 6 digits
+	 * 
+	 * @return
+	 */
+	public static String getToken() {
+		int n = Const.Authentication.TOKEN_NUMBER;
+		int max = (int) Math.pow(10, n) - 1;
+
+		Random t = new Random();
+		int s = t.nextInt(max);
+
+		char[] zeros = new char[n];
+		Arrays.fill(zeros, '0');
+		String format = String.valueOf(zeros);
+		DecimalFormat df = new DecimalFormat(format);
+		String res = df.format(s);
 
 		return res;
 	}

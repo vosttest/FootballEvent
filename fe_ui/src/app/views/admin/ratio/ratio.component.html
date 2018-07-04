@@ -1,21 +1,21 @@
 <div id="overview">
     <mat-card>
         <div class="panel panel-default">
-            <div class="title-Panels">Odds</div>
+            <div class="title-Panels">Ratio</div>
         </div>
         <!-- <button mat-raised-button color="primary" (click)="redirect('create')" matTooltip="Add calendar"><mat-icon>add</mat-icon></button> -->
         <mat-tab-group>
-            <mat-tab label="Odds today">
+            <mat-tab label="Ratio today">
                 <mat-card>
                     <table class="table table-hover" matSort (matSortChange)="sortData($event)">
                         <tr class="text-center">
-                            <th rowspan="2" style="width: 20%;">Time</th>
-                            <th rowspan="2" style="width: 30%;">Match</th>
-                            <th colspan="3" style="width: 20%;">Match rate</th>
-                            <th colspan="2" style="width: 20%;">Score</th>
-                            <th colspan="3" style="width: 10%;">Over/Under</th>
-                            <th rowspan="2" style="width: 20%;">Champion</th>
-                            <th rowspan="2"></th>
+                            <th rowspan="2" style="width: 10%;">Time</th>
+                            <th rowspan="2" style="width: 20%;">Match</th>
+                            <th colspan="3" style="width: 10%;">Match rate</th>
+                            <th colspan="2" style="width: 10%;">Score</th>
+                            <th rowspan="2" style="width: 10%;">Over/Under</th>
+                            <th rowspan="2" style="width: 10%;">Champion</th>
+                            <th rowspan="2" style="width: 10%;"></th>
                         </tr>
                         <tr class="rowTable">
                             <td>Team 1 win</td>
@@ -23,9 +23,6 @@
                             <td>Team 2 win</td>
                             <td>Team 1</td>
                             <td>Team 2</td>
-                            <td>Rate</td>
-                            <td>Over</td>
-                            <td>Under</td>
                         </tr>
                         <tr *ngFor="let i of sortedData" class="rowTable text-center">
                             <td rowspan="3">{{i.time}}</td>
@@ -37,26 +34,35 @@
                             <td rowspan="3">{{i.aa}}</td>
                             <td rowspan="3">{{i.aa}}</td>
                             <td rowspan="3">{{i.aa}}</td>
-                            <td rowspan="3">{{i.aa}}</td>
-                            <td rowspan="3">{{i.aa}}</td>
-                            <td rowspan="3" class="text-center">
-                                <mat-icon (click)="redirect('edit')">edit</mat-icon>
+                            <td rowspan="3" class="text-center pointer">
+                                <div>
+                                    <i>Coming up</i><br/>
+                                    <mat-icon (click)="redirect('edit')">edit</mat-icon>
+                                </div>
+                                <!-- <div>
+                                    <i>Took place</i><br/>
+                                </div> -->
                             </td>
                         </tr>
                     </table>
                 </mat-card>
             </mat-tab>
-            <mat-tab label="All odds">
+            <mat-tab label="All rato">
+                <mat-form-field>
+                    <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
                 <mat-card>
                     <table class="table table-hover" matSort (matSortChange)="sortData($event)">
                         <tr class="text-center">
-                            <th rowspan="2" style="width: 20%;">Time</th>
-                            <th rowspan="2" style="width: 30%;">Match</th>
-                            <th colspan="3" style="width: 20%;">Match rate</th>
-                            <th colspan="2" style="width: 20%;">Score</th>
+                            <th rowspan="2" style="width: 10%;">Time</th>
+                            <th rowspan="2" style="width: 20%;">Match</th>
+                            <th colspan="3" style="width: 10%;">Match rate</th>
+                            <th colspan="2" style="width: 10%;">Score</th>
                             <th rowspan="2" style="width: 10%;">Over/Under</th>
-                            <th rowspan="2" style="width: 20%;">Champion</th>
-                            <th rowspan="2"></th>
+                            <th rowspan="2" style="width: 10%;">Champion</th>
+                            <th rowspan="2" style="width: 10%;"></th>
                         </tr>
                         <tr class="rowTable">
                             <td>Team 1 win</td>
@@ -75,8 +81,13 @@
                             <td rowspan="3">{{i.aa}}</td>
                             <td rowspan="3">{{i.aa}}</td>
                             <td rowspan="3">{{i.aa}}</td>
-                            <td rowspan="3" class="text-center">
-                                <mat-icon (click)="redirect('edit')">edit</mat-icon>
+                            <td rowspan="3" class="text-center pointer">
+                                <div><i>Coming up</i><br/>
+                                    <mat-icon (click)="redirect('edit')">edit</mat-icon>
+                                </div>
+                                <!-- <div>
+                                    <i>Took place</i><br/>
+                                </div> -->
                             </td>
                         </tr>
                     </table>
@@ -146,7 +157,7 @@
                     </div>
                 </div>
                 <div class="text-right">
-                    <button mat-raised-button color="primary" data-toggle="modal" data-target="#editModal">Save</button>
+                    <button class="save" mat-raised-button color="primary" data-toggle="modal" data-target="#editModal">Save</button>
                     <button mat-raised-button color="accent" (click)="redirect('overview')">Cancel</button>
                 </div>
             </form>
@@ -165,88 +176,3 @@
         </div>
     </div>
 </div>
-<!-- <div id="create" style="display: none">
-    <mat-card>
-        <div class="panel panel-default">
-            <div class="title-Panels">Add ratio</div>
-        </div>
-        <div class="container">
-            <form class="example-form">
-                <div class="row align-items-center">
-                    <div class="col-6">
-                        <mat-form-field class="example-full-width">
-                            <mat-select placeholder="Tournament">
-                                <mat-option>None</mat-option>
-                                <mat-option *ngFor="let state of states" [value]="state">{{state}}</mat-option>
-                            </mat-select>
-                        </mat-form-field>
-                    </div>
-                </div>
-                <div class="row align-items-center">
-                    <div class="col-6">
-                        <mat-form-field class="example-full-width">
-                            <input matInput placeholder="Team 1">
-                        </mat-form-field>
-                    </div>
-                    <div class="col-6">
-                        <mat-form-field class="example-full-width">
-                            <input matInput placeholder="Team 2">
-                        </mat-form-field>
-                    </div>
-                </div>
-                <div class="row align-items-center">
-                    <div class="col-6">
-                        <mat-form-field class="example-full-width">
-                            <input matInput placeholder="Stadium">
-                        </mat-form-field>
-                    </div>
-                    <div class="col-6">
-                        <mat-form-field class="example-full-width">
-                            <input matInput placeholder="Referee">
-                        </mat-form-field>
-                    </div>
-                </div>
-                <div class="row align-items-center">
-                    <div class="col-6">
-                        <mat-form-field class="example-full-width">
-                            <input matInput [matDatepicker]="picker" placeholder="Choose a date">
-                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                            <mat-datepicker touchUi="true" #picker></mat-datepicker>
-                        </mat-form-field>
-                    </div>
-                    <div class="col-6">
-                        <mat-checkbox>Group match</mat-checkbox>
-                    </div>
-                </div>
-                <div class="row align-items-center">
-                    <div class="col-6">
-                        <mat-form-field class="example-full-width">
-                            <textarea matInput placeholder="Squad 1"></textarea>
-                        </mat-form-field>
-                    </div>
-                    <div class="col-6">
-                        <mat-form-field class="example-full-width">
-                            <textarea matInput placeholder="Squad 2"></textarea>
-                        </mat-form-field>
-                    </div>
-                </div>
-                <div class="text-right">
-                    <button mat-raised-button color="primary" data-toggle="modal" data-target="#addModal">Add</button>
-                    <button mat-raised-button color="accent" (click)="redirect('overview')">Cancel</button>
-                </div>
-            </form>
-        </div>
-    </mat-card>
-    <div class="modal fade" id="addModal">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-body">
-                    Add ratio successfully !!!
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-info" data-dismiss="modal" (click)="redirect('overview')">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div> -->

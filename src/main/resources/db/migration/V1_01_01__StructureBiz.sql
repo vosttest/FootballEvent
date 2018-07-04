@@ -54,6 +54,7 @@ CREATE TABLE "calendar"
 	"r12"										INT4,
 	"r22"										INT4,
 	"win_team"									INT4,
+	"status"									VARCHAR(32),
 	"is_deleted"								BOOLEAN,
 	"create_by"									INT4,
 	"create_on"									TIMESTAMP,
@@ -132,6 +133,7 @@ CREATE TABLE "ratio"
 	"r32"										FLOAT8,
 	"r33"										FLOAT8,
 	"r4"										INT4,
+	"status"									VARCHAR(32),
 	"is_deleted"								BOOLEAN,
 	"create_by"									INT4,
 	"create_on"									TIMESTAMP,
@@ -144,6 +146,7 @@ CREATE TABLE "prize"
 (
 	"id"										SERIAL PRIMARY KEY,
 	"bet_id"									INT4,
+	"total"										FLOAT8,
 	"is_deleted"								BOOLEAN,
 	"create_by"									INT4,
 	"create_on"									TIMESTAMP,

@@ -16,9 +16,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.tva.fe.bll.TeamService;
+import com.tva.fe.dto.TeamDto;
 import com.tva.fe.model.Team;
 import com.tva.fe.req.TeamReq;
 import com.tva.fe.rsp.BaseRsp;
+import com.tva.fe.rsp.MultipleRsp;
 import com.tva.fe.rsp.SingleRsp;
 
 @RestController
@@ -35,7 +37,7 @@ public class TeamController {
 
 	@GetMapping("/search")
 	public ResponseEntity<?> search() {
-		SingleRsp res = new SingleRsp();
+		MultipleRsp res = new MultipleRsp();
 
 		try {
 			// Handle
@@ -89,6 +91,23 @@ public class TeamController {
 
 			// Handle
 			teamService.save(m);
+		} catch (Exception ex) {
+			res.setError(ex.getMessage());
+		}
+
+		return new ResponseEntity<>(res, HttpStatus.OK);
+	}
+
+	@RequestMapping(value = "/getByCal/{id}", method = RequestMethod.GET)
+	public ResponseEntity<?> getByCal(@PathVariable("id") int id) {
+		SingleRsp res = new SingleRsp();
+
+		try {
+			// Handle
+			TeamDto m = teamService.getByCal(id);
+
+			// Set data
+			res.setResult(m);
 		} catch (Exception ex) {
 			res.setError(ex.getMessage());
 		}

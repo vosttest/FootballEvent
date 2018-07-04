@@ -50,6 +50,31 @@
     padding: 0px;
 }
 
+.format-icon {
+    width: 35px;
+    margin-right: 10%
+}
+
+.color-white {
+    color: white;
+    text-decoration: none;
+}
+
+a.user mat-icon {
+    font-size: 2em;
+    padding-top: 30%;
+}
+
+.dropdown-toggle::after {
+    display: none;
+}
+
+.my-dropdown-left {
+    position: absolute;
+    left: auto;
+    right: 0;
+}
+
 .modal-body button {
     width: 100%;
 }
@@ -69,4 +94,9 @@ h1 {
 
 p {
     font-family: Lato;
+}
+
+.row.example-full-width {
+    margin-left: 0px!important;
+    margin-right: 0px!important;
 }

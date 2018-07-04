@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.tva.fe.dal.TeamDao;
+import com.tva.fe.dto.TeamDto;
 import com.tva.fe.model.Team;
 
 @Service(value = "teamService")
@@ -24,6 +25,20 @@ public class TeamService {
 
 	public List<Team> search() {
 		List<Team> res = teamDao.search();
+		return res;
+	}
+
+	public TeamDto getByCal(int id) {
+		List<Object[]> t = teamDao.getByCal(id);
+		TeamDto res = new TeamDto();
+		Object[] item = t.get(0);
+		res.setTeam1Id((Integer) item[0]);
+		res.setName1(item[1].toString());
+		res.setLogo1(item[2].toString());
+		item = t.get(1);
+		res.setTeam2Id((Integer) item[0]);
+		res.setName2(item[1].toString());
+		res.setLogo2(item[2].toString());
 		return res;
 	}
 

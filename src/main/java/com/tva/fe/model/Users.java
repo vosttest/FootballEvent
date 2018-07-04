@@ -52,6 +52,9 @@ public class Users {
 	@Column(columnDefinition = "varchar(128)")
 	private String remarks;
 
+	@Column(columnDefinition = "float")
+	private Float amount;
+
 	@Column(columnDefinition = "char(3)")
 	private String status;
 
@@ -204,6 +207,14 @@ public class Users {
 
 	public void setRemarks(String remarks) {
 		this.remarks = remarks;
+	}
+
+	public Float getAmount() {
+		return amount;
+	}
+
+	public void setAmount(Float amount) {
+		this.amount = amount;
 	}
 
 	public String getStatus() {

@@ -20,6 +20,7 @@ import com.tva.fe.bll.StatementService;
 import com.tva.fe.model.Statement;
 import com.tva.fe.req.StatementReq;
 import com.tva.fe.rsp.BaseRsp;
+import com.tva.fe.rsp.MultipleRsp;
 import com.tva.fe.rsp.SingleRsp;
 
 @RestController
@@ -36,7 +37,7 @@ public class StatementController {
 
 	@GetMapping("/search")
 	public ResponseEntity<?> search() {
-		SingleRsp res = new SingleRsp();
+		MultipleRsp res = new MultipleRsp();
 
 		try {
 			// Handle

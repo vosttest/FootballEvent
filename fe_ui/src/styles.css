@@ -40,3 +40,8 @@ h2 {
 .rowTable>td {
     vertical-align: middle;
 }
+
+h6 {
+    color: red;
+    font-style: italic;
+}

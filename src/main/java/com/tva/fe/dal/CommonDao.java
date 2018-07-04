@@ -10,6 +10,9 @@ import com.tva.fe.model.Common;
 
 public interface CommonDao extends CrudRepository<Common, Integer> {
 	@Query("FROM Common a WHERE a.type = :type ORDER BY a.sequence")
+	public Common getAmout(@Param("type") String type);
+	
+	@Query("FROM Common a WHERE a.type = :type ORDER BY a.sequence")
 	public List<Common> getBy(@Param("type") String type);
 
 	@Query(nativeQuery = true, value = "SELECT a.* FROM common a JOIN common b on a.parent_id = b.id WHERE a.type = :type AND b.value = :value ORDER BY a.sequence")

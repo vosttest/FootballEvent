@@ -57,6 +57,16 @@ public class Const {
 		public static final String RSA = "RSA_MODE";
 	}
 
+	public class SMS {
+		public static final String SMS_URL = "SMS_URL";
+
+		public static final String SMS_USERNAME = "SMS_USERNAME";
+
+		public static final String SMS_PASSWORD = "SMS_PASSWORD";
+
+		public static final String TEMPLATE_ACTIVE_CODE = "Hi {0},\n\rYour active code is: {1}.";
+	}
+
 	public class DateTime {
 		public static final String FULL = "yyyy-MM-dd HH:mm:ss";
 
@@ -65,6 +75,10 @@ public class Const {
 		public static final String DMY_HMS = "dd-MM-yyyy hh:mm:ss";
 
 		public static final String YMD = "yyyy-MM-dd";
+	}
+
+	public class Module {
+		public static final String SIGN_IN = "sign-in";
 	}
 
 	public class SpecialString {

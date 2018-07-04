@@ -31,10 +31,10 @@ public class Calendar {
 	@Column(columnDefinition = "TIMESTAMP WITH TIME ZONE")
 	private Date startGuess;
 
-	@Column(columnDefinition = "integer",name="team1_id")
+	@Column(columnDefinition = "integer", name = "team1_id")
 	private Integer team1Id;
 
-	@Column(columnDefinition = "integer",name="team2_id")
+	@Column(columnDefinition = "integer", name = "team2_id")
 	private Integer team2Id;
 
 	@Column(columnDefinition = "varchar(64)")
@@ -72,6 +72,9 @@ public class Calendar {
 
 	@Column(columnDefinition = "integer")
 	private Integer winTeam;
+
+	@Column(columnDefinition = "varchar(32)")
+	private String status;
 
 	@Column(columnDefinition = "bool")
 	private boolean isDeleted;
@@ -228,6 +231,14 @@ public class Calendar {
 
 	public void setWinTeam(Integer winTeam) {
 		this.winTeam = winTeam;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
 	}
 
 	public boolean isDeleted() {
