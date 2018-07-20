@@ -13,10 +13,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.tva.fe.bll.BetService;
+import com.tva.fe.bll.GuessService;
 import com.tva.fe.common.Utils;
 import com.tva.fe.dto.PayloadDto;
 import com.tva.fe.model.Bet;
+import com.tva.fe.model.Guess;
 import com.tva.fe.req.BetReq;
+import com.tva.fe.req.GuessReq;
 import com.tva.fe.rsp.BaseRsp;
 
 @RestController
@@ -26,6 +29,9 @@ public class BetController {
 
 	@Autowired
 	private BetService betService;
+
+	@Autowired
+	private GuessService guessService;
 
 	// end
 
@@ -66,6 +72,32 @@ public class BetController {
 			m.setUserId(userId);
 
 			betService.save(m);
+		} catch (Exception ex) {
+			res.setError(ex.getMessage());
+		}
+
+		return new ResponseEntity<>(res, HttpStatus.OK);
+	}
+
+	@PostMapping("/saveGuess")
+	public ResponseEntity<?> saveGuess(@RequestHeader HttpHeaders header, @RequestBody GuessReq req) {
+		BaseRsp res = new BaseRsp();
+
+		try {
+
+			int champion = req.getChampionId();
+			String top4 = req.getTop4Id();
+			String phone = req.getPhoneNo();
+			int subQuestion = req.getSubQuestion();
+
+			Guess m = new Guess();
+			m.setChampionId(champion);
+			m.setTop4Id(top4);
+			m.setPhoneNo(phone);
+			m.setSubQuestion(subQuestion);
+
+			guessService.save(m);
+
 		} catch (Exception ex) {
 			res.setError(ex.getMessage());
 		}

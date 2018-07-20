@@ -26,6 +26,8 @@ export class GuessComponent implements OnInit {
     public vmSI: any = {};
     public vmBet: any = { calendarId: 1, code: "THT", g11: null, g21: null, g22: null, g31: null, g41: null, amount: null, subQuestion: null, status: "" };
     public vm: any;
+    public vmchampion: any = { championId: "", subQuestion: null, phoneOne: null ,top4Id:""};
+    public vmTop4: any = { championId: "", subQuestion: null, phoneOne: null ,top4Id:""};
 
     public imgURL = "../../../../assets/img/flag_wc/";
 
@@ -49,6 +51,9 @@ export class GuessComponent implements OnInit {
     public rsOU = ""; //KQ checkbox tài-xỉu
     public tsOU;
     public sRatioOU = 1;
+    public rsScore = ""; //KQ checkbox Score
+    public tsScore;
+    public sRatioScore = 10;
     public code = "THT";
     public subQuesRS = "";
     public subQuesScore = "";
@@ -88,7 +93,7 @@ export class GuessComponent implements OnInit {
     }
 
     public loadData() {
-        this.toDate2 = this.toDate1.setDate(this.toDate1.getDate() + 2);
+        this.toDate2 = this.toDate1.setDate(this.toDate1.getDate() + 5);
         let a = new Date(this.toDate2);
         let obj = {
             fromDate: this.fromDate,
@@ -153,7 +158,7 @@ export class GuessComponent implements OnInit {
 
     public showModal(id: any, time: any) {
         let a = new Date(time);
-        a.setHours(a.getHours() - 7);
+        a.setHours(a.getHours() - 72);
 
         if (this.toDate1 > a && this.toDate1 < time) {
             this.searchRatiobyCal(10);
@@ -445,5 +450,39 @@ export class GuessComponent implements OnInit {
         this.rou.navigate(['/guess']);
         this.informationModal.hide();
         this.guessModal.hide();
+    }
+
+    public saveGuess() {
+        let obj;
+        let obj1 = {
+            championId: this.vmchampion.championId,
+            phoneNo:this.vmchampion.phoneNo,
+            subQuestion:this.vmchampion.subQuestion,
+            top4Id: ""
+        };
+
+        let obj2 = {
+            championId: "",
+            phoneNo: this.vmTop4.phoneNo,
+            subQuestion: this.vmTop4.subQuestion,
+            top4Id: this.vmTop4.top4Id
+        };
+
+        if (this.vmchampion.championId != "") {
+            obj = obj1;
+        }
+        if (this.vmTop4.top4Id != "") {
+            obj = obj2
+        }
+
+        this.proBet.saveguess(obj).subscribe((rsp: any) => {
+            if (rsp.status === HTTP.STATUS_SUCCESS) {
+                this.informationModal.show();
+            }
+            else {
+                console.log(rsp.message);
+            }
+            this.loader = false;
+        }, err => console.log(err));
     }
 }

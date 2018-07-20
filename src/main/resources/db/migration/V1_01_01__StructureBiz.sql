@@ -153,3 +153,18 @@ CREATE TABLE "prize"
 	"modify_by"									INT4,
 	"modify_on"									TIMESTAMP
 );
+DROP TABLE IF EXISTS PUBLIC."guess";
+CREATE TABLE "guess"
+(
+	"id"										SERIAL PRIMARY KEY,
+	"champion_id"								INT4,
+	"top4_id"									VARCHAR(16),
+	"sub_question"								INT4,
+	"phone_no"									VARCHAR(16),
+	"statement_id"								INT4,
+	"status"									VARCHAR(32),
+	"create_by"									INT4,
+	"create_on"									TIMESTAMP,
+	"modify_by"									INT4,
+	"modify_on"									TIMESTAMP
+);

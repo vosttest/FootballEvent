@@ -27,4 +27,11 @@ export class BetProvider {
     public delete(id: any) {
         return this.api.delete('bet/delete/' + id);
     }
+
+    /**
+     * Save
+     */
+    public saveguess(vmchampion) {
+        return this.api.post('bet/saveGuess', vmchampion);
+    }
 }
