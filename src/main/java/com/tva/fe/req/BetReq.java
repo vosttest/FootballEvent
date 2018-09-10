@@ -28,7 +28,7 @@ public class BetReq {
 
 	@JsonProperty(value = "g41")
 	private Integer g41;
-	
+
 	@JsonProperty(value = "amount")
 	private Float amount;
 

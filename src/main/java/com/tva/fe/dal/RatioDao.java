@@ -14,7 +14,7 @@ public interface RatioDao extends CrudRepository<Ratio, Integer> {
 
 	@Query("FROM Ratio")
 	public List<Ratio> search();
-	
+
 	@Query("FROM Ratio a WHERE a.calendarId = :calendarId")
 	public List<Ratio> getByCal(@Param("calendarId") int calendarId);
 }

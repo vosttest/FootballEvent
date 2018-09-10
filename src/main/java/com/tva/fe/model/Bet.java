@@ -45,7 +45,7 @@ public class Bet {
 
 	@Column(columnDefinition = "integer")
 	private Integer g41;
-	
+
 	@Column(columnDefinition = "float")
 	private Float amount;
 
@@ -142,7 +142,7 @@ public class Bet {
 	public void setG41(Integer g41) {
 		this.g41 = g41;
 	}
-	
+
 	public Float getAmount() {
 		return amount;
 	}

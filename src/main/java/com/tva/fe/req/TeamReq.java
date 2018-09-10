@@ -96,7 +96,7 @@ public class TeamReq {
 	public void setCondition(String[] condition) {
 		this.condition = condition;
 	}
-	
+
 	// end
 
 	// region -- Methods --

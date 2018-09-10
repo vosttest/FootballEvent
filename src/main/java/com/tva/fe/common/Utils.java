@@ -86,10 +86,9 @@ public class Utils {
 	 * Function get date time, when user can guess a result of match
 	 * 
 	 * @param competitionDate
-	 * @param type
-	 *            Choose attribute to add (Calendar.MINUTE, Calendar.HOUR, ...)
-	 * @param n
-	 *            Number want to add
+	 * @param type            Choose attribute to add (Calendar.MINUTE,
+	 *                        Calendar.HOUR, ...)
+	 * @param n               Number want to add
 	 * @return
 	 * @throws Exception
 	 */
@@ -111,10 +110,8 @@ public class Utils {
 	/**
 	 * Get UTC date time
 	 * 
-	 * @param type
-	 *            Choose attribute to add (Calendar.MINUTE, Calendar.HOUR, ...)
-	 * @param n
-	 *            Number want to add
+	 * @param type Choose attribute to add (Calendar.MINUTE, Calendar.HOUR, ...)
+	 * @param n    Number want to add
 	 * @return
 	 * @throws Exception
 	 */
@@ -136,8 +133,7 @@ public class Utils {
 	/**
 	 * Verify with current date
 	 * 
-	 * @param d
-	 *            Date
+	 * @param d Date
 	 * @return
 	 */
 	public static boolean verify(Date d) {
