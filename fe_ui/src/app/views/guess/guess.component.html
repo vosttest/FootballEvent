@@ -1,0 +1,373 @@
+<div id="fullpage">
+    <div class="section section-1 fp-section fp-table">
+        <div class="fp-tableCell">
+            <carousel>
+                <slide>
+                    <img src="../assets/img/banner2.jpg" alt="first slide" style="display:block">
+                    <div class="carousel-caption d-none d-md-block">
+                    </div>
+                </slide>
+                <slide>
+                    <img src="../assets/img/banner7.jpg" alt="second slide" style="display:block">
+                    <div class="carousel-caption d-none d-md-block">
+                    </div>
+                </slide>
+                <slide>
+                    <img src="../assets/img/banner3.jpg" alt="third slide" style="display:block">
+                    <div class="carousel-caption d-none d-md-block">
+                    </div>
+                </slide>
+            </carousel>
+        </div>
+    </div>
+    <div class="section section-2 fp-section fp-table">
+        <div class="row main">
+            <div class="col-sm-8 tabs row">
+                <div class="col-sm-12 mar-top5" *ngFor="let i of calendar">
+                    <div class="time-break border">
+                        <div class="time-content">{{ i.competitionDate | date:'EEEE dd-MM-yyy' }}</div>
+                    </div>
+                    <div class="time-break" title="Click to Guess!!!" *ngFor="let j of i.calendarDetail">
+                        <div class="matchs">
+                            <div class="row match-line">
+                                <!-- <img src="https://cdn.vn.garenanow.com/web/fo3/fo4/worldcup/images/rounds/A.png" alt="true" class="group-name-title"> -->
+                                <div class="banner" (click)="showModal(j.calendarId, j.competitionDate1)">
+                                    <!-- <div class="team1"> -->
+                                    <div class="team1">
+                                        <img alt="true" class="flag" src="{{ imgURL + j.logo1 }}">
+                                        <div class="div-span">
+                                            <span> {{j.name1}} </span>
+                                        </div>
+                                    </div>
+                                    <div class="team2">
+                                        <div class="div-span">
+                                            <span>{{j.name2}} </span>
+                                        </div>
+                                        <img alt="true" class="flag" src="{{ imgURL + j.logo2 }}">
+                                    </div>
+                                    <div class="time">{{ j.competitionDate1 | date:'HH:mm' }}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section-2 welcome-section fp-section fp-table">
+        <div class="container" style="height: auto">
+            <div class="top-content row">
+                <div class="left-side col-7" style="width: 58.5%; vertical-align: top;">
+                    <div class="carousel">
+                        <carousel class="section-2" interval="2000" showIndicators="true" activeSlide="0" noPause=true style="width:50%; margin-right: 35%">
+                            <slide>
+                                <img src="../assets/img/price5.jpg" class="prize" style="display:block">
+                            </slide>
+                            <slide>
+                                <img src="../assets/img/price3.jpg" class="prize" style="display:block">
+                            </slide>
+                            <slide>
+                                <img src="../assets/img/price6.jpg" class="prize" style="display:block">
+                            </slide>
+                            <slide>
+                                <img src="../assets/img/price4.jpg" class="prize" style="display:block">
+                            </slide>
+                            <slide>
+                                <img src="../assets/img/GT1.jpg" class="prize" style="display:block">
+                            </slide>
+                            <slide>
+                                <img src="../assets/img/GT2.jpg" class="prize" style="display:block">
+                            </slide>
+                        </carousel>
+                    </div>
+                </div>
+                <div class="right-side col-5" style="vertical-align: top">
+                    <div class="guess-c form-group">
+                        <mat-tab-group class="example-full-width">
+                            <mat-tab label="Champion">
+                                <form>
+                                    <mat-form-field class="example-full-width">
+                                        <mat-select placeholder="Choose champion team" name="idchampion" #idchampion="ngModel" [(ngModel)]="vmchampion.championId">
+                                            <mat-option *ngFor="let i of lstTeam" value="{{i.id}}">{{ i.name }}</mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                    <!-- <div class="example-selected-value text-left">You selected: </div> -->
+                                    <br>
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Those who have the same result" type="number" name="subQuestion" #subQuestion="ngModel" [(ngModel)]="vmchampion.subQuestion">
+                                    </mat-form-field>
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Phone Number" pattern="^0[0-9]{9,10}$" maxlength="16" name="phoneNo" #phoneNo="ngModel" [(ngModel)]="vmchampion.phoneNo">
+                                    </mat-form-field>
+                                    <div class="row">
+                                        <div class="col-4"></div>
+                                        <div class="col-4">
+                                            <button mat-button (click)="saveGuess()">Guess</button>
+                                        </div>
+                                        <div class="col-4"></div>
+                                    </div>
+                                </form>
+                            </mat-tab>
+                            <mat-tab label="Top 4">
+                                <form>
+                                    <mat-form-field class="example-full-width">
+                                        <mat-select placeholder="Choose top 4 team" multiple max-selected-options="4" name="idtop4" #idtop4="ngModel" [(ngModel)]="vmTop4.top4Id">
+                                            <mat-option *ngFor="let i of lstTeam" value="{{i.id}}">{{i.name}}</mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                    <!-- <div class="example-selected-value text-left">You selected:</div> -->
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Those who have the same result" type="number" name="subQuestion" #subQuestion="ngModel" [(ngModel)]="vmTop4.subQuestion">
+                                    </mat-form-field>
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Phone Number" pattern="^0[0-9]{9,10}$" maxlength="16" name="phoneNo" #phoneNo="ngModel" [(ngModel)]="vmTop4.phoneNo">
+                                    </mat-form-field>
+                                    <div class="row">
+                                        <div class="col-4"></div>
+                                        <div class="col-4">
+                                            <button mat-button (click)="saveGuess()">Guess</button>
+                                        </div>
+                                        <div class="col-4"></div>
+                                    </div>
+                                </form>
+                            </mat-tab>
+                        </mat-tab-group>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div bsModal #guessModal="bs-modal" class="modal fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" [config]="{backdrop: 'static'}">
+    <div class="modal-dialog modal-xs" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="row">
+                    <img style="width: 100%; height: calc(30vh)" src="../assets/img/banner6.jpg">
+                    <div class="row team form-group">
+                        <div class="col-md-6 ">
+                            <div class="flag-team">
+                                <img alt="true" class="flag-d" src="{{ imgURL + vmTeam.logo1 }}">
+                                <div style="margin: auto">
+                                    <span>{{vmTeam.name1}}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="flag-team">
+                                <img alt="true" class="flag-d" src="{{ imgURL + vmTeam.logo2 }}">
+                                <div style="margin: auto">
+                                    <span>{{vmTeam.name2}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <br>
+                    <mat-tab-group class="example-full-width" (selectedTabChange)="selectTab($event)">
+                        <mat-tab label="Result">
+                            <br/>
+                            <form class="example-form">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <mat-radio-button value="11" (change)="changeResult($event.value)" [checked]="isShowr11"></mat-radio-button>
+                                        <h4>{{ratioTHT.r11}} WIN</h4>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <mat-radio-button value="12" (change)="changeResult($event.value)" [checked]="isShowr12"></mat-radio-button>
+                                        <h4>{{ratioTHT.r12}} DRAW</h4>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <mat-radio-button value="13" (change)="changeResult($event.value)" [checked]="isShowr13"></mat-radio-button>
+                                        <h4>{{ratioTHT.r13}} WIN</h4>
+                                    </div>
+                                </div>
+                                <div class="example-selected-value">Your choose is: {{rsResult}}</div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <mat-form-field class="example-full-width">
+                                            <input matInput placeholder="Total stake" type="number" [(ngModel)]="tsResult" name="tsresult" [(ngModel)]="vmBet.amount" name="amount">
+                                        </mat-form-field>
+                                        <p class="text-left">Potential Returns: {{tsResult*sRatioRS | number : '0.0-2'}}</p>
+                                    </div>
+                                    <div class="col-6">
+                                        <mat-form-field class="example-full-width">
+                                            <input matInput placeholder="Those who have the same result" type="number" [(ngModel)]="subQuesRS" name="subQuesRS">
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <button mat-button (click)="guess()">Guess</button>
+                                <button mat-button (click)="hideModal()">Cancel</button>
+                            </form>
+                        </mat-tab>
+                        <mat-tab label="Score">
+                            <br/>
+                            <form class="example-form">
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        <mat-form-field appearance="outline">
+                                            <input matInput type="number" [(ngModel)]="vmBet.g21" name="g21" onkeydown="if (this.value.length > 1) {this.value = this.value.slice(1,1);}">
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="col-md-2" style="font-size: 45px; text-align: center">:</div>
+                                    <div class="col-md-5">
+                                        <mat-form-field appearance="outline">
+                                            <input matInput type="number" [(ngModel)]="vmBet.g22" name="g22" onkeydown="if (this.value.length > 1) {this.value = this.value.slice(1,1);}">
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <mat-form-field class="example-full-width">
+                                            <input matInput placeholder="Total stake" type="number" [(ngModel)]="tsScore" name="tsScore" [(ngModel)]="vmBet.amount" name="amount">
+                                        </mat-form-field>
+                                        <p class="text-left">Potential Returns: {{tsScore*sRatioScore | number : '0.0-2'}}</p>
+                                    </div>
+                                    <div class="col-6">
+                                        <mat-form-field class="example-full-width">
+                                            <input matInput placeholder="Those who have the same result" type="number" [(ngModel)]="subQuesScore" name="subQuesScore">
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <button mat-button (click)="guess()">Guess</button>
+                                <button mat-button (click)="hideModal()">Cancel</button>
+                            </form>
+                        </mat-tab>
+                        <mat-tab label="Over/Under">
+                            <br>
+                            <form class="example-form">
+                                <div class="row ">
+                                    <div class="col-md-4">
+                                        <mat-radio-button value="31" (change)="changeOU($event.value)" [checked]="isShowr31"></mat-radio-button>
+                                        <h3>{{ratioTX.r33}} Under</h3>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <h3>{{ratioTX.r31}}</h3>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <mat-radio-button value="32" (change)="changeOU($event.value)" [checked]="isShowr32"></mat-radio-button>
+                                        <h3>{{ratioTX.r32}} Over</h3>
+                                    </div>
+                                </div>
+                                <div class="example-selected-value">Your choose is: {{rsOU}}</div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <mat-form-field class="example-full-width">
+                                            <input matInput placeholder="Total stake" type="number" [(ngModel)]="tsOU" name="tsOU" [(ngModel)]="vmBet.amount" name="amount">
+                                        </mat-form-field>
+                                        <p class="text-left">Potential Returns: {{tsOU*sRatioOU | number : '0.0-2'}}</p>
+                                    </div>
+                                    <div class="col-6">
+                                        <mat-form-field class="example-full-width">
+                                            <input matInput placeholder="Those who have the same result" type="number" [(ngModel)]="subQuesOU" name="subQuesOU">
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <button mat-button (click)="guess()">Guess</button>
+                                <button mat-button (click)="hideModal()">Cancel</button>
+                            </form>
+                        </mat-tab>
+                    </mat-tab-group>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div bsModal #signInModal="bs-modal" class="modal fade" [config]="{backdrop: 'static'}" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="sign-in modal-dialog modal-xs" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div>
+                    <strong>Sign in with your Phone number</strong><br><br>
+                </div>
+                <form name="form" #f="ngForm" (ngSubmit)="f.form.valid && signIn()">
+                    <div class="col-md-12">
+                        <mat-form-field class="example-full-width" tabindex="0">
+                            <input id="userName" name="userName" #userName="ngModel" [(ngModel)]="vmSI.userName" matInput pattern="^0[0-9]{9,10}$" maxlength="16" placeholder="Phone number" required>
+                        </mat-form-field>
+                        <span [hidden]="userName.valid || (userName.pristine && !f.submitted)">
+                            <span *ngIf="userName.errors?.required">
+                                <mat-icon>report_problem</mat-icon>Required!
+                            </span>
+                        <span *ngIf="userName.errors?.pattern">
+                                <mat-icon>report_problem</mat-icon>Phone number invalid!
+                            </span>
+                        </span>
+                    </div>
+                    <div class="text-right">
+                        <button mat-raised-button color="accent" (click)="signInModal.hide();accessTokenModal.hide()">Cancel</button>
+                        <button mat-raised-button color="primary" type="submit" tabindex="2">Sign In</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div bsModal #accessTokenModal="bs-modal" [config]="{backdrop: 'static'}" class="modal fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="token modal-dialog modal-xs" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Confirm Token</h5>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div>
+                            <strong>Please enter the token</strong>
+                        </div>
+                        <div class="form-group">
+                            <input type="number" class="form-control border-iput margin-right" name="codeNumber1" id="codeNumber1" (keyup)="checkMaxlength('input1', $event)" min="0" max="9" />
+                            <input type="number" class="form-control border-iput margin-right" name="codeNumber2" id="codeNumber2" (keyup)="checkMaxlength('input2', $event)" min="0" max="9" />
+                            <input type="number" class="form-control border-iput margin-right" name="codeNumber3" id="codeNumber3" (keyup)="checkMaxlength('input3', $event)" min="0" max="9" />
+                            <input type="number" class="form-control border-iput margin-right" name="codeNumber4" id="codeNumber4" (keyup)="checkMaxlength('input4', $event)" min="0" max="9" />
+                            <input type="number" class="form-control border-iput margin-right" name="codeNumber5" id="codeNumber5" (keyup)="checkMaxlength('input5', $event)" min="0" max="9" />
+                            <input type="number" class="form-control border-iput margin-right" name="codeNumber6" id="codeNumber6" (keyup)="checkMaxlength('input6', $event)" min="0" max="9" />
+                        </div>
+                        <h6>{{msg}}</h6>
+                        <a routerLink="/sign-in" (click)="signIn()">Resend OTP</a>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" (click)="cancelAccessTokenModal(); show = false;">Cancel</button>
+                <button type="button" (click)="proceedClick()" style="background-color :#06539C;" [disabled]="isDisabled" class="btn btn-success">Proceed</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div bsModal #notificationModal="bs-modal" [config]="{backdrop: 'static'}" class="modal fade" id="notificationModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="info modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Notification</h5>
+            </div>
+            <div class="modal-body text-center">
+                <p>{{timeGuess | date:'HH:mm dd-MMM-yyyy'}} will start to bet</p>
+                <p>Please come back later!</p>
+            </div>
+            <div class="modal-footer">
+                <button mat-raised-button color="accent" (click)="notificationModal.hide()">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal -->
+<div bsModal #informationModal="bs-modal" [config]="{backdrop: 'static'}" class="modal fade" id="informationModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="infor modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Information</h5>
+            </div>
+            <div class="modal-body">
+                {{ msg }}
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-success" (click)="ok()" *ngIf='success; else other_content'>OK</button>
+                <ng-template #other_content>
+                    <button type="submit" class="btn btn-success" (click)="informationModal.hide()">OK</button>
+                </ng-template>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+button.mat-raised-button {
+    margin-top: 1%;
+    margin-right: 1%;
+}
+
+.mat-raised-button.mat-accent {
+    background-color: gray;
+}
+
+::ng-deep .mat-tab-labels {
+    justify-content: center;
+}

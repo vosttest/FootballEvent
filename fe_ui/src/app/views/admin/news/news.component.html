@@ -1,0 +1,59 @@
+<div id="overview">
+    <mat-card>
+        <div class="row">
+            <div class="col-2 overview">
+                <button mat-raised-button color="primary" (click)="redirect('create')" matTooltip="Add news"><mat-icon>add</mat-icon></button>
+            </div>
+            <div class="col-3">
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Search news by title">
+                </mat-form-field>
+            </div>
+            <button type="submit" class="btn btn-white btn-round btn-just-icon">
+                <i class="material-icons">search</i>
+            </button>
+        </div>
+        <div class="row">
+            <table class="table table-hover" matSort (matSortChange)="sortData($event)">
+                <tr>
+                    <th mat-sort-header="title" style="width: 30%;">News Title</th>
+                    <th mat-sort-header="content" style="width: 65%;">Content</th>
+                    <th style="width: 5%;"></th>
+                </tr>
+                <tr *ngFor="let i of sortedData" class="rowTable">
+                    <td>{{i.title}}</td>
+                    <td>{{i.content}}</td>
+                    <td class="text-center">
+                        <mat-icon>edit</mat-icon>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </mat-card>
+</div>
+<div id="create" style="display: none">
+    <mat-card>
+        <div class="panel panel-default">
+            <div class="title-Panels">Add News</div>
+        </div>
+        <form class="example-form">
+            <div class="row">
+                <div class="col-6">
+                    <mat-form-field class="example-full-width">
+                        <input matInput placeholder="News Title">
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <label>Content</label>
+                    <app-ngx-editor name="content" [config]="editorConfig" [spellcheck]="true" [(ngModel)]="vm.content"></app-ngx-editor>
+                </div>
+            </div>
+            <div class="text-right">
+                <button mat-raised-button color="primary">Save</button>
+                <button mat-raised-button color="accent" (click)="redirect('overview')">Cancel</button>
+            </div>
+        </form>
+    </mat-card>
+</div>

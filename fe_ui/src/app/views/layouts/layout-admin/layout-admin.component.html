@@ -1,0 +1,70 @@
+<section class="format-layout">
+    <nav class="row navbar navbar-expand-lg navbar-dark bg-primary fixed-top resize-none" id="mainNav">
+        <div class="col-md-2 bg-green text-center">
+            <span tabindex="-1" class="navbar-brand mb-0 h1 color-white pointer" routerLink="dashboard/overview" (click)="active('dashboard')">FootBall Event</span>
+        </div>
+        <div class="col-md-10">
+            <ul class="navbar-nav my-top-menu float-right">
+                <li class="dropdown">
+                    <a class="dropdown-toggle color-white" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="far fa-user color-white"></i>
+                    </a>
+                    <div class="dropdown-menu dropleft my-dropdown-left" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" routerLink="/profile"> <i class="fas fa-search"></i> Profile</a>
+                        <a class="dropdown-item" routerLink="/setting"> <i class="fas fa-cogs"></i> Setting</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item pointer"> <i class="fas fa-sign-out-alt"></i> Sign Out</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+                <li class="nav-item pointer" id="dashboard" routerLink="dashboard/overview" (click)="active('dashboard')" data-toggle="tooltip" title="Dashboard">
+                    <a class="nav-link">
+                        <mat-icon>dashboard</mat-icon>
+                        <span class="nav-link-text">Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item pointer" id="calendar" routerLink="calendar/overview" (click)="active('calendar')" data-toggle="tooltip" title="Calendar">
+                    <a class="nav-link">
+                        <mat-icon>calendar_today</mat-icon>
+                        <span class="nav-link-text">Calendar</span>
+                    </a>
+                </li>
+                <li class="nav-item pointer" id="statement" routerLink="statement/overview" (click)="active('statement')" data-toggle="tooltip" title="Tournament">
+                    <a class="nav-link">
+                        <mat-icon>public</mat-icon>
+                        <span class="nav-link-text">Tournament</span>
+                    </a>
+                </li>
+                <li class="nav-item pointer" id="team" routerLink="team/overview" (click)="active('team')" data-toggle="tooltip" title="Team">
+                    <a class="nav-link">
+                        <mat-icon>supervisor_account</mat-icon>
+                        <span class="nav-link-text">Team</span>
+                    </a>
+                </li>
+                <li class="nav-item pointer" id="news" routerLink="news/overview" (click)="active('news')" data-toggle="tooltip" title="News">
+                    <a class="nav-link">
+                        <mat-icon>fiber_new</mat-icon>
+                        <span class="nav-link-text">News</span>
+                    </a>
+                </li>
+                <li class="nav-item pointer" id="ratio" routerLink="ratio/overview" (click)="active('ratio')" data-toggle="tooltip" title="Ratio">
+                    <a class="nav-link">
+                        <mat-icon>money</mat-icon>
+                        <span class="nav-link-text">Ratio</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div id="content-wrapper">
+        <div class="container-fluid">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</section>
